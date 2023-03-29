@@ -1,18 +1,18 @@
 
 document.querySelector("#navbar").innerHTML=`
 <div id="nav-cont">
-    <div id="nav-logo">
+    <div data-aos="zoom-out" data-aos-duration="1000" id="nav-logo">
         <div id="nav-img">
-            <img alt="Logo" src="./Files/Medistar-no-bg.png"/>
+            <img alt="Logo" src="./Files/MEDSTAR-no-bg.png"/>
         </div>
     </div>
-    <div id="nav-menu">
+    <div data-aos="zoom-out" data-aos-duration="1000" id="nav-menu">
         <li>Book an appointment</li>
         <li>Find Doctors</li>
         <li>Departments</li>
         <li>Security & Help</li>
     </div>
-    <div id="nav-user-details">
+    <div data-aos="zoom-out" data-aos-duration="1000" id="nav-user-details">
         <button>Login</button>
         <button>Signup</button>
     </div>

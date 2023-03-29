@@ -12,10 +12,11 @@ li{
     top:0;
     z-index: 1000;
     width:100%;
+    box-shadow: rgba(50, 50, 93, 0.25) 0px 13px 27px -5px, rgba(0, 0, 0, 0.3) 0px 8px 16px -8px;
 }
 #nav-cont{
     /* border:1px solid black; */
-    width:85%;
+    width:84%;
     margin:auto;
     display:flex;
     justify-content: space-between;
@@ -23,7 +24,7 @@ li{
     font-weight: 300;
 }
 #nav-logo{
-    /* border:1px solid black; */
+    /* border:1px solid black; */   
     width:8%;
     padding:5px 0;
     /* width:8%; */
@@ -33,14 +34,19 @@ li{
 }
 #nav-img{
     width:100%;
-    height:4rem;
+    height:3.5rem;
     /* border:1px solid black; */
 }
 #nav-img>img{
     width:100%;
-    height:4rem;
+    height:3.5rem;
     object-fit: contain;
     /* border:1px solid black;  */
+    transition: transform .2s;
+}
+#nav-img>img:hover{
+    transform: scale(1.1);
+    cursor:pointer;
 }
 #nav-menu{
     /* border:1px solid black; */
@@ -61,9 +67,10 @@ li{
     justify-content: space-evenly;
 }
 #nav-user-details>button{
-    border:1px solid black;
-    background-color: black;
-    color:white;
+    border:1px solid white;
+    background-color: white;
+    color:#0b76c6;
+    font-weight: bold;
     padding:5px 10px;
     border-radius: 5px;
     transition: transform .2s;
@@ -72,15 +79,174 @@ li{
     transform: scale(1.1);
     cursor:pointer;
 }
+.land-sections{
+    /* border:1px solid black; */
+    width:77rem;
+    margin: 5rem auto;
+}
 #land-video{
-    border:1px solid black;
-    width:80rem;
-    margin: 3rem auto;
-}
-#land-video>div{
     width:100%;
 }
-#land-video>div>img{
+#land-video>img{
     width:100%;
 }
- 
+#feature-cont{
+    display:flex;
+    justify-content: space-between;
+}
+.feature-card{
+    width:16%;
+    box-shadow: rgba(50, 50, 93, 0.25) 0px 6px 12px -2px, rgba(0, 0, 0, 0.3) 0px 3px 7px -3px;
+    border-radius: 10px;
+    transition: transform .2s;
+}
+.feature-card:hover{
+    transform: scale(1.1);
+    cursor:pointer;
+}
+.feature-img{
+    width:100%;
+    /* border:1px solid black; */
+}
+.feature-img>img{
+    border-top-right-radius: 10px;
+    border-top-left-radius: 10px;
+    width:100%;
+}
+.feature-desc{
+    padding:12px;
+}
+.feature-desc>*{
+    margin:10px 0;
+}
+.feature-desc>p{
+    color:gray;
+    font-size: 15px;
+}
+#consult-head>*{
+    margin:7px 0;
+}
+#consult-body{
+    display:flex;
+    justify-content: space-between;
+    margin:30px 0;
+}
+.consult-card{
+    width:16%;
+    /* box-shadow: rgba(50, 50, 93, 0.25) 0px 6px 12px -2px, rgba(0, 0, 0, 0.3) 0px 3px 7px -3px; */
+    border-radius: 10px;
+    transition: transform .2s;
+}
+.consult-card:hover{
+    transform: scale(1.1);
+    cursor:pointer;
+}
+.c-c-img{
+    width:100%;
+    /* border:1px solid black; */
+}
+.c-c-img>img{
+    width:100%;
+    height:12rem;
+    border-radius: 50%;
+    /* border:1px solid black; */
+}
+.c-c-desc{
+    padding:10px;
+    text-align: center;
+}
+.c-c-desc>*{
+    margin:5px 0;
+}
+.c-c-desc>a{
+    color:rgb(0, 183, 255);
+    font-size: 12px;
+    font-weight: bold;
+    text-decoration: none;
+}
+/* .land-sections-dept{
+    width:85rem;
+    margin:auto;
+} */
+.dept-card{
+    width:100%;
+    position:relative;
+}
+.dept-card>img{
+    width:100%;
+    border-radius:1rem;
+    margin:1rem 0;
+}
+#dept-sec>div:nth-child(odd)>.dept-body{
+    width:30rem;
+    position:absolute;
+    top:4rem;
+    left:5rem;
+}
+#dept-sec>div:nth-child(even)>.dept-body{
+    width:30rem;
+    position:absolute;
+    top:4rem;
+    right:5rem;
+}
+.dept-body>h1{
+    font-size:35px;
+    margin-bottom: 2rem;
+}
+.dept-body>p{
+    line-height: 1.5rem;
+    color:rgb(107, 107, 107);
+}
+#footer{
+    /* border:1px solid red; */
+    width:99.9%;
+    background-color: #186dae;
+    overflow: hidden;   
+}
+#footer-cont{
+    width:80%;
+    margin:auto;
+    /* border:1px solid red; */
+    display: flex;
+    justify-content: space-between;
+    padding-top:2rem;
+    color:white;
+}
+#footer-left{
+    width:50%;
+    display: flex;
+    justify-content: space-between;
+    /* border:1px solid blue; */
+}
+#footer-left>div>h4{
+    margin-bottom:0.5rem;
+    text-decoration: underline;
+}
+#footer-left>div>p{
+    font-size: 15px;
+    margin-bottom: 3px;
+}
+#footer-left>div>p:hover{
+    color: lightgrey;
+    text-decoration: underline;
+    cursor: pointer;
+}
+#footer-right{
+    /* border:1px solid blue; */
+    width:17%;
+}
+#logo-div{
+    width:100%;
+    height:10rem;
+    /* border:1px solid black; */
+}
+#logo-div>img{
+    width:100%;
+    height:10rem;
+    object-fit: contain;
+}
+#socials{
+    margin:1rem auto;
+    display: flex;
+    justify-content: space-between;
+}
