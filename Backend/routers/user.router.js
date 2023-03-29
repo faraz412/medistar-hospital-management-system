@@ -20,7 +20,6 @@ userRouter.post("/signup", async (req, res) => {
       msg: "User already registered",
     });
   }
-
   try {
     bcrypt.hash(password, 5, async (err, hash) => {
       if (err) {
@@ -48,18 +47,15 @@ userRouter.post("/signin", async (req, res) => {
   let { payload, password } = req.body;
 
   try {
-    let userEmail = await Signup.findOne({  email: payload  });
+    let userEmail = await Signup.findOne({ email: payload });
     if (!userEmail) {
-      let userMobile = await Signup.findOne( { mobile: payload  });
+      let userMobile = await Signup.findOne({ mobile: payload });
       if (!userMobile) {
         return res.status(500).send({ msg: "User not Found" });
       } else {
         bcrypt.compare(password, userMobile.password).then(function (result) {
           if (result) {
-            var token = jwt.sign(
-              { mobile: userMobile.mobile, email: userMobile.email },
-              "masai"
-            );
+            const token = jwt.sign({ userID: userMobile._id }, "masai");
             res.send({
               message: "Success",
               token,
@@ -75,10 +71,7 @@ userRouter.post("/signin", async (req, res) => {
     } else {
       bcrypt.compare(password, userEmail.password).then(function (result) {
         if (result) {
-          var token = jwt.sign(
-            { email: userEmail.email, mobile: userEmail.mobile },
-            "masai"
-          );
+          const token = jwt.sign({ userID: userEmail._id }, "masai");
           res.send({
             message: "Success",
             token,
@@ -95,7 +88,6 @@ userRouter.post("/signin", async (req, res) => {
     res.send({ msg: "Error in Login 33" + e });
   }
 });
-
 
 module.exports = {
   userRouter,
