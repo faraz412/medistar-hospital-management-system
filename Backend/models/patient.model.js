@@ -1,13 +1,5 @@
 const mongoose = require("mongoose");
 
-// - patientId
-// - name
-// - email
-// - phone
-// - city
-// - Address
-// - problemDescription
-
 const patientSchema = mongoose.Schema({
   patientId: {
     type: Number,

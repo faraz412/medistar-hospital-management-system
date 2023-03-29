@@ -101,17 +101,4 @@ module.exports = {
   userRouter,
 };
 
-// {
-//     "first_name":"Abhishek",
-//     "last_name":"Jaiswal",
-//     "email":"abhishek@gmail.com",
-//     "mobile":"7999765866",
-//     "password":"12345"
-//   }
-// {
-//   "first_name":"Deepak",
-//   "last_name":"Chaurasia",
-//   "email":"deepak@gmail.com",
-//   "mobile":"7011111111",
-//   "password":"123456"
-// }
+
