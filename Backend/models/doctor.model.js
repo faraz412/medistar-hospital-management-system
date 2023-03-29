@@ -1,20 +1,5 @@
 const mongoose = require("mongoose");
 
-// # Doctor
-// - id
-// - Name
-// - email
-// - phone
-// - DOB
-// - Address
-// - departmentID
-// - qualifications
-// - experience
-// - doctorsAchievements
-// - availableOrNot
-// - charge
-// - image
-
 const doctorSchema = mongoose.Schema({
   doctorId: {
     type: Number,

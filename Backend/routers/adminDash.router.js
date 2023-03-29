@@ -5,18 +5,6 @@ const DashboardRouter = require("express").Router();
 DashboardRouter.get("/all", async (req, res) => {
   try {
     let users = await Signup.findAll();
-    // let doc = await Doc.findAll()
-    // let Appointment = await Appointment.findAll()
-
-    // res.send({
-    //   msg: "Dashboard Done",
-    //   userTotal: users.length,
-    //   users: users,
-    //   docTotal: doc.length,
-    //   docs: doc,
-    //   appTotal: Appointment.length,
-    //   appointments: Appointment,
-    // });
     res.send({ msg: "Dashboard Done", userTotal: users.length, data: users });
   } catch (error) {
     console.log({ msg: "Error" });

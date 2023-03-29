@@ -1,19 +1,56 @@
-const loginRouter = require("express").Router();
-const { Signup } = require("../models/signup.model");
+const { UserModel } = require("../models/user.model");
+const userRouter = require("express").Router();
+userRouter.use(express.json());
 
 const jwt = require("jsonwebtoken");
 const bcrypt = require("bcrypt");
+const cors = require("cors");
+userRouter.use(cors());
 
-loginRouter.get("/", async (req, res) => {
-  res.send({ msg: "login Route" });
+userRouter.get("/", async (req, res) => {
+  res.send({ msg: "Home Page" });
 });
 
-loginRouter.post("/", async (req, res) => {
+userRouter.post("/signup", async (req, res) => {
+  let { first_name, last_name, email, mobile, password } = req.body;
+
+  const isPresent = await UserModel.findOne({ email });
+  if (isPresent) {
+    return res.status(500).send({
+      msg: "User already registered",
+    });
+  }
+
   try {
-    let { payload, password } = req.body;
-    let userEmail = await Signup.findOne({ where: { email: payload } });
+    bcrypt.hash(password, 5, async (err, hash) => {
+      if (err) {
+        res.status(500).send({ msg: "Error" });
+      } else {
+        const user = await UserModel({
+          first_name,
+          last_name,
+          email,
+          mobile,
+          password: hash,
+        });
+        await user.save();
+        res.status(201).send({ msg: " Signup Successfully" });
+      }
+    });
+  } catch (error) {
+    res.status(500).send({
+      msg: "Error",
+    });
+  }
+});
+
+userRouter.post("/signin", async (req, res) => {
+  let { payload, password } = req.body;
+
+  try {
+    let userEmail = await Signup.findOne({  email: payload  });
     if (!userEmail) {
-      let userMobile = await Signup.findOne({ where: { mobile: payload } });
+      let userMobile = await Signup.findOne( { mobile: payload  });
       if (!userMobile) {
         return res.status(500).send({ msg: "User not Found" });
       } else {
@@ -29,7 +66,6 @@ loginRouter.post("/", async (req, res) => {
               name: userMobile.first_name,
               last_name: userMobile.last_name,
               email: userMobile.email,
-
             });
           } else {
             res.status(500).send({ mag: "Wrong Password" });
@@ -49,7 +85,6 @@ loginRouter.post("/", async (req, res) => {
             name: userEmail.first_name,
             last_name: userEmail.last_name,
             email: userEmail.email,
-
           });
         } else {
           res.status(500).send({ mag: "Wrong Password" });
@@ -61,7 +96,10 @@ loginRouter.post("/", async (req, res) => {
   }
 });
 
-module.exports = { loginRouter };
+
+module.exports = {
+  userRouter,
+};
 
 // {
 //     "first_name":"Abhishek",
@@ -70,3 +108,10 @@ module.exports = { loginRouter };
 //     "mobile":"7999765866",
 //     "password":"12345"
 //   }
+// {
+//   "first_name":"Deepak",
+//   "last_name":"Chaurasia",
+//   "email":"deepak@gmail.com",
+//   "mobile":"7011111111",
+//   "password":"123456"
+// }

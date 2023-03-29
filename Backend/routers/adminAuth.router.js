@@ -1,21 +1,19 @@
-const adminAuth = require("express").Router();
-const { AdminAuth } = require("../models/adminAuth.model");
+const { AdminModel } = require("../models/adminAuth.model");
+const adminAuthRouter = require("express").Router();
+adminAuthRouter.use(express.json());
 
 const jwt = require("jsonwebtoken");
 const bcrypt = require("bcrypt");
 
-adminAuth.get("/", async (req, res) => {
+
+adminAuthRouter.get("/", async (req, res) => {
   res.send({ msg: "Admin Page" });
 });
 
-adminAuth.post("/signup", async (req, res) => {
+adminAuthRouter.post("/signup", async (req, res) => {
   let { first_name, last_name, email, password } = req.body;
 
-  const isPresent = await AdminAuth.findOne({
-    where: {
-      email: email,
-    },
-  });
+  const isPresent = await AdminModel.findOne({email});
   if (isPresent) {
     return res.status(500).send({
       msg: "Admin already registered",
@@ -27,12 +25,7 @@ adminAuth.post("/signup", async (req, res) => {
       if (err) {
         res.status(500).send({ msg: "Error in Password hashing" });
       } else {
-        await AdminAuth.create({
-          first_name,
-          last_name,
-          email,
-          password: hash,
-        });
+        await AdminModel({first_name,last_name,email,password: hash,});
         res.status(201).send({ msg: " Admin Registered Successfully" });
       }
     });
@@ -43,10 +36,10 @@ adminAuth.post("/signup", async (req, res) => {
   }
 });
 
-adminAuth.post("/signin", async (req, res) => {
+adminAuthRouter.post("/signin", async (req, res) => {
   try {
     let { email, password } = req.body;
-    let admin = await AdminAuth.findOne({ where: { email } });
+    let admin = await AdminModel.findOne( { email } );
     if (!admin) {
       return res.status(500).send({ msg: "Admin not Found" });
     } else {
@@ -68,4 +61,4 @@ adminAuth.post("/signin", async (req, res) => {
   }
 });
 
-module.exports = { adminAuth };
+module.exports = { adminAuthRouter };

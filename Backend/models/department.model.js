@@ -1,11 +1,5 @@
 const mongoose = require("mongoose");
 
-// # department model
-// - dept_id
-// - name
-// - about
-// - image
-
 const departmentSchema = mongoose.Schema({
   departmentId: {
     type: Number,
