@@ -1,8 +1,9 @@
 # cozy-passenger-4798
 
-# sigup model (All Models)
+## (All Models)
+# sigup model 
 
-- id: PK, AK
+- id: PK, AI
 - f_name
 - L_name
 - email
