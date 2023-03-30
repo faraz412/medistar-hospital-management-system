@@ -16,10 +16,10 @@ const { appointmentRouter } = require("./routers/appointment.router");
 
 
 app.use('/user',userRouter)
-app.use(authenticate)
+
 // app.use("/department",departmentRouter)
 app.use('/doctor',doctorRouter)
-app.use('/appointment',appointmentRouter)
+app.use('/appointment',authenticate,appointmentRouter);
 
 app.listen(process.env.port,async()=>{
      try {
