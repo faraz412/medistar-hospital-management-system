@@ -9,6 +9,8 @@ const departmentSchema = mongoose.Schema({
   deptName: { type: String, required: true },
   about: { type: String, required: true },
   image: { type: String, required: true },
+},{
+  versionKey:false
 });
 
 const DepartmentModel = mongoose.model("Department", departmentSchema);

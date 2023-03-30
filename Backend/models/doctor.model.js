@@ -1,5 +1,4 @@
 const mongoose = require("mongoose");
-const { STRING } = require("sequelize");
 
 const doctorSchema = mongoose.Schema({
   doctorName: {
@@ -20,7 +19,7 @@ const doctorSchema = mongoose.Schema({
     required: true,
     unique: true,
   },
-  city: {
+  city:{
     type: String,
     required: true,
   },

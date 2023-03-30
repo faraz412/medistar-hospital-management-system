@@ -32,6 +32,8 @@ const patientSchema = mongoose.Schema({
     type: String,
     required: true,
   }
+},{
+  versionKey:false
 });
 
 const PatientModel = mongoose.model("Patient", patientSchema);
