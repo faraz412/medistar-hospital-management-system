@@ -38,15 +38,25 @@ doctorRouter.post("/addDoctor", async (req, res) => {
 });
 
 // get all
-doctorRouter.get("/allDoctors", async (req, res) => {
-    try{
+doctorRouter.get("/allDoctor", async (req, res) => {
+  try {
+    let doctor = await DoctorModel.find();
+    res.status(201).send({ total: doctor.length, doctor });
+  } catch (error) {
+    res.status(500).send({ msg: "Error in getting dr info.." });
+  }
+});
 
-       let doctor =  await DoctorModel.find();
-      res.status(201).send({ msg: "all doctors are..", doctor });
-    } catch (error) {
-      res.status(500).send({ msg: "Error in getting dr info.." });
-    }
-  });
+// DOCTORS BY DEPARTMENT 
+doctorRouter.get("/allDoctor/:id", async (req, res) => {
+  let id = req.params.id;
+  try {
+    let doctor = await DoctorModel.find({departmentId:id});
+    res.status(201).send({ total: doctor.length, doctor });
+  } catch (error) {
+    res.status(500).send({ msg: "Error in getting dr info.." });
+  }
+});
 
 // DELETE A DOCTOR..
 doctorRouter.delete("/removeDoctor/:id", async (req, res) => {
@@ -73,14 +83,18 @@ doctorRouter.delete("/removeDoctor/:id", async (req, res) => {
 // UPDATE THE DOCTOR..
 doctorRouter.patch("/udateDoctorInfo/:id", async (req, res) => {
   let id = req.params.id;
-  let payload = req.body;
-  let isDoctorPresent = await DoctorModel.findById({ _id: id });
-  try {
-    if (!isDoctorPresent) {
-      return res.status(404).send({ msg: "Doctor not found" });
-    }
 
-    let doctor = await DoctorModel.findByIdAndUpdate({ _id: id },payload)
+  let isDoctorPresent = await DoctorModel.findById({ _id: id });
+  if (!isDoctorPresent) {
+    return res.status(404).send({ msg: "Doctor not found" });
+  }
+  let payload = {
+    ...isDoctorPresent._doc,
+  };
+  payload.status = true;
+
+  try {
+    let doctor = await DoctorModel.findByIdAndUpdate({ _id: id }, payload)
       .then(() => {
         res.status(200).send({ msg: "Doctor Updated successfully...." });
       })
@@ -89,7 +103,9 @@ doctorRouter.patch("/udateDoctorInfo/:id", async (req, res) => {
         console.log("Error while updating the doctor info..");
       });
   } catch (error) {
-    res.status(500).send({ msg: "Server error while updating the doctor info.." });
+    res
+      .status(500)
+      .send({ msg: "Server error while updating the doctor info.." });
   }
 });
 
@@ -109,6 +125,5 @@ module.exports = {
 //     "status":true,
 //     "image":"https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSJO1Bmu2stkBmmOJXmyHN5G7UHmeA4xr5z0whR9JZF&s"
 // }
-
 
 // doctors
