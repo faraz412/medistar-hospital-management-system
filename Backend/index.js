@@ -13,8 +13,9 @@ const { authenticate } = require("./middlewares/authenticator.mw");
 const { doctorRouter } = require("./routers/doctor.router");
 const { departmentRouter } = require("./routers/department.router");
 
-app.use(authenticate)
+
 app.use('/user',userRouter)
+app.use(authenticate)
 // app.use("/department",departmentRouter)
 app.use('/doctor',doctorRouter)
 

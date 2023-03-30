@@ -33,14 +33,6 @@ DashboardRouter.get("/alldocs", async (req, res) => {
   } catch (error) {}
 });
 
-//!! DOC DETAIl BY ID ------------------------------->
-DashboardRouter.get("/alldocs/:id", async (req, res) => {});
-
-DashboardRouter.post("/alldocs/:id", async (req, res) => {});
-
-DashboardRouter.delete("/alldocs/:id", async (req, res) => {});
-
-DashboardRouter.patch("/alldocs/:id", async (req, res) => {});
 
 //!! All Appointments --------------------------------->
 DashboardRouter.patch("/allappoinments", async (req, res) => {});
