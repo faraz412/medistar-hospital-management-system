@@ -1,19 +1,60 @@
 const { UserModel } = require("../models/user.model");
 const userRouter = require("express").Router();
-userRouter.use(express.json());
-
+require("dotenv").config();
 const jwt = require("jsonwebtoken");
 const bcrypt = require("bcrypt");
+const express = require("express");
 const cors = require("cors");
+const redis = require("redis");
+const nodemailer = require("nodemailer");
+const otpGenerator = require("otp-generator");
 userRouter.use(cors());
+var otp;
 
 userRouter.get("/", async (req, res) => {
   res.send({ msg: "Home Page" });
 });
 
+userRouter.get("/emailVerify", async (req, res) => {
+  otp = otpGenerator.generate(4, {
+    upperCaseAlphabets: false,
+    specialChars: false,
+  });
+  console.log(otp);
+  let { email } = req.body;
+  const transporter = nodemailer.createTransport({
+    service: "gmail",
+    secure: false,
+    auth: {
+      user: "abhi.jaiswal1494@gmail.com",
+      pass: "catttouunbkahzcr",
+    },
+    tls: {
+      rejectUnauthorized: false,
+    },
+  });
+  const mailOptions = {
+    from: "abhi.jaiswal1494@gmail.com",
+    to: `${email}`,
+    subject: "LOGIN Successfull",
+    text: `${otp} `,
+  };
+  transporter.sendMail(mailOptions, (error, info) => {
+    if (error) {
+      console.log(error);
+      return res.status(500).json({ message: "Error Sending Mail" });
+    } else {
+      console.log("mail send");
+      return res
+        .status(200)
+        .json({ message: "OTP Send", otp: otp, email: email });
+    }
+  });
+  // ------------------------------------------
+});
+
 userRouter.post("/signup", async (req, res) => {
   let { first_name, last_name, email, mobile, password } = req.body;
-
   const isPresent = await UserModel.findOne({ email });
   if (isPresent) {
     return res.status(500).send({
@@ -47,9 +88,9 @@ userRouter.post("/signin", async (req, res) => {
   let { payload, password } = req.body;
 
   try {
-    let userEmail = await Signup.findOne({ email: payload });
+    let userEmail = await UserModel.findOne({ email: payload });
     if (!userEmail) {
-      let userMobile = await Signup.findOne({ mobile: payload });
+      let userMobile = await UserModel.findOne({ mobile: payload });
       if (!userMobile) {
         return res.status(500).send({ msg: "User not Found" });
       } else {
@@ -89,8 +130,19 @@ userRouter.post("/signin", async (req, res) => {
   }
 });
 
+// userRouter.get("/logout", async (req, res) => {
+//   const token = req.headers.authorization;
+//   if (!token) {
+//     return res.status(500).send({ msg: "No Token in Headers" });
+//   }
+//   try {
+//     await client.LPUSH("token", token);
+//     res.status(200).send({ msg: "You are Logged out" });
+//   } catch (error) {
+//     return res.status(500).send({ msg: "Error in Redis" });
+//   }
+// });
+
 module.exports = {
   userRouter,
 };
-
-
