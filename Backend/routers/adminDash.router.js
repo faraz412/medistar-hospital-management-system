@@ -1,11 +1,11 @@
-const { Signup } = require("../models/signup.model");
+const { UserModel } = require("../models/user.model");
 const DashboardRouter = require("express").Router();
 
 //!! ALL DETAILS ------------------------------->
 DashboardRouter.get("/all", async (req, res) => {
   try {
-    let users = await Signup.findAll();
-    res.send({ msg: "Dashboard Done", userTotal: users.length, data: users });
+    let users = await UserModel.findAll();
+    res.send({ msg: "Dashboard Done", userTotal: users.length, users: users });
   } catch (error) {
     console.log({ msg: "Error" });
   }
@@ -14,10 +14,9 @@ DashboardRouter.get("/all", async (req, res) => {
 //!! ALL DOC DETAIl BY------------------------------->
 DashboardRouter.get("/alldocs", async (req, res) => {
   try {
-    let doc = await Doc.findAll();
-    res.send({ msg: "Docs Details", docTotal: doc.length, docs: doc });
+   
   } catch (error) {
-    console.log({ msg: "Error" });
+
   }
 });
 
