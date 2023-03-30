@@ -102,6 +102,7 @@ userRouter.post("/signin", async (req, res) => {
               name: userMobile.first_name,
               last_name: userMobile.last_name,
               email: userMobile.email,
+              mobile: userMobile.mobile,
             });
           } else {
             res.status(500).send({ mag: "Wrong Password" });
@@ -118,6 +119,7 @@ userRouter.post("/signin", async (req, res) => {
             name: userEmail.first_name,
             last_name: userEmail.last_name,
             email: userEmail.email,
+            mobile: userEmail.mobile,
           });
         } else {
           res.status(500).send({ mag: "Wrong Password" });
@@ -133,9 +135,9 @@ userRouter.use(express.text());
 const client = redis.createClient({
   password: process.env.redisPassword,
   socket: {
-      host: process.env.redisHost,
-      port: process.env.redisPort
-  }
+    host: process.env.redisHost,
+    port: process.env.redisPort,
+  },
 });
 client.on("error", (err) => console.log(err, "ERROR in REDIS"));
 client.connect();

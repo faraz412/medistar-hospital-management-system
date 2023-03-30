@@ -9,14 +9,12 @@ app.use(cors());
 
 const { userRouter } = require("./routers/user.router");
 const { connection } = require("./config/db");
-const { adminAuthRouter } = require("./routers/adminAuth.router");
 const { authenticate } = require("./middlewares/authenticator.mw");
 const { doctorRouter } = require("./routers/doctor.router");
 const { departmentRouter } = require("./routers/department.router");
 
 app.use(authenticate)
 app.use('/user',userRouter)
-app.use('/admin',adminAuthRouter)
 // app.use("/department",departmentRouter)
 app.use('/doctor',doctorRouter)
 
