@@ -19,11 +19,7 @@ const doctorSchema = mongoose.Schema({
     required: true,
     unique: true,
   },
-  dob: {
-    type: String,
-    required: true,
-  },
-  address: {
+  city:{
     type: String,
     required: true,
   },
@@ -31,6 +27,13 @@ const doctorSchema = mongoose.Schema({
     type: Number,
     required: true,
   },
+  status:{
+    type:Boolean,
+    default:false
+  },
+  image:{
+    type:String
+  }
 });
 
 const DoctorModel = mongoose.model("Doctors", doctorSchema);

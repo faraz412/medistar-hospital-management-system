@@ -1,4 +1,3 @@
-
 const express = require("express");
 const cors = require('cors');
 require("dotenv").config();
@@ -10,13 +9,17 @@ app.use(cors());
 
 const { userRouter } = require("./routers/user.router");
 const { connection } = require("./config/db");
-const { adminAuthRouter } = require("./routers/adminAuth.router");
 const { authenticate } = require("./middlewares/authenticator.mw");
+const { doctorRouter } = require("./routers/doctor.router");
+const { departmentRouter } = require("./routers/department.router");
+const { appointmentRouter } = require("./routers/appointment.router");
 
-// app.use(authenticate)
+
 app.use('/user',userRouter)
-app.use('/admin',adminAuthRouter)
-
+app.use(authenticate)
+// app.use("/department",departmentRouter)
+app.use('/doctor',doctorRouter)
+app.use('/appointment',appointmentRouter)
 
 app.listen(process.env.port,async()=>{
      try {
