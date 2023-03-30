@@ -2,9 +2,9 @@ const { request } = require("express");
 const { DoctorModel } = require("../models/doctor.model");
 const doctorRouter = require("express").Router();
 
-doctorRouter.get("/doctorRouter", (req, res) => {
-  res.send("On Doctor Route ");
-});
+// doctorRouter.get("/doctorRouter", (req, res) => {
+//   res.send("On Doctor Route ");
+// });
 
 doctorRouter.post("/addDoctor", async (req, res) => {
   let {
