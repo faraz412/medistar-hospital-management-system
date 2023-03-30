@@ -86,7 +86,6 @@ userRouter.post("/signup", async (req, res) => {
 
 userRouter.post("/signin", async (req, res) => {
   let { payload, password } = req.body;
-
   try {
     let userEmail = await UserModel.findOne({ email: payload });
     if (!userEmail) {
@@ -132,10 +131,10 @@ userRouter.post("/signin", async (req, res) => {
 
 userRouter.use(express.text());
 const client = redis.createClient({
-  password: 'jKnThiUqDr7ko7ESOUban2Rawrt7DSu2',
+  password: process.env.redisPassword,
   socket: {
-      host: 'redis-19172.c8.us-east-1-2.ec2.cloud.redislabs.com',
-      port: 19172
+      host: process.env.redisHost,
+      port: process.env.redisPort
   }
 });
 client.on("error", (err) => console.log(err, "ERROR in REDIS"));

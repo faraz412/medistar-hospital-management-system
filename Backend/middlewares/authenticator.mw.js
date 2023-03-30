@@ -2,15 +2,14 @@ const express=require('express')
 const app=express();
 const jwt = require("jsonwebtoken");
 const redis = require('redis')
-
 require("dotenv").config();
 
 app.use(express.text());
 const client = redis.createClient({
-  password: 'jKnThiUqDr7ko7ESOUban2Rawrt7DSu2',
+  password: process.env.redisPassword,
   socket: {
-      host: 'redis-19172.c8.us-east-1-2.ec2.cloud.redislabs.com',
-      port: 19172
+      host: process.env.redisHost,
+      port: process.env.redisPort
   }
 });
 client.on("error", (err) => console.log(err, "ERROR in REDIS"));
