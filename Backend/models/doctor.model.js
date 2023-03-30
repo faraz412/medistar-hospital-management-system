@@ -1,11 +1,7 @@
 const mongoose = require("mongoose");
 
 const doctorSchema = mongoose.Schema({
-  doctorId: {
-    type: Number,
-    unique: true,
-    required: true,
-  },
+
   doctorName: {
     type: String,
     required: true,
@@ -24,18 +20,12 @@ const doctorSchema = mongoose.Schema({
     required: true,
     unique: true,
   },
-  dob: {
-    type: String,
-    required: true,
-  },
-  address: {
-    type: String,
-    required: true,
-  },
   departmentId: {
     type: Number,
     required: true,
   },
+},{
+  versionKey:false
 });
 
 const DoctorModel = mongoose.model("Doctors", doctorSchema);

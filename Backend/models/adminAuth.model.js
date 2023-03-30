@@ -18,6 +18,8 @@ const adminSchema = mongoose.Schema({
     type: String,
     required:true
   }
+},{
+  versionKey:false
 });
 
 const AdminModel = mongoose.model('admin',adminSchema)
