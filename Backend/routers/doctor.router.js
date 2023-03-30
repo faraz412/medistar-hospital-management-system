@@ -113,7 +113,7 @@ doctorRouter.patch("/udateDoctorInfo/:id", async (req, res) => {
 });
 
 module.exports = {
-  doctorRouter,
+  doctorRouter
 };
 
 // DOCTORS DATA...
@@ -128,5 +128,3 @@ module.exports = {
 //     "status":true,
 //     "image":"https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSJO1Bmu2stkBmmOJXmyHN5G7UHmeA4xr5z0whR9JZF&s"
 // }
-
-// doctors

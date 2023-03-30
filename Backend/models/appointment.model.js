@@ -1,13 +1,12 @@
 const mongoose = require("mongoose");
 
-
 const appointmentSchema = mongoose.Schema({
   patientId: {
-    type: Number,
+    type: String,
     required: true,
   },
   doctorId: {
-    type: Number,
+    type: String,
     required: true,
   },
   ageOfPatient:{
@@ -16,8 +15,7 @@ const appointmentSchema = mongoose.Schema({
   },
   gender: {
     type: String,
-    enum: ['male', 'female', 'other'],
-    default: 'male'
+    required:true
   },
   address: {
     type: String,
@@ -28,7 +26,7 @@ const appointmentSchema = mongoose.Schema({
     required: true,
   },
   appointmentDate: {
-    type: Date,
+    type: String,
     required: true
   },
   createdAt: {
@@ -38,6 +36,10 @@ const appointmentSchema = mongoose.Schema({
   updatedAt: {
     type: Date,
     default: Date.now
+  },
+  status:{
+    type:Boolean,
+    default: false 
   },
   paymentStatus:{
     type:Boolean,
@@ -53,7 +55,20 @@ module.exports = {
 
 
 
-
+// APPOINTMENT MODEL
+// {
+//   "patientId":"64256f28b1fc4d36b5a12be7",
+//   "doctorId":"6425319914291e303a3cf2c4",
+//   "ageOfPatient":40,
+//   "gender":"male",
+//   "address":"Mumbai woribali",
+//   "problemDescription":"having some problem related to neourology ",
+//   "appointmentDate":"30-03-2023",
+//   "createdAt":,
+//   "updatedAt":,
+//   "paymentStatus":false,
+//   }
+  
 
 // appontmentid
 // dateTime
