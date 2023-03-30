@@ -1,40 +1,36 @@
 const { AdminModel } = require("../models/adminAuth.model");
 const adminAuthRouter = require("express").Router();
-adminAuthRouter.use(express.json());
+
 
 const jwt = require("jsonwebtoken");
 const bcrypt = require("bcrypt");
 
-
-adminAuthRouter.get("/", async (req, res) => {
-  res.send({ msg: "Admin Page" });
-});
-
-adminAuthRouter.post("/signup", async (req, res) => {
-  let { first_name, last_name, email, password } = req.body;
-
-  const isPresent = await AdminModel.findOne({email});
-  if (isPresent) {
-    return res.status(500).send({
-      msg: "Admin already registered",
-    });
-  }
-
-  try {
-    bcrypt.hash(password, 5, async (err, hash) => {
-      if (err) {
-        res.status(500).send({ msg: "Error in Password hashing" });
-      } else {
-        await AdminModel({first_name,last_name,email,password: hash,});
-        res.status(201).send({ msg: " Admin Registered Successfully" });
-      }
-    });
-  } catch (error) {
-    res.status(500).send({
-      msg: "Error",
-    });
-  }
-});
+// adminAuthRouter.post("/signup", async (req, res) => {
+//   let { first_name, last_name, email, password } = req.body;
+//   console.log(req.body)
+//   const isPresent = await AdminModel.findOne({email});
+//   if (isPresent) {
+//     return res.status(500).send({
+//       msg: "Admin already registered",
+//     });
+//   }
+//   console.log(isPresent)
+//   try {
+//     bcrypt.hash(password, 5, async (err, hash) => {
+//       if (err) {
+//         res.status(500).send({ msg: "Error in Password hashing" });
+//       } else {
+//         const admin = await AdminModel({first_name,last_name,email,password: hash,});
+//         await admin.save();
+//         res.status(201).send({ msg: " Admin Registered Successfully" });
+//       }
+//     });
+//   } catch (error) {
+//     res.status(500).send({
+//       msg: "Error",
+//     });
+//   }
+// });
 
 adminAuthRouter.post("/signin", async (req, res) => {
   try {
