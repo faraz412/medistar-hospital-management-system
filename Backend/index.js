@@ -1,3 +1,4 @@
+
 const express = require("express");
 const cors = require('cors');
 require("dotenv").config();
@@ -15,7 +16,7 @@ const { authenticate } = require("./middlewares/authenticator.mw");
 app.use(authenticate)
 app.use('/user',userRouter)
 app.use('/admin',adminAuthRouter)
-
+app.use('')
 
 app.listen(process.env.port,async()=>{
      try {

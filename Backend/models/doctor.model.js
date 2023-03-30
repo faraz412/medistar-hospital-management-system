@@ -1,7 +1,7 @@
 const mongoose = require("mongoose");
+const { STRING } = require("sequelize");
 
 const doctorSchema = mongoose.Schema({
-
   doctorName: {
     type: String,
     required: true,
@@ -24,8 +24,13 @@ const doctorSchema = mongoose.Schema({
     type: Number,
     required: true,
   },
-},{
-  versionKey:false
+  status:{
+    type:Boolean,
+    required:true
+  },
+  image:{
+    type:String
+  }
 });
 
 const DoctorModel = mongoose.model("Doctors", doctorSchema);
