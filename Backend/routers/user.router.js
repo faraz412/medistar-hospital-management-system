@@ -97,7 +97,7 @@ userRouter.post("/signin", async (req, res) => {
           if (result) {
             const token = jwt.sign({ userID: userMobile._id }, "masai");
             res.send({
-              message: "Success",
+              message: "Login Successful",
               token,
               name: userMobile.first_name,
               last_name: userMobile.last_name,
