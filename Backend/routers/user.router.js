@@ -34,7 +34,7 @@ userRouter.post("/signup", async (req, res) => {
           password: hash,
         });
         await user.save();
-        res.status(201).send({ msg: " Signup Successfully" });
+        res.status(201).send({ msg: " Signup Successfull" });
       }
     });
   } catch (error) {
