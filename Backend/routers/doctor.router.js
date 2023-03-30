@@ -64,12 +64,12 @@ doctorRouter.delete("/removeDoctor/:id", async (req, res) => {
   let isDoctorPresent = await DoctorModel.findById({ _id: id });
   try {
     if (!isDoctorPresent) {
-      return res.status(404).send({ msg: "Doctor not found" });
+      return res.status(500).send({ msg: "Doctor not found" });
     }
 
     let doctor = await DoctorModel.findByIdAndDelete({ _id: id })
       .then(() => {
-        res.status(200).send({ msg: "Doctor deleted" });
+        res.status(201).send({ msg: "Doctor deleted" });
       })
       .catch(() => {
         res.status(500).send({ msg: "Error in deleting the doctor" });
@@ -88,19 +88,22 @@ doctorRouter.patch("/udateDoctorInfo/:id", async (req, res) => {
   if (!isDoctorPresent) {
     return res.status(404).send({ msg: "Doctor not found" });
   }
-  let payload = {
-    ...isDoctorPresent._doc,
-  };
-  payload.status = true;
-
+  if(req.body===true){
+    let payload = {
+      ...isDoctorPresent._doc,
+    };
+    payload.status = true;
+  }else{
+    return res.status(201).send({msg:'Doctor Application Rejected'})
+  }
   try {
     let doctor = await DoctorModel.findByIdAndUpdate({ _id: id }, payload)
       .then(() => {
-        res.status(200).send({ msg: "Doctor Updated successfully...." });
+        res.status(201).send({ msg: "Doctor Application Approved" });
       })
       .catch(() => {
         res.status(500).send({ msg: "Error in Updating the doctor info.." });
-        console.log("Error while updating the doctor info..");
+        
       });
   } catch (error) {
     res
