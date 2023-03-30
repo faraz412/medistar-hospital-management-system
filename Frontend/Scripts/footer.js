@@ -27,13 +27,13 @@ document.querySelector("#footer").innerHTML=`
     </div>
     <div data-aos="fade-left" data-aos-duration="1000" id="footer-right">
         <div id="logo-div">
-            <img alt="logo" src="./Files/Medistar-logo-crop.jpeg"/>
+            <img alt="logo" src="/Frontend/Files/Medistar-logo-crop.jpeg"/>
         </div>
         <div id="socials">
-            <p>fb</p>
-            <p>insta</p>
-            <p>twt</p>
-            <p>in</p>
+            <p><i class="fa-brands fa-facebook"></i></p>
+            <p><i class="fa-brands fa-instagram"></i></p>
+            <p><i class="fa-brands fa-twitter"></i></p>
+            <p><i class="fa-brands fa-linkedin"></i></p>
         </div>
     </div>
 </div>
