@@ -20,10 +20,6 @@ const doctorSchema = mongoose.Schema({
     required: true,
     unique: true,
   },
-  city: {
-    type: String,
-    required: true,
-  },
   departmentId: {
     type: Number,
     required: true,

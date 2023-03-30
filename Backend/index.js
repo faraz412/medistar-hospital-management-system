@@ -13,7 +13,7 @@ const { connection } = require("./config/db");
 const { adminAuthRouter } = require("./routers/adminAuth.router");
 const { authenticate } = require("./middlewares/authenticator.mw");
 
-// app.use(authenticate)
+app.use(authenticate)
 app.use('/user',userRouter)
 app.use('/admin',adminAuthRouter)
 app.use('')
