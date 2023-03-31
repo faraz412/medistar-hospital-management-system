@@ -2,10 +2,17 @@ const { request } = require("express");
 const { DoctorModel } = require("../models/doctor.model");
 const doctorRouter = require("express").Router();
 
-// doctorRouter.get("/doctorRouter", (req, res) => {
-//   res.send("On Doctor Route ");
-// });
+// get all
+doctorRouter.get("/allDoctor", async (req, res) => {
+  try {
+    let doctor = await DoctorModel.find();
+    res.status(201).send({ total: doctor.length, doctor });
+  } catch (error) {
+    res.status(500).send({ msg: "Error in getting dr info.." });
+  }
+});
 
+// Add a Doctor
 doctorRouter.post("/addDoctor", async (req, res) => {
   let {
     doctorName,
@@ -33,28 +40,23 @@ doctorRouter.post("/addDoctor", async (req, res) => {
     await doctor.save();
     res.status(201).send({ msg: "Doctor has been created", doctor });
   } catch (error) {
-    res.status(500).send({ msg: "Error in created doctor" });
+    res.status(500).send({ msg: "Error in created doctor due to Non unique email/mob" });
   }
 });
 
-// get all
-doctorRouter.get("/allDoctor", async (req, res) => {
-  try {
-    let doctor = await DoctorModel.find();
-    res.status(201).send({ total: doctor.length, doctor });
-  } catch (error) {
-    res.status(500).send({ msg: "Error in getting dr info.." });
-  }
-});
-
-// DOCTORS BY DEPARTMENT 
+// DOCTORS BY DEPARTMENT
 doctorRouter.get("/allDoctor/:id", async (req, res) => {
   let id = req.params.id;
+  console.log(id);
+  let isDoctorPresent = await DoctorModel.find({ departmentId: id });
+  if (isDoctorPresent.length === 0) {
+    return res.status(404).send({ msg: "This Department have No doctor" });
+  }
   try {
-    let doctor = await DoctorModel.find({departmentId:id});
+    let doctor = await DoctorModel.find({ departmentId: id });
     res.status(201).send({ total: doctor.length, doctor });
   } catch (error) {
-    res.status(500).send({ msg: "Error in getting dr info.." });
+    res.status(500).send({ msg: "Error in getting Dr. info.." });
   }
 });
 
@@ -62,11 +64,10 @@ doctorRouter.get("/allDoctor/:id", async (req, res) => {
 doctorRouter.delete("/removeDoctor/:id", async (req, res) => {
   let id = req.params.id;
   let isDoctorPresent = await DoctorModel.findById({ _id: id });
+  if (!isDoctorPresent) {
+    return res.status(500).send({ msg: "Doctor not found" });
+  }
   try {
-    if (!isDoctorPresent) {
-      return res.status(500).send({ msg: "Doctor not found" });
-    }
-
     let doctor = await DoctorModel.findByIdAndDelete({ _id: id })
       .then(() => {
         res.status(201).send({ msg: "Doctor deleted" });
@@ -80,40 +81,48 @@ doctorRouter.delete("/removeDoctor/:id", async (req, res) => {
   }
 });
 
-// UPDATE THE DOCTOR..
-doctorRouter.patch("/udateDoctorInfo/:id", async (req, res) => {
-  let id = req.params.id;
-
-  let isDoctorPresent = await DoctorModel.findById({ _id: id });
-  if (!isDoctorPresent) {
-    return res.status(404).send({ msg: "Doctor not found" });
+// DOCTOR PENDING FOR APPROVAL
+doctorRouter.get("/docPending", async (req, res) => {
+  try {
+    var docPending = await DoctorModel.find({ status: false });
+    if (!docPending || docPending.length === 0) {
+      return res.send({ msg: "No Doc Pending for Approval" });
+    }
+    res.status(201).send({ msg: "Doc Pending", docPending });
+  } catch (error) {
+    console.log(error);
   }
-  if(req.body===true){
-    let payload = {
-      ...isDoctorPresent._doc,
-    };
-    payload.status = true;
-  }else{
-    return res.status(201).send({msg:'Doctor Application Rejected'})
+});
+
+// UPDATE THE DOCTOR STATUS..
+doctorRouter.patch("/updateDoctorStatus/:id", async (req, res) => {
+  let id = req.params.id;
+  let isDoctorPresent = await DoctorModel.findById({ _id: id });
+  if (!isDoctorPresent || isDoctorPresent.length === 0) {
+    return res.status(404).send({ msg: "Doctor not found, check Id" });
   }
   try {
-    let doctor = await DoctorModel.findByIdAndUpdate({ _id: id }, payload)
-      .then(() => {
-        res.status(201).send({ msg: "Doctor Application Approved" });
-      })
-      .catch(() => {
-        res.status(500).send({ msg: "Error in Updating the doctor info.." });
-        
-      });
+    if (req.body.status === true) {
+      let payload = {
+        ...isDoctorPresent._doc,
+      };
+      payload.status = true;
+      console.log(payload);
+    } else if (req.body.status === false) {
+      await DoctorModel.findByIdAndDelete({ _id: id });
+      return res.status(201).send({ msg: "Doctor Application Rejected" });
+    }
+    await DoctorModel.findByIdAndUpdate(id, { status: true });
+    res.status(201).send({ msg: "Doctor Application Approved" });
   } catch (error) {
     res
       .status(500)
-      .send({ msg: "Server error while updating the doctor info.." });
+      .send({ msg: "Server error while updating the doctor Status" });
   }
 });
 
 module.exports = {
-  doctorRouter
+  doctorRouter,
 };
 
 // DOCTORS DATA...
