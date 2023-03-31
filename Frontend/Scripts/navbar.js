@@ -1,5 +1,5 @@
 
-document.querySelector("#navbar").innerHTML=`
+document.querySelector("#navbar").innerHTML = `
 <div id="nav-cont">
     <div data-aos="zoom-out" data-aos-duration="1000" id="nav-logo">
         <div id="nav-img">
@@ -19,7 +19,7 @@ document.querySelector("#navbar").innerHTML=`
 </div>
 `
 
-const logoBtn=document.getElementById("nav-logo");
-logoBtn.addEventListener("click",(e)=>{
-    window.location.href="index.html";
+const logoBtn = document.getElementById("nav-logo");
+logoBtn.addEventListener("click", (e) => {
+    window.location.href = "index.html";
 })
