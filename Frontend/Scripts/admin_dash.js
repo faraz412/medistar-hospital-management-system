@@ -1,48 +1,62 @@
-// let sidemenu=document.querySelector("aside");
-// let menubtn=document.querySelector("#menu-btn");
-// // let closebtn=document.querySelector("#close-btn");
+let sidemenu=document.querySelector("aside");
 let themetoggler=document.querySelector(".theme-toggler")
 
-// menubtn.addEventListener("click",()=>{
-//     sidemenu.style.display="block";
-// })
-// closebtn.addEventListener("click",()=>{
-//     sidemenu.style.display="none";
-// })
 themetoggler.addEventListener("click",()=>{
     document.body.classList.toggle("dark-theme-variables");
     themetoggler.querySelector("span").classList.toggle("active"); 
+});
+
+let dash_btn=document.getElementById("menu-dash");
+let doc_btn=document.getElementById("menu-doc");
+let patient_btn=document.getElementById("menu-patient");
+let app_btn=document.getElementById("menu-app");
+
+let dash_cont=document.getElementById("dash-cont");
+let doc_cont=document.getElementById("doc-cont");
+let patient_cont=document.getElementById("patient-cont");
+let app_cont=document.getElementById("app-cont");
+
+dash_btn.addEventListener("click",()=>{
+    dash_btn.classList.add("active");
+    doc_btn.classList.remove("active");
+    patient_btn.classList.remove("active");
+    app_btn.classList.remove("active");
+    dash_cont.classList.remove("div-hide");
+    doc_cont.classList.add("div-hide");
+    patient_cont.classList.add("div-hide");
+    app_cont.classList.add("div-hide");
 })
 
-// async function getdata(){
-//     let res=await fetch("https://pear-z5ta.onrender.com/api/products/")
-//     let data=await res.json()
-//     displaydata(data)
-// }
-// getdata()
+doc_btn.addEventListener("click",()=>{
+    doc_btn.classList.add("active");
+    dash_btn.classList.remove("active");
+    patient_btn.classList.remove("active");
+    app_btn.classList.remove("active");
+    doc_cont.classList.remove("div-hide");
+    dash_cont.classList.add("div-hide");
+    patient_cont.classList.add("div-hide");
+    app_cont.classList.add("div-hide");
+})
 
+patient_btn.addEventListener("click",()=>{
+    patient_btn.classList.add("active");
+    dash_btn.classList.remove("active");
+    doc_btn.classList.remove("active");
+    app_btn.classList.remove("active");
+    patient_cont.classList.remove("div-hide");
+    dash_cont.classList.add("div-hide");
+    doc_cont.classList.add("div-hide");
+    app_cont.classList.add("div-hide");
+})
 
-// function displaydata(data){
-//     data.forEach((el)=>{
-//         let tr=document.createElement("tr")
-//         let trcontent=`
-//             <td>${el.name}</td>
-//             <td>${el.speed}</td>
-//             <td>${el.date}</td>
-//             <td class="success">Available</td>
-//             <td class="danger">details</td>                
-//         `
-//         tr.innerHTML=trcontent;
-//         document.querySelector("tbody").append(tr)
-//     })
-    
-// }
-// let showall=document.querySelector(".showall")
-//     showall.addEventListener("click",()=>{
-//     getalldata()
-// })
-// async function getalldata(){
-//     let res = await fetch("https://639b1b94d5141501974b716f.mockapi.io/AddCart");
-// 	let data = await res.json();
-//     displaydata(data)
-// }
+app_btn.addEventListener("click",()=>{
+    app_btn.classList.add("active");
+    dash_btn.classList.remove("active");
+    doc_btn.classList.remove("active");
+    patient_btn.classList.remove("active");
+    app_cont.classList.remove("div-hide");
+    dash_cont.classList.add("div-hide");
+    doc_cont.classList.add("div-hide");
+    patient_cont.classList.add("div-hide");
+})
+

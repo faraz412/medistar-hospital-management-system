@@ -1,4 +1,3 @@
-const { request } = require("express");
 const { DoctorModel } = require("../models/doctor.model");
 const doctorRouter = require("express").Router();
 
@@ -44,7 +43,7 @@ doctorRouter.post("/addDoctor", async (req, res) => {
   }
 });
 
-// DOCTORS BY DEPARTMENT
+// DOCTORS BY DEPARTMENT ID
 doctorRouter.get("/allDoctor/:id", async (req, res) => {
   let id = req.params.id;
   console.log(id);

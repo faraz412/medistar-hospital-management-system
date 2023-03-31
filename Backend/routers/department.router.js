@@ -1,13 +1,18 @@
 const { DepartmentModel } = require("../models/department.model");
 const departmentRouter = require("express").Router();
 
-// FOR TESTING
-departmentRouter.get("/department", (req, res) => {
-  res.send("On Department Route ");
+// GET ALL DEPARTMENTS-----------------------------------------------------------------
+
+departmentRouter.get("/getAllDepartment", async (req, res) => {
+  try {
+    let allDepartments = await DepartmentModel.find();
+    res.status(201).send({ msg: "All Departments", allDepartments });
+  } catch (error) {
+    res.status(404).send({ msg: "Server Error" });
+  }
 });
 
 // CREATE A DEPARTMENT-----------------------------------------------------
-
 departmentRouter.post("/createDepartment", async (req, res) => {
   let payload = req.body;
   try {
@@ -21,7 +26,6 @@ departmentRouter.post("/createDepartment", async (req, res) => {
 });
 
 // GET DEPARTMENT BY ID----------------------------------------------------------
-
 departmentRouter.get("/getDepartment/:id", async (req, res) => {
   let departmentId = req.params.id;
   try {
@@ -36,19 +40,7 @@ departmentRouter.get("/getDepartment/:id", async (req, res) => {
   }
 });
 
-// GET ALL DEPARTMENTS-----------------------------------------------------------------
-
-departmentRouter.get("/getAllDepartment", async (req, res) => {
-  try {
-    let allDepartments = await DepartmentModel.find();
-    res.status(201).send({ msg: "All Departments", allDepartments });
-  } catch (error) {
-    res.status(404).send({ msg: "Server Error" });
-  }
-});
-
 // DELETE DEPARTMENT-----------------------------------------------------------------
-
 departmentRouter.delete("/deleteDepartment/:id", async (req, res) => {
   try {
     let departmentId = req.params.id;
@@ -71,7 +63,6 @@ departmentRouter.delete("/deleteDepartment/:id", async (req, res) => {
 });
 
 // UPDATE DEPARTMENT-----------------------------------------------------------------
-
 departmentRouter.patch("/updateDepartment/:id", async (req, res) => {
   try {
     let departmentId = req.params.id;
