@@ -7,19 +7,36 @@ document.querySelector("#navbar").innerHTML=`
         </div>
     </div>
     <div data-aos="zoom-out" data-aos-duration="1000" id="nav-menu">
-        <li><a href="./Pages/find-doctors.html">Book an appointment</a></li>
-        <li><a>Find Doctors</a></li>
-        <li><a href="#nav-dept">Departments</a></li>
-        <li><a>Security & Help</a></li>
+        <li id="book-app">Book an appointment</li>
+        <li id="find-doc">Find Doctors</li>
+        <li>Departments</li>
+        <li>Security & Help</li>
     </div>
     <div data-aos="zoom-out" data-aos-duration="1000" id="nav-user-details">
-        <button>Login</button>
-        <button>Signup</button>
+        <button id="nav-login">Login</button>
+        <button id="nav-reg">Signup</button>
     </div>
 </div>
 `
 
 const logoBtn=document.getElementById("nav-logo");
+const book_app=document.getElementById("book-app");
+const find_doc=document.getElementById("find-doc");
+
 logoBtn.addEventListener("click",(e)=>{
-    window.location.href="index.html";
+    window.location.href="/Frontend/index.html";
+})
+
+
+book_app.addEventListener("click",()=>{
+    window.location.href="/Frontend/Pages/book.appointment.html";
+    book_app.classList.add("nav-active");
+    find_doc.classList.remove("nav-active");
+})
+
+
+find_doc.addEventListener("click",()=>{
+    window.location.href="/Frontend/Pages/doctors.page.html";
+    book_app.classList.remove("nav-active");
+    find_doc.classList.add("nav-active");
 })
