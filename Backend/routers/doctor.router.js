@@ -1,4 +1,3 @@
-const { request } = require("express");
 const { DoctorModel } = require("../models/doctor.model");
 const doctorRouter = require("express").Router();
 
