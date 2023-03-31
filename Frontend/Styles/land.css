@@ -83,16 +83,25 @@ li{
     transform: scale(1.1);
     cursor:pointer;
 }
+.nav-active{
+    color:red;
+}
 .land-sections{
     /* border:1px solid black; */
     width:77rem;
-    margin: 5rem auto;
+    margin: 4.5rem auto;
 }
 #land-video{
     width:100%;
+    /* border:1px solid red; */
 }
 #land-video>img{
     width:100%;
+}
+#land-video>video{
+    border:1px solid green;
+    width:100%;
+    height:30rem;
 }
 #feature-cont{
     display:flex;
