@@ -1,0 +1,40 @@
+#cont {
+    width: 80%;
+    margin: auto;
+}
+
+.mainbox {
+    border: 1px solid red;
+    display: flex;
+    justify-content: space-evenly;
+    padding: 20px;
+}
+
+.doc-image-info {
+    display: flex;
+}
+
+.mainbox div {
+    border: 1px solid red;
+}
+
+img {
+    border-radius: 50%;
+}
+
+.view-profile {
+    color: blue;
+    background-color: transparent;
+    border: none;
+}
+
+.dis {
+    width: 40%;
+}
+
+.extra {
+    width: 10%;
+    display: flex;
+    margin: auto;
+    justify-content: space-evenly;
+}
