@@ -23,7 +23,7 @@ doctorRouter.post("/addDoctor", async (req, res) => {
     departmentId,
     status,
     image,
-    isAvailable
+    isAvailable,
   } = req.body;
   try {
     let doctor = new DoctorModel({
@@ -36,12 +36,14 @@ doctorRouter.post("/addDoctor", async (req, res) => {
       departmentId,
       status,
       image,
-      isAvailable
+      isAvailable,
     });
     await doctor.save();
     res.status(201).send({ msg: "Doctor has been created", doctor });
   } catch (error) {
-    res.status(500).send({ msg: "Error in created doctor due to Non unique email/mob" });
+    res
+      .status(500)
+      .send({ msg: "Error in created doctor due to Non unique email/mob" });
   }
 });
 
@@ -122,6 +124,38 @@ doctorRouter.patch("/updateDoctorStatus/:id", async (req, res) => {
   }
 });
 
+// Update the availability status of a doctor by ID
+doctorRouter.patch("/isAvailable/:doctorId", async (req, res) => {
+  try {
+    const doctorId = req.params.doctorId;
+
+    // Check if the doctor with the given ID exists
+    const doctor = await DoctorModel.findById({ _id: doctorId });
+    if (!doctor) {
+      return res
+        .status(404)
+        .json({ msg: "Doctor not found, please check the ID" });
+    }
+
+    // Update the availability status of the doctor
+    const payload = { isAvailable: req.body.isAvailable };
+    const updatedDoctor = await DoctorModel.findByIdAndUpdate(
+      { _id: doctorId },
+      payload
+    );
+
+    res.json({
+      msg: "Doctor's status has been updated",
+      doctor: updatedDoctor,
+    });
+  } catch (error) {
+    console.error(error);
+    res
+      .status(500)
+      .json({ msg: "Server error while updating the doctor status" });
+  }
+});
+
 module.exports = {
   doctorRouter,
 };
@@ -130,7 +164,7 @@ module.exports = {
 // {
 //     "doctorName":"Abhishek Jaiswal",
 //     "email":"abhisek@gmail.com",
-//     "qualification":"MBBS from AIMS Delhi",
+//     "qualifications":"MBBS from AIMS Delhi",
 //     "experience":"14 years of experience",
 //     "phoneNo":"7011144555",
 //     "city":"Mumbai",
