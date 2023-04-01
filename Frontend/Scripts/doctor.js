@@ -71,12 +71,22 @@ function renderdata(data) {
         </div>
 
 
-        <button class="u-t-capitalize u-bold u-round-corner--large c-btn--dark-medium">
-            Book Clinic Visit
-            <div class="u-xx-small-font">
-                No Booking Fee
-            </div>
-        </button>
+        <button class="btn">
+        Book Now
+    </button>
+
+    <div id="slot-cont" class="div-hide">
+        <div class="slot-container" id='good'>
+            <h2 class="slot-heading">Available Slots</h2>
+            <ul class="slot-list">
+            <li>Timing</li>
+            <li>2 PM </li>
+            <li>3 PM </li>
+            <li>4 PM </li>
+            </ul>
+        </div>
+
+    </div>
 
     </div>
         </div>
