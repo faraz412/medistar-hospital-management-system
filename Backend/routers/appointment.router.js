@@ -61,6 +61,9 @@ appointmentRouter.post("/create/:doctorId", async (req, res) => {
   let { ageOfPatient, gender, address, problemDescription, appointmentDate } =
     req.body;
   try {
+    if(!docName.isAvailable){
+       return  res.send({msg:`${docFirstName} is not available for today`})
+    }
     const appointment = new AppointmentModel({
       patientId,
       doctorId,
