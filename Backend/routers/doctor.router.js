@@ -139,11 +139,7 @@ doctorRouter.patch("/isAvailable/:doctorId", async (req, res) => {
 
     // Update the availability status of the doctor
     const payload = { isAvailable: req.body.isAvailable };
-    const updatedDoctor = await DoctorModel.findByIdAndUpdate(
-      { _id: doctorId },
-      payload
-    );
-
+    const updatedDoctor = await DoctorModel.findByIdAndUpdate(doctorId,{isAvailable: payload.isAvailable});
     res.json({
       msg: "Doctor's status has been updated",
       doctor: updatedDoctor,
@@ -170,5 +166,6 @@ module.exports = {
 //     "city":"Mumbai",
 //     "departmentId":1,
 //     "status":true,
+        // isAvailable:true;
 //     "image":"https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSJO1Bmu2stkBmmOJXmyHN5G7UHmeA4xr5z0whR9JZF&s"
 // }
