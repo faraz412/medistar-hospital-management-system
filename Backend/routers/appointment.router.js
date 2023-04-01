@@ -58,7 +58,6 @@ appointmentRouter.post("/create/:doctorId", async (req, res) => {
     patientFirstName,
     patientEmail
   );
-  
   let { ageOfPatient, gender, address, problemDescription, appointmentDate } =
     req.body;
   try {
