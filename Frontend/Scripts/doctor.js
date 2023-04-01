@@ -85,4 +85,19 @@ function renderdata(data) {
 
     console.log(arr.join(""));
     container.innerHTML = arr.join("");
+
+     const buttons = document.getElementsByClassName('btn')
+    const slot = document.getElementById('slot-cont')
+    
+    
+    console.log(slot);
+    for(let button of buttons){
+        button.addEventListener('click', ()=>{
+            slot.classList.add('active')
+            console.log(slot, 'i am slot');
+            slot.classList.remove('div-hide')
+        //    console.log('hi');
+        })
+    }
+
 }
