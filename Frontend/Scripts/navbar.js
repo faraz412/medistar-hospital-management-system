@@ -18,5 +18,3 @@ document.querySelector("#navbar").innerHTML = `
     </div>
 </div>
 `
-
-})
