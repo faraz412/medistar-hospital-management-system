@@ -20,14 +20,14 @@ userRouter.get("/emailVerify", async (req, res) => {
     upperCaseAlphabets: false,
     specialChars: false,
   });
-  console.log(otp);
+  // console.log(otp);
   let { email } = req.body;
   const transporter = nodemailer.createTransport({
     service: "gmail",
     secure: false,
     auth: {
       user: "abhi.jaiswal1494@gmail.com",
-      pass: "catttouunbkahzcr",
+      pass: process.env.nodeMailer,
     },
     tls: {
       rejectUnauthorized: false,

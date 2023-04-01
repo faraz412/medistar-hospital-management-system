@@ -30,6 +30,7 @@ const authenticate = async (req, res, next) => {
       if (decoded) {
         const userID = decoded.userID;
         req.body.userID = userID;
+        
         next();
       } else {
         res.send({ msg: "Wrong Token" });
