@@ -40,37 +40,47 @@
               <p >Are you a doctor? <a href="doctor_reg.html" style="color: red;">register here</a></p>
           </div>
         </div>
-        <div class="card" style="width: 30rem;">
-          <div class="card-body">
-            <div class="mb-3" style="padding: 1%; ">
-              <label for="exampleFormControlInput1" class="form-label">Full Name</label>
-              <input type="email" class="form-control" id="exampleFormControlInput1" placeholder="Full Name">
+        <form >
+          <div class="card" style="width: 30rem;">
+            <div class="card-body">
+              <div class="mb-3" style="padding: 1%; ">
+                <label for="exampleFormControlInput1" class="form-label">First Name</label>
+                <input class="form-control" id="exampleFormControlInput1" placeholder="First Name">
+              </div>
+              <div class="mb-3" style="padding: 1%; ">
+                <label for="exampleFormControlInput1" class="form-label">Last Name</label>
+                <input class="form-control" id="exampleFormControlInput2" placeholder="Last Name">
+              </div>
+              <div class="mb-3" style="padding: 1%; ">
+                <label for="exampleFormControlInput1" class="form-label">E-mail</label>
+                <input class="form-control" id="exampleFormControlInput3" placeholder="E-mail">
+              </div>
+              <div class="mb-3" style="padding: 1%; ">
+                <label for="exampleFormControlInput1" class="form-label">Mobile Number</label>
+                <input class="form-control" id="exampleFormControlInput4" placeholder="Mobile Number">
+              </div>
+              <div class="mb-3" style="padding: 1%; ">
+                <label for="exampleFormControlInput1" class="form-label">Create password</label>
+                <input type="password" class="form-control" id="exampleFormControlInput5" placeholder="Create password">
+              </div>
+              <div class="form-check" style="padding: 1%;margin-left: 5%; ">
+                <input class="form-check-input" type="checkbox" value="" id="flexCheckDefault">
+                <label class="form-check-label" for="flexCheckDefault">
+                  Receive revelant offers and promotional communication
+                </label>
+              </div>
+              <div class="form-check" style="padding: 2%;margin-left: 4%;">
+                <input class="form-check-input" type="checkbox" value="" id="flexCheckDefault">
+                <label class="form-check-label" for="flexCheckDefault">
+                  Agree to terms and condition
+                </label>
+              </div>
             </div>
-            <div class="mb-3" style="padding: 1%; ">
-              <label for="exampleFormControlInput1" class="form-label">Mobile Number</label>
-              <input type="email" class="form-control" id="exampleFormControlInput1" placeholder="Mobile Number">
-            </div>
-            <div class="mb-3" style="padding: 1%; ">
-              <label for="exampleFormControlInput1" class="form-label">Create password</label>
-              <input type="email" class="form-control" id="exampleFormControlInput1" placeholder="Create password">
-            </div>
-            <div class="form-check" style="padding: 1%;margin-left: 5%; ">
-              <input class="form-check-input" type="checkbox" value="" id="flexCheckDefault">
-              <label class="form-check-label" for="flexCheckDefault">
-                Receive revelant offers and promotional communication
-              </label>
-            </div>
-            <div class="form-check" style="padding: 2%;margin-left: 4%;">
-              <input class="form-check-input" type="checkbox" value="" id="flexCheckDefault">
-              <label class="form-check-label" for="flexCheckDefault">
-                Agree to terms and condition
-              </label>
-            </div>
-          </div>
-          <button  type="button" class="btn btn-info" style="color: white; margin:auto;margin-bottom: 5%; width:90%">
-            Send OTP
-          </button>
-      </div>
+            <button  type="submit" class="btn btn-info" style="color: white; margin:auto;margin-bottom: 5%; width:90%">
+              Send OTP
+            </button>
+        </div>
+        </form>
     </div>
   </div>
 
@@ -84,5 +94,5 @@
 
 <script type="module" src="/Frontend/Scripts/navbar.js"></script>
 <script type="module" src="/Frontend/Scripts/footer.js"></script>
-
+<script src="/Frontend/Scripts/signup.js"></script>
 </html>
