@@ -23,9 +23,10 @@ doctorRouter.post("/addDoctor", async (req, res) => {
     departmentId,
     status,
     image,
+    isAvailable
   } = req.body;
   try {
-    let doctor = await DoctorModel({
+    let doctor = new DoctorModel({
       doctorName,
       email,
       qualifications,
@@ -35,6 +36,7 @@ doctorRouter.post("/addDoctor", async (req, res) => {
       departmentId,
       status,
       image,
+      isAvailable
     });
     await doctor.save();
     res.status(201).send({ msg: "Doctor has been created", doctor });

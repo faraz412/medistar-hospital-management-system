@@ -33,6 +33,10 @@ const doctorSchema = mongoose.Schema({
   },
   image:{
     type:String
+  },
+  isAvailable:{
+    type:Boolean,
+    required:true
   }
 });
 
