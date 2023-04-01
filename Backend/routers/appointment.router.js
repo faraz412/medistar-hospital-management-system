@@ -91,7 +91,7 @@ appointmentRouter.post("/create/:doctorId", async (req, res) => {
     const mailOptions = {
       from: "abhi.jaiswal1494@gmail.com",
       to: `${patientEmail}`,
-      subject: "LOGIN Successfull",
+      subject: "Medistar Appointment",
       html: `<!DOCTYPE html>
       <html>
         <head>
