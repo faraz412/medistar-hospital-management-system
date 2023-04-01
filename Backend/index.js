@@ -16,7 +16,7 @@ const { appointmentRouter } = require("./routers/appointment.router");
 const { dashboardRouter } = require("./routers/adminDash.router");
 
 app.use("/user", userRouter);
-app.use("/department",departmentRouter)
+app.use("/department",departmentRouter);
 app.use("/doctor", doctorRouter);
 app.use("/appointment", authenticate, appointmentRouter);
 app.use("/admin", dashboardRouter);
