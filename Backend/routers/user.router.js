@@ -20,14 +20,14 @@ userRouter.get("/emailVerify", async (req, res) => {
     upperCaseAlphabets: false,
     specialChars: false,
   });
-  console.log(otp);
+  // console.log(otp);
   let { email } = req.body;
   const transporter = nodemailer.createTransport({
     service: "gmail",
     secure: false,
     auth: {
       user: "abhi.jaiswal1494@gmail.com",
-      pass: "catttouunbkahzcr",
+      pass: process.env.nodeMailer,
     },
     tls: {
       rejectUnauthorized: false,
@@ -95,7 +95,7 @@ userRouter.post("/signin", async (req, res) => {
       } else {
         bcrypt.compare(password, userMobile.password).then(function (result) {
           if (result) {
-            const token = jwt.sign({ userID: userMobile._id }, "masai");
+            const token = jwt.sign({ userID: userMobile._id , email: userMobile.email}, "masai");
             res.send({
               message: "Login Successful",
               token,
@@ -112,7 +112,7 @@ userRouter.post("/signin", async (req, res) => {
     } else {
       bcrypt.compare(password, userEmail.password).then(function (result) {
         if (result) {
-          const token = jwt.sign({ userID: userEmail._id }, "masai");
+          const token = jwt.sign({ userID: userEmail._id, email: userEmail.email }, "masai");
           res.send({
             message: "Success",
             token,

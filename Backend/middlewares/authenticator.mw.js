@@ -29,7 +29,11 @@ const authenticate = async (req, res, next) => {
       const decoded = jwt.verify(token, process.env.key);
       if (decoded) {
         const userID = decoded.userID;
+        const email = decoded.email;
+        console.log('Middleware Console',userID,email)
         req.body.userID = userID;
+        req.body.email = email;
+
         next();
       } else {
         res.send({ msg: "Wrong Token" });
