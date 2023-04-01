@@ -6,6 +6,7 @@ const { PatientModel } = require("../models/patient.model");
 const { UserModel } = require("../models/user.model");
 const dashboardRouter = require("express").Router();
 
+
 dashboardRouter.post("/signin", async (req, res) => {
   let { email, password } = req.body;
   try {
@@ -66,7 +67,6 @@ dashboardRouter.get("/all", async (req, res) => {
       msg: "Dashboard Done",
       docPending: docPending,
       docApproved: docApproved,
-      docsTotal: docs,
       department: dept,
       usersRegistered: users,
       appPending: appPending,

@@ -1,4 +1,7 @@
 const { AppointmentModel } = require("../models/appointment.model");
+const { DoctorModel } = require("../models/doctor.model");
+const { UserModel } = require("../models/user.model");
+
 const appointmentRouter = require("express").Router();
 
 //!! User Side OPERATION------------------------------>
@@ -40,13 +43,19 @@ appointmentRouter.get("/getApp/:appointmentId", async (req, res) => {
 appointmentRouter.post("/create/:doctorId", async (req, res) => {
   let doctorId = req.params.doctorId;
   let patientId = req.body.userID;
-  // console.log(patientId, doctorId);
+  let docName = await DoctorModel.findOne({doctorId})
+  let patientName = await UserModel.findOne({patientId})
+  let docFirstName =docName.doctorName;
+  let patientFirstName = patientName.first_name
+// console.log(docFirstName,patientFirstName)
   let { ageOfPatient, gender, address, problemDescription, appointmentDate } =
     req.body;
   try {
     const appointment = new AppointmentModel({
       patientId,
       doctorId,
+      patientFirstName,
+      docFirstName,
       ageOfPatient,
       gender,
       address,

@@ -9,6 +9,14 @@ const appointmentSchema = mongoose.Schema({
     type: String,
     required: true,
   },
+  patientFirstName:{
+    type: String,
+    required: true,
+  },
+  docFirstName:{
+    type: String,
+    required: true,
+  },
   ageOfPatient:{
    type:Number,
    required:true
