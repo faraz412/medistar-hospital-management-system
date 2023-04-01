@@ -23,6 +23,7 @@ const authenticate = async (req, res, next) => {
   } else {
     try {
       const blacklistdata = await client.LRANGE("token", 0, -1);
+      console.log(blacklistdata)
       if (blacklistdata.includes(token)) {
         return res.send({ msg: "Token Blackilsted/Logout" });
       }

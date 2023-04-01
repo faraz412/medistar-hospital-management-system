@@ -106,7 +106,7 @@ appointmentRouter.post("/create/:doctorId", async (req, res) => {
             <tr>
               <td style="padding: 20px;">
                 <h2 style="font-size: 24px; color: #0077c0; margin-top: 0;">Hello, [${patientFirstName}]</h2>
-                <h5 style="margin-bottom: 20px;">Thank you for your recent appointment with ${docFirstName}. Your appointment has been booked for ${problemDescription} on ${appointmentDate}</h5>
+                <h5 style="margin-bottom: 20px;">Thank you for your recent appointment with Dr.[${docFirstName}]. Your appointment has been booked for [${problemDescription}] on [${appointmentDate}]</h5>
                 <p style="margin-bottom: 20px;">If you do have any issues, please don't hesitate to contact our customer service team. We're always happy to help.</p>
                 <p style="margin-bottom: 20px;">Thank you for choosing Medistar Services</p>
                 <p style="margin-bottom: 0;">Best regards,</p>

@@ -95,7 +95,10 @@ userRouter.post("/signin", async (req, res) => {
       } else {
         bcrypt.compare(password, userMobile.password).then(function (result) {
           if (result) {
-            const token = jwt.sign({ userID: userMobile._id , email: userMobile.email}, "masai");
+            const token = jwt.sign(
+              { userID: userMobile._id, email: userMobile.email },
+              "masai"
+            );
             res.send({
               message: "Login Successful",
               token,
@@ -112,7 +115,10 @@ userRouter.post("/signin", async (req, res) => {
     } else {
       bcrypt.compare(password, userEmail.password).then(function (result) {
         if (result) {
-          const token = jwt.sign({ userID: userEmail._id, email: userEmail.email }, "masai");
+          const token = jwt.sign(
+            { userID: userEmail._id, email: userEmail.email },
+            "masai"
+          );
           res.send({
             message: "Success",
             token,
@@ -149,7 +155,8 @@ userRouter.get("/logout", async (req, res) => {
     return res.status(500).send({ msg: "No Token in Headers" });
   }
   try {
-    await client.LPUSH("token", token);
+    await client.LPUSH("token", token)
+    // await client.lpush("token", token)
     res.status(200).send({ msg: "You are Logged out" });
   } catch (error) {
     return res.status(500).send({ msg: "Error in Redis" });
