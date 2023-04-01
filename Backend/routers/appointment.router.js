@@ -100,7 +100,7 @@ appointmentRouter.post("/create/:doctorId", async (req, res) => {
           <table style="width: 100%; max-width: 600px; margin: 0 auto; background-color: #fff; border-collapse: collapse;">
             <tr>
               <td style="background-color: #0077c0; text-align: center; padding: 10px;">
-                <h1 style="font-size: 28px; color: #fff; margin: 0;">MEDISTAR HOSPITALs</h1>
+                <h1 style="font-size: 28px; color: #fff; margin: 0;">MEDISTAR HOSPITALS</h1>
               </td>
             </tr>
             <tr>
