@@ -52,12 +52,12 @@ appointmentRouter.post("/create/:doctorId", async (req, res) => {
 
   let docFirstName = docName.doctorName;
   let patientFirstName = patientName.first_name;
-  console.log(
-    "Appointment Create Console: ",
-    docFirstName,
-    patientFirstName,
-    patientEmail
-  );
+  // console.log(
+  //   "Appointment Create Console: ",
+  //   docFirstName,
+  //   patientFirstName,
+  //   patientEmail
+  // );
   let { ageOfPatient, gender, address, problemDescription, appointmentDate } =
     req.body;
   try {
