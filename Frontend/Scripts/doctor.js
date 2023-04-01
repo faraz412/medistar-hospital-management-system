@@ -31,45 +31,30 @@ function renderdata(data) {
             </button>
         </div>
 
-
         <div class="info">
+        <div>
             <h2> ${ele.doctorName}</h2>
-            <h5> ${ele.qualifications}</h5>
+        </div>
+        <div>
+            <h6> ${ele.qualifications}</h6>
+        </div>
+        <div>
             <h5>${ele.experience}</h5>
-            <div class="hosp-detail">
-                <span>Yeshwanthpur,</span> ${ele.city}<span> Manipal Hospitals Yeshwanthpur</span><span>+2 and
-                    more</span>
-            </div>
-            <span>800rs consulation fee at clinic</span>
-            <div>
-                <span class="o-label--success u-bold">
-                    <i class="icon-ic_like_filled">
-                    </i>
-                    <span data-qa-id="doctor_recommendation">
-                        95%
-                    </span>
-                </span>
-                <span class="u-bold u-t-underline">
-                    30&nbsp;
-                    <span>
-                        Patient Stories
-                    </span>
-                </span>
-            </div>
-
-
+        </div>
+        <div>
+            <p>Contact: ${ele.phoneNo}</p>
+        </div>
+        <div>
+        <p>Medicare Hosital, ${ele.city}</p>
         </div>
     </div>
-    <div class="book-apt-sec">
+</div>
 
-        <div class="available"><i data-qa-id="time_icon" class="c-card__icon icon-ic_calendar u-valign--top">
-            </i>
-            <span data-qa-id="availability_text">
-                Available
-            </span>
+<div class="book-apt-sec">
 
-        </div>
-
+    <div class='avail'>
+        Available Today
+    </div>
 
         <button class="btn">
         Book Now
