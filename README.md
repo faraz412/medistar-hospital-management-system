@@ -8,7 +8,7 @@ The system allows users to create, read, update, and delete records of patients,
 
 ## Tech Stack 
 
-**Client:** HTML, CSS, Javascript and Bootsrap
+**Client:** HTML, CSS, Javascript , AOS and Bootsrap
 
 **Server:** Node.js, Express.js, MongoDB, Redis
 
