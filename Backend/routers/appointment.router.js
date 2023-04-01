@@ -52,12 +52,12 @@ appointmentRouter.post("/create/:doctorId", async (req, res) => {
 
   let docFirstName = docName.doctorName;
   let patientFirstName = patientName.first_name;
-  // console.log(
-  //   "Appointment Create Console: ",
-  //   docFirstName,
-  //   patientFirstName,
-  //   patientEmail
-  // );
+  console.log(
+    "Appointment Create Console: ",
+    docFirstName,
+    patientFirstName,
+    patientEmail
+  );
   let { ageOfPatient, gender, address, problemDescription, appointmentDate } =
     req.body;
   try {
@@ -88,7 +88,7 @@ appointmentRouter.post("/create/:doctorId", async (req, res) => {
     const mailOptions = {
       from: "abhi.jaiswal1494@gmail.com",
       to: `${patientEmail}`,
-      subject: "LOGIN Successfull",
+      subject: "Medistar Appointment",
       html: `<!DOCTYPE html>
       <html>
         <head>
