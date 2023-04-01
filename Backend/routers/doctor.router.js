@@ -47,13 +47,26 @@ doctorRouter.post("/addDoctor", async (req, res) => {
   }
 });
 
+//SEARCH BY NAME
+doctorRouter.get("/search", async(req,res)=>{
+  let query=req.query;
+  //console.log(query);
+  try{
+      const result=await DoctorModel.find({doctorName:{$regex:query.q,$options:"i"}});
+      res.send(result);
+  }catch(err){
+      res.send({"err in getting doctor details":err});
+  }
+})
+
 // DOCTORS BY DEPARTMENT ID
 doctorRouter.get("/allDoctor/:id", async (req, res) => {
   let id = req.params.id;
-  console.log(id);
+  // console.log(id);
   let isDoctorPresent = await DoctorModel.find({ departmentId: id });
+  console.log(isDoctorPresent);
   if (isDoctorPresent.length === 0) {
-    return res.status(404).send({ msg: "This Department have No doctor" });
+    return res.status(201).send({ msg: "This Department have no doctors" });
   }
   try {
     let doctor = await DoctorModel.find({ departmentId: id });
