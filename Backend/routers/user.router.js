@@ -66,7 +66,7 @@ userRouter.post("/signup", async (req, res) => {
       if (err) {
         res.status(500).send({ msg: "Error" });
       } else {
-        const user = await UserModel({
+        const user = new UserModel({
           first_name,
           last_name,
           email,
