@@ -91,11 +91,3 @@ departmentRouter.patch("/updateDepartment/:id", async (req, res) => {
 module.exports = {
   departmentRouter,
 };
-
-// DEPARTMENT OBJECTS --------------------------------
-// {
-//   "departmentId":1,
-//   "deptName":"Neourology",
-//   "about":"medical specialty concerned with the nervous system and its functional or organic disorders",
-//   "image":"https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRzUT8yBJiQiKk-odQuEGmnFx5f2dDkg5iYrg&usqp=CAU"
-// }

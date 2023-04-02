@@ -175,26 +175,7 @@ doctorRouter.patch("/isAvailable/:doctorId", async (req, res) => {
   }
 });
 
-doctorRouter.post("/addTimeSlots", async (req, res) => {
-  let payload = "11-12";
-  try {
-  } catch (error) {}
-});
 
 module.exports = {
   doctorRouter,
 };
-
-// DOCTORS DATA...
-// {
-//     "doctorName":"Abhishek Jaiswal",
-//     "email":"abhisek@gmail.com",
-//     "qualifications":"MBBS from AIMS Delhi",
-//     "experience":"14 years of experience",
-//     "phoneNo":"7011144555",
-//     "city":"Mumbai",
-//     "departmentId":1,
-//     "status":true,
-//     "isAvailable":true;
-//     "image":"https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSJO1Bmu2stkBmmOJXmyHN5G7UHmeA4xr5z0whR9JZF&s"
-// }
