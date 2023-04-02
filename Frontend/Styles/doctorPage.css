@@ -1,4 +1,7 @@
 @import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700;800&display=swap');
+*{
+    box-sizing: border-box;
+}
 body{
     width: 100vw;
     height: 100vh;
@@ -94,54 +97,64 @@ body{
     width:70%;
 }
 .doc-img{
-    width:25%;
+    /* border:1px solid black; */
+    width:30%;
 }
 .doc-img,.doc-book{
     display:flex;
     align-items: center;
 }
 .doc-img>img{
+    width:120px;
+    height:120px;
     border-radius: 50%;
 }
 .doc-desc{
+    /* border:1px solid black; */
     width:55%;
 }
 .doc-desc>*{
     margin:0.5rem auto;
 }
-.doc-book>button{
+.doc-book{
+    /* border:1px solid black; */
+    width:38%;
+}
+.select-app{
+    /* border:1px solid black; */
+    width:100%;
+}
+.select-app>form{
+    display:flex;
+    flex-direction: column;
+    /* align-items: center; */
+    justify-content: center; 
+}
+.select-app>form>div{
+    margin-bottom:1rem;
+    /* border:1px solid black; */
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+.select-app>form select{
+    width:60%;
+    text-align: center;
+    border:1px solid lightgray
+}
+.select-app>form select:focus{
+    outline:none;
+}
+.select-app>form label{
+    font-weight: bold;
+}
+.doc-book input{
     padding:5px 10px;
     background-color:#0b9c6c;
     border:1px solid #0b9c6c;
     border-radius: 5px;
     color:white 
 }
-.bottom-cont{
-    box-shadow: rgba(0, 0, 0, 0.16) 0px 1px 4px;
-    margin-top:1rem;
-    border-radius:5px;
-    background-color: white;
-    border-radius: 7px;
+.doc-book input:hover{
+    cursor: pointer;
 }
-.bottom-cont table{
-    width:100%;
-    text-align: center;
-    border-collapse: collapse;
-    border-spacing: 0;
-    overflow: hidden;
-    border-radius: 7px;
-}
-.bottom-cont th{
-    background-color:#55a3de;
-}
-.bottom-cont th,.bottom-cont td{
-    padding-top:0.5rem;
-    padding-bottom:0.5rem;
-    width:15%;
-}
-.bottom-cont tr{
-    border:1px solid lightgray;
-}
-.div-hide{
-    display:none;
-}   
