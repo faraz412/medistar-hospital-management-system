@@ -128,18 +128,14 @@ appointmentRouter.post("/create/:doctorId", authenticate, async (req, res) => {
     // !!-NODE MAILER-//
     const transporter = nodemailer.createTransport({
       service: "gmail",
-      secure: false,
       auth: {
         user: "abhi.jaiswal1494@gmail.com",
         pass: process.env.nodeMailer,
       },
-      tls: {
-        rejectUnauthorized: false,
-      },
     });
     const mailOptions = {
       from: "abhi.jaiswal1494@gmail.com",
-      to: `${patientEmail}`,
+      to: patientEmail,
       subject: "Medistar Appointment Confirm",
       html: `
       <!DOCTYPE html>
@@ -171,22 +167,18 @@ appointmentRouter.post("/create/:doctorId", authenticate, async (req, res) => {
         </html>
       `,
     };
-    transporter.sendMail(mailOptions, (error, info) => {
-      if (error) {
-        console.log(error);
-        return res.status(500).json({ message: "Error Sending Mail" });
-      } else {
-        console.log("mail send");
-        // return res
-        //   .status(200)
-        //   .json({ message: "OTP Send", otp: otp, email: email });
-        console.log(createdAppointment);
+    transporter
+      .sendMail(mailOptions)
+      .then((info) => {
         res.status(201).json({
           message: "Appointment has been created , Check Your Mail",
           status: true,
         });
-      }
-    });
+      })
+      .catch((e) => {
+        console.log(error);
+        return res.status(500).json({ message: "Error Sending Mail" });
+      });
   } catch (error) {
     res.status(500).send({ msg: "Error in created appointment" });
     console.log(error);

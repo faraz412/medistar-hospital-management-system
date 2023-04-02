@@ -15,42 +15,37 @@ userRouter.get("/", async (req, res) => {
   res.send({ msg: "Home Page" });
 });
 
-userRouter.get("/emailVerify", async (req, res) => {
+userRouter.post("/emailVerify", async (req, res) => {
   otp = otpGenerator.generate(4, {
     upperCaseAlphabets: false,
     specialChars: false,
   });
-  // console.log(otp);
   let { email } = req.body;
   const transporter = nodemailer.createTransport({
     service: "gmail",
-    secure: false,
     auth: {
-      user: "abhi.jaiswal1494@gmail.com",
-      pass: process.env.nodeMailer,
-    },
-    tls: {
-      rejectUnauthorized: false,
+      user: "forsmmpanel@gmail.com",
+      pass: "noymjrhbxjwiclin",
     },
   });
+
   const mailOptions = {
-    from: "abhi.jaiswal1494@gmail.com",
-    to: `${email}`,
+    from: "forsmmpanel@gmail.com",
+    to: email,
     subject: "LOGIN Successfull",
-    text: `${otp} `,
+    text: otp,
   };
-  transporter.sendMail(mailOptions, (error, info) => {
-    if (error) {
-      console.log(error);
-      return res.status(500).json({ message: "Error Sending Mail" });
-    } else {
-      console.log("mail send");
-      return res
-        .status(200)
-        .json({ message: "OTP Send", otp: otp, email: email });
-    }
-  });
-  // ------------------------------------------
+
+  transporter
+    .sendMail(mailOptions)
+    .then((info) => {
+      console.log(info.response);
+      res.send({ msg: "Mail has been Send", otp, email });
+    })
+    .catch((e) => {
+      console.log(e);
+      res.send(e);
+    });
 });
 
 userRouter.post("/signup", async (req, res) => {
@@ -155,7 +150,7 @@ userRouter.get("/logout", async (req, res) => {
     return res.status(500).send({ msg: "No Token in Headers" });
   }
   try {
-    await client.LPUSH("token", token)
+    await client.LPUSH("token", token);
     // await client.lpush("token", token)
     res.status(200).send({ msg: "You are Logged out" });
   } catch (error) {
