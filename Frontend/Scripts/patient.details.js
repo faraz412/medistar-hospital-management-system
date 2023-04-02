@@ -82,6 +82,9 @@ patientForm.addEventListener("submit",async(e)=>{
                 if(response.ok){
                     let result=await response.json();
                     console.log(result);
+                    swal("",`${result.msg}`,"info"); 
+                }else{
+                    swal("",`Selected slot not available`,"warning"); 
                 }
             }else{
                 swal("",`Selected slot not available`,"warning"); 
