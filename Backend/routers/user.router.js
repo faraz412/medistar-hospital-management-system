@@ -128,7 +128,7 @@ userRouter.post("/signin", async (req, res) => {
       });
     }
   } catch (e) {
-    res.send({ msg: "Error in Login 33" + e });
+    res.send({ msg: "Error in Login" });
   }
 });
 
