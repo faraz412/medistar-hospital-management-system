@@ -15,7 +15,7 @@ userRouter.get("/", async (req, res) => {
   res.send({ msg: "Home Page" });
 });
 
-userRouter.get("/emailVerify", async (req, res) => {
+userRouter.post("/emailVerify", async (req, res) => {
   otp = otpGenerator.generate(4, {
     upperCaseAlphabets: false,
     specialChars: false,
@@ -39,7 +39,8 @@ userRouter.get("/emailVerify", async (req, res) => {
     subject: "LOGIN Successfull",
     text: `${otp} `,
   };
-  transporter.sendMail(mailOptions, (error, info) => {
+  //console.log(email,otp);
+  transporter.sendMail(mailOptions,(error, info) => {
     if (error) {
       console.log(error);
       return res.status(500).json({ message: "Error Sending Mail" });
@@ -157,5 +158,5 @@ userRouter.get("/logout", async (req, res) => {
 });
 
 module.exports = {
-  userRouter,
+  userRouter
 };

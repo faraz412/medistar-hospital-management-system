@@ -1,15 +1,16 @@
+import baseURL from './baseURL';
 let form =document.querySelector("form");
     form.addEventListener("submit",async (e)=>{
         e.preventDefault();
         let obj={
             first_name:form.exampleFormControlInput1.value,
             last_name:form.exampleFormControlInput2.value,
+            email:form.exampleFormControlInput3.value,
             mobile:form.exampleFormControlInput4.value,
             password:form.exampleFormControlInput5.value,
-            email:form.exampleFormControlInput3.value
         }
       try {
-        let res=await fetch("http://localhost:8080/user/signup",{
+        let res=await fetch(baseURL+"user/emailVerify",{
             method:"POST",
             headers:{
                 'Content-type':'application/json'
@@ -17,8 +18,11 @@ let form =document.querySelector("form");
             body:JSON.stringify(obj)
         })
         let data=await res.json();
-        console.log(data);
-        alert("Successfully registered");
+        //console.log(data);
+        localStorage.setItem("userDetails",JSON.stringify(obj));
+        localStorage.setItem("otp",data);
+
+       // alert("Successfully registered");
       } catch (error) {
         console.log(error);
       }
