@@ -25,6 +25,34 @@ const logoBtn=document.getElementById("nav-logo");
 const book_app=document.getElementById("book-app");
 const find_doc=document.getElementById("find-doc");
 
+let loginbtn=document.getElementById("nav-login");
+let signupbtn=document.getElementById("nav-reg");
+
+if(localStorage.getItem("token")){
+    loginbtn.innerText=localStorage.getItem("userName");
+    signupbtn.innerText="Log Out";
+}else{
+    loginbtn.innerText="Login";
+    signupbtn.innerText="Signup";
+}
+
+loginbtn.addEventListener("click",(e)=>{
+    if(e.target.innerText=="Login"){
+        window.location.href="/Frontend/Pages/login.html";
+    }
+})
+
+signupbtn.addEventListener("click",(e)=>{
+    if(e.target.innerText=="Signup"){
+        window.location.href="/Frontend/Pages/signup.html";
+    }else{
+        localStorage.removeItem("token");
+        localStorage.removeItem("userName");
+        window.location.href="/Frontend/index.html";
+    }
+})
+
+
 logoBtn.addEventListener("click",(e)=>{
     window.location.href="/Frontend/index.html";
 })
@@ -42,4 +70,6 @@ find_doc.addEventListener("click",()=>{
     // book_app.classList.remove("nav-active");
     // find_doc.classList.add("nav-active");
 })
+
+
 

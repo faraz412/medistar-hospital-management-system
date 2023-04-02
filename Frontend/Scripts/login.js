@@ -17,6 +17,7 @@ form.addEventListener("submit",async (e)=>{
         let data=await res.json();
         console.log(data);
         localStorage.setItem("token",data.token);
+        localStorage.setItem("userName",data.name);
         alert("Login Successful");
         window.location.href="book.appointment.html";
       } catch (error) {
