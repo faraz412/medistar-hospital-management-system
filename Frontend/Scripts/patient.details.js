@@ -1,21 +1,24 @@
+import baseURL from "./baseURL.js";
+
 let formObj=JSON.parse(localStorage.getItem("formObj"));
 let docObj=JSON.parse(localStorage.getItem("docObj"));
 let docContainer=document.getElementById("doctors-container");
 
+
+
 let dateObj={
-    1: "04-Apr-23",
-    2: "05-Apr-23",
-    3: "06-Apr-23",
-    "11-12": "11AM to 12PM",
+    "APRIL_04": "04-Apr-23",
+    "APRIL_05": "05-Apr-23",
+    "APRIL_06": "06-Apr-23",
     "2-3": "2PM to 3PM",
     "4-5": "4PM to 5PM",
-    "6-7": "6PM to 7PM"
+    "7-8": "7PM to 8PM"
 }
 
 renderdata(formObj,docObj)
 
 function renderdata(formObj,docObj) {
-    console.log(formObj.slot)
+    // console.log(formObj.slot)
     docContainer.innerHTML= `
     <div data-aos="fade-right" data-aos-duration="800" class=doc-card>
         <h3 style="text-align:center">Appontment Details</h3>
@@ -41,18 +44,55 @@ function renderdata(formObj,docObj) {
     `
 };
 
-    // let forms=document.querySelectorAll(".select-app>form");
-    // for(let form of forms){
-    //     form.addEventListener("submit",(e)=>{
-    //         e.preventDefault();
-    //         // console.log(e);
-    //         let obj={
-    //             "date":form.date.value,
-    //             "slot":form.slot.value
-    //         }
-    //         swal("", `Confirm Booking?`, "info").then(function() {
-    //             localStorage.setItem("formObj",obj);
-    //             window.location.href="/Frontend/Pages/patient_details.html";
-    //         });
-    //     })
-    // }
+let patientForm=document.getElementById("PatientForm");
+
+patientForm.addEventListener("submit",async(e)=>{
+    e.preventDefault();
+    console.log(docObj);
+    let obj={
+        patientFirstName:patientForm.name.value,
+        docFirstName:docObj.name,
+        ageOfPatient:patientForm.age.value,
+        gender:patientForm.gender.value,
+        address:patientForm.address.value,
+        problemDescription:patientForm.problem.value,
+        appointmentDate:dateObj[formObj.date],
+        slotTime:formObj.slot,
+        date:formObj.date
+    };
+
+    try{
+        let res=await fetch(baseURL+`appointment/checkSlot/${docObj.docID}`,{
+            method:"POST",
+            headers:{
+				"content-type": "application/json"
+			},
+            body: JSON.stringify(obj)
+        });
+        if(res.ok){
+            let data=await res.json();
+            if(data){
+                let response=await fetch(baseURL+`appointment/create/${docObj.docID}`,{
+                    method:"POST",
+                    headers:{
+                        "content-type": "application/json"
+                    },
+                    body: JSON.stringify(obj)
+                });
+                if(response.ok){
+                    let result=await response.json();
+                    console.log(result);
+                    swal("",`${result.msg}`,"info"); 
+                }else{
+                    swal("",`Selected slot not available`,"warning"); 
+                }
+            }else{
+                swal("",`Selected slot not available`,"warning"); 
+            }
+        }
+    }catch(err){
+        console.log(err);
+    }
+})
+
+

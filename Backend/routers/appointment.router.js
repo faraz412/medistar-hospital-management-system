@@ -47,9 +47,10 @@ appointmentRouter.get(
 );
 
 // !! Check Slots
-appointmentRouter.get("/checkSlot/:doctorId", async (req, res) => {
+appointmentRouter.post("/checkSlot/:doctorId", async (req, res) => {
   let { date, slotTime } = req.body;
   let doctorId = req.params.doctorId;
+  console.log(date,slotTime)
   try {
     let docName = await DoctorModel.findOne({ _id: doctorId });
     if (!docName) {
@@ -57,7 +58,7 @@ appointmentRouter.get("/checkSlot/:doctorId", async (req, res) => {
     }
     if (!docName.isAvailable) {
       return res.send({
-        msg: `${docName.doctorName} is not available for today`,
+        msg: `${docName.doctorName} is not available currently`,
       });
     }
     await DoctorModel.findOne({ _id: doctorId })
@@ -111,7 +112,7 @@ appointmentRouter.post("/create/:doctorId", authenticate, async (req, res) => {
       req.body;
       console.log(req.body);
     if (!docName.isAvailable) {
-      return res.send({ msg: `${docFirstName} is not available for today` });
+      return res.send({ msg: `${docFirstName}  is currently unavailable` });
     }
     const appointment = new AppointmentModel({
       patientId,
@@ -129,12 +130,12 @@ appointmentRouter.post("/create/:doctorId", authenticate, async (req, res) => {
     const transporter = nodemailer.createTransport({
       service: "gmail",
       auth: {
-        user: "abhi.jaiswal1494@gmail.com",
-        pass: process.env.nodeMailer,
+        user: "forsmmpanel@gmail.com",
+        pass: "noymjrhbxjwiclin",
       },
     });
     const mailOptions = {
-      from: "abhi.jaiswal1494@gmail.com",
+      from: "forsmmpanel@gmail.com",
       to: patientEmail,
       subject: "Medistar Appointment Confirm",
       html: `
