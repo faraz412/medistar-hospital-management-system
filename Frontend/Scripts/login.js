@@ -16,11 +16,12 @@ form.addEventListener("submit",async (e)=>{
         })
         let data=await res.json();
         console.log(data);
-        if(!data || data.mag || data.msg=="User not Found"){
+        if(!data || data.mag || data.msg=="Error in Login" || data.msg=="User not Found"){
             alert("Wrong Credentials");
         }else{
             localStorage.setItem("token",data.token);
             localStorage.setItem("userName",data.name);
+            console.log(data);
             alert("Login Successful");
             window.location.href="book.appointment.html";
         }
