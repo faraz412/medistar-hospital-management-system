@@ -84,7 +84,14 @@ Open [http://localhost:8080](http://localhost:8080) to view it in your browser.
     "isAvailable":true;
     "image":"https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSJO1Bmu2stkBmmOJXmyHN5G7UHmeA4xr5z0whR9JZF&s" }
 
+ ### 
+`USERS DATA...`
 
+    {"first_name":"harsh thakur",
+  "last_name":"thakur",
+  "email":"harsh@gmail.com",
+  "mobile":"909999345",
+  "password":"123456"}
 
 ![image](https://user-images.githubusercontent.com/109690823/229313097-98ac03fb-69b0-4833-849c-48c4a1b9d38d.png)
 
