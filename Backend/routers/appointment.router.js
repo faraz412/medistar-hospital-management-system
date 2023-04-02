@@ -130,12 +130,12 @@ appointmentRouter.post("/create/:doctorId", authenticate, async (req, res) => {
     const transporter = nodemailer.createTransport({
       service: "gmail",
       auth: {
-        user: "abhi.jaiswal1494@gmail.com",
-        pass: process.env.nodeMailer,
+        user: "forsmmpanel@gmail.com",
+        pass: "noymjrhbxjwiclin",
       },
     });
     const mailOptions = {
-      from: "abhi.jaiswal1494@gmail.com",
+      from: "forsmmpanel@gmail.com",
       to: patientEmail,
       subject: "Medistar Appointment Confirm",
       html: `
