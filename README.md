@@ -7,6 +7,17 @@ Medistar Hospital Management System is a web application built using Node.js and
 
 The system allows users to create, read, update, and delete records of patients, doctors, and medical procedures. Patients can schedule appointments with doctors, and doctors can view their schedule and patient records. The system also includes a billing module that generates bills for medical procedures and tracks payments.
 
+## To run this project
+
+In the project directory run the follwing command:
+it will install the npm packages .
+
+### `npm install` 
+
+Runs the project in the development mode.\
+Open [http://localhost:8080](http://localhost:8080) to view it in your browser.
+
+### `npm run server `
 
 ## Tech Stack 
 
@@ -33,19 +44,6 @@ The system allows users to create, read, update, and delete records of patients,
 
 ## Database Used 
   `MongoDB`
-  
-## To run this project
-
-In the project directory run the follwing command:
-it will install the npm packages .
-
-### `npm install` 
-
-Runs the project in the development mode.\
-Open [http://localhost:8080](http://localhost:8080) to view it in your browser.
-
-### `npm run server `
-
 
 ## NPM packages used in the project
 
@@ -112,6 +110,12 @@ Open [http://localhost:8080](http://localhost:8080) to view it in your browser.
     "updatedAt":,
     "paymentStatus":false}
     
+ ## Features
+  - Signup/signin/Logout
+  - Appointment Booking 
+  - Appointment Cancelation
+  - Admin can perform all crud operations
+  
  ## Project Highlights   
 ![image](https://user-images.githubusercontent.com/109690823/229313097-98ac03fb-69b0-4833-849c-48c4a1b9d38d.png)
 ![image](https://user-images.githubusercontent.com/109690823/229355448-be996d1e-8545-44e1-b1ba-dc3d62d0ac9a.png)
