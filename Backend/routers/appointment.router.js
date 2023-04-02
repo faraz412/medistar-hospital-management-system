@@ -1,3 +1,4 @@
+const { authenticate } = require("../middlewares/authenticator.mw");
 const { AppointmentModel } = require("../models/appointment.model");
 const { DoctorModel } = require("../models/doctor.model");
 const { UserModel } = require("../models/user.model");
@@ -8,7 +9,7 @@ const appointmentRouter = require("express").Router();
 
 //!! User Side OPERATION------------------------------>
 //  Get All Appointments for a Particular Patient
-appointmentRouter.get("/allApp", async (req, res) => {
+appointmentRouter.get("/allApp", authenticate, async (req, res) => {
   let id = req.body.userID;
   console.log(id);
   try {
@@ -25,42 +26,50 @@ appointmentRouter.get("/allApp", async (req, res) => {
 });
 
 // Details according to Appointment ID
-appointmentRouter.get("/getApp/:appointmentId", async (req, res) => {
-  try {
-    const appointment = await AppointmentModel.find({
-      _id: req.params.appointmentId,
-    });
-    res.status(200).json({
-      message: "Particular Appointments Details",
-      appointment: appointment,
-    });
-  } catch (error) {
-    res
-      .status(501)
-      .send({ msg: "Error in Getting All Appointments By a Patient", e });
+appointmentRouter.get(
+  "/getApp/:appointmentId",
+  authenticate,
+  async (req, res) => {
+    try {
+      const appointment = await AppointmentModel.find({
+        _id: req.params.appointmentId,
+      });
+      res.status(200).json({
+        message: "Particular Appointments Details",
+        appointment: appointment,
+      });
+    } catch (error) {
+      res
+        .status(501)
+        .send({ msg: "Error in Getting All Appointments By a Patient", e });
+    }
   }
-});
+);
 
 // Create a new appointment By Selecting a Doctor by User
-appointmentRouter.post("/create/:doctorId", async (req, res) => {
+appointmentRouter.post("/create/:doctorId", authenticate, async (req, res) => {
   let doctorId = req.params.doctorId;
   let patientId = req.body.userID;
   let patientEmail = req.body.email;
-
-  let docName = await DoctorModel.findOne({ _id: doctorId });
-  let patientName = await UserModel.findOne({ _id: patientId });
-
-  let docFirstName = docName.doctorName;
-  let patientFirstName = patientName.first_name;
-  console.log(
-    "Appointment Create Console: ",
-    docFirstName,
-    patientFirstName,
-    patientEmail
-  );
-  let { ageOfPatient, gender, address, problemDescription, appointmentDate } =
-    req.body;
   try {
+    let docName = await DoctorModel.findOne({ _id: doctorId });
+    let patientName = await UserModel.findOne({ _id: patientId });
+    if (!docName) {
+      return res.status(404).send({ msg: `Doctor donot exists` });
+    }
+    if(!patientName){
+      return res.status(404).send({ msg: `Patient donot exists` });
+    }
+    let docFirstName = docName.doctorName;
+    let patientFirstName = patientName.first_name;
+    console.log(
+      "Appointment Create Console: ",
+      docFirstName,
+      patientFirstName,
+      patientEmail
+    );
+    let { ageOfPatient, gender, address, problemDescription, appointmentDate } =
+      req.body;
     if (!docName.isAvailable) {
       return res.send({ msg: `${docFirstName} is not available for today` });
     }
@@ -144,50 +153,60 @@ appointmentRouter.post("/create/:doctorId", async (req, res) => {
 });
 
 // Cancel Appointment by user/Patient
-appointmentRouter.delete("/cancel/:appointmentId", async (req, res) => {
-  let id = req.body.userID;
-  try {
-    let appointment = await AppointmentModel.findOne({
-      patientId: id,
-      _id: req.params.appointmentId,
-    });
-    // console.log(appointment);
-    if (!appointment) {
-      return res.status(404).json({ message: "Appointment not found" });
+appointmentRouter.delete(
+  "/cancel/:appointmentId",
+  authenticate,
+  async (req, res) => {
+    let id = req.body.userID;
+    try {
+      let appointment = await AppointmentModel.findOne({
+        patientId: id,
+        _id: req.params.appointmentId,
+      });
+      // console.log(appointment);
+      if (!appointment) {
+        return res.status(404).json({ message: "Appointment not found" });
+      }
+      await AppointmentModel.findByIdAndDelete({
+        _id: req.params.appointmentId,
+      });
+      res.status(200).json({
+        message: "Appointment has been Cancelled By Patient successfully",
+      });
+    } catch (error) {
+      res.send({ msg: "Error in Deleting the Appointment By Patient", error });
     }
-    await AppointmentModel.findByIdAndDelete({ _id: req.params.appointmentId });
-    res.status(200).json({
-      message: "Appointment has been Cancelled By Patient successfully",
-    });
-  } catch (error) {
-    res.send({ msg: "Error in Deleting the Appointment By Patient", error });
   }
-});
+);
 
 // Reschedule a appointment by Patient
-appointmentRouter.patch("/reschedule/:appointmentId", async (req, res) => {
-  const userId = req.body.userID;
-  const payload = req.body;
-  try {
-    // Find the appointment by appointmentId and patientId
-    let appointment = await AppointmentModel.findOne({
-      patientId: userId,
-      _id: req.params.appointmentId,
-    });
-    // console.log(appointment);
-    if (!appointment) {
-      return res.status(404).json({ message: "Appointment not found" });
+appointmentRouter.patch(
+  "/reschedule/:appointmentId",
+  authenticate,
+  async (req, res) => {
+    const userId = req.body.userID;
+    const payload = req.body;
+    try {
+      // Find the appointment by appointmentId and patientId
+      let appointment = await AppointmentModel.findOne({
+        patientId: userId,
+        _id: req.params.appointmentId,
+      });
+      // console.log(appointment);
+      if (!appointment) {
+        return res.status(404).json({ message: "Appointment not found" });
+      }
+      await AppointmentModel.findByIdAndUpdate(
+        { _id: req.params.appointmentId },
+        payload
+      );
+      res.status(200).json({ message: "Appointment updated successfully" });
+    } catch (error) {
+      res.send({ msg: error.message });
+      console.log("error");
     }
-    await AppointmentModel.findByIdAndUpdate(
-      { _id: req.params.appointmentId },
-      payload
-    );
-    res.status(200).json({ message: "Appointment updated successfully" });
-  } catch (error) {
-    res.send({ msg: error.message });
-    console.log("error");
   }
-});
+);
 
 //!! ADMIN SIDE OPERATIONS------------------------------>
 //  Get All Appointments
