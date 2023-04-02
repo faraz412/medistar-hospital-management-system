@@ -32,7 +32,7 @@ userRouter.post("/emailVerify", async (req, res) => {
   const mailOptions = {
     from: "forsmmpanel@gmail.com",
     to: email,
-    subject: "Email Verification",
+    subject: "Here is your OTP for Medistar Login",
     text: otp,
   };
 

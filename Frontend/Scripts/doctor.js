@@ -64,6 +64,7 @@ function renderdata(arr) {
                         <h4>Department: ${depObj[elem.departmentId]}</h4>
                         <p>Experience: ${elem.experience}</p>
                         <h4>Qualification: ${elem.qualifications}</h4>
+                        <p style="color:white">${elem._id}<p>
                         <p>Rs.1,000 Consultation Fee</p>
                         <p style=${elem.status?"color:green":"color:red"}>${elem.status?"Available":"Currently Unavailable"}</p>
                     </div>
@@ -74,18 +75,17 @@ function renderdata(arr) {
                             <div>
                                 <label>Select Date:</label>
                                 <select required="true" name="date">
-                                    <option value="1">04-Apr-23</option>
-                                    <option value="2">05-Apr-23</option>
-                                    <option value="3">06-Apr-23</option>
+                                    <option value="APRIL_04">04-Apr-23</option>
+                                    <option value="APRIL_05">05-Apr-23</option>
+                                    <option value="APRIL_06">06-Apr-23</option>
                                 </select>
                                 </div>
                                 <div>
                                 <label>Select Slot:</label>
                                 <select required="true" name="slot">
-                                    <option value="11-12">11AM to 12PM</option>
                                     <option value="2-3">2PM to 3PM</option>
                                     <option value="4-5">4PM to 5PM</option>
-                                    <option value="6-7">6PM to 7PM</option>
+                                    <option value="7-8">6PM to 7PM</option>
                                 </select>
                             </div>
                             <input type="submit" value="Book Appointment Now"/>
@@ -108,6 +108,7 @@ function renderdata(arr) {
             let dept=e.path[3].children[0].children[1].children[1].innerText;
             let exp=e.path[3].children[0].children[1].children[2].innerText;
             let qual=e.path[3].children[0].children[1].children[3].innerText;
+            let docID=e.path[3].children[0].children[1].children[4].innerText;
             let formObj={
                 "date":form.date.value,
                 "slot":form.slot.value
@@ -118,6 +119,7 @@ function renderdata(arr) {
                 dept,
                 exp,
                 qual,
+                docID
             };
             console.log(docObj);
             swal("", `Confirm Booking?`, "info").then(function() {
