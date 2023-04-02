@@ -1,14 +1,12 @@
-<div align="center">
-
-![image](https://github.com/faraz412/cozy-passenger-4798/blob/main/Frontend/Files/MEDSTAR.png?raw=true)
+<div align="center"  width="55" height="55">
+  <img src="https://github.com/faraz412/cozy-passenger-4798/blob/main/Frontend/Files/MEDSTAR.png?raw=true" alt="html" width="120" height="120"/>
 </div>
 
 Medistar Hospital Management System is a web application built using Nodejs,Expressjs,Mongoose,Redis and MongoDB. The system is designed to automate the management of hospital appointments, including the handling of patient records, medical billing, appointment scheduling, and other administrative tasks.
 
 The system allows users to create, read, update, and delete records of patients, doctors, and medical procedures. Patients can schedule appointments with doctors, and doctors can view their schedule and patient records. The system also includes a billing module that generates bills for medical procedures and tracks payments.
 
-<hr>
-<h3 align="center">Tech Stack:</h3>
+## Tech Stacks
 <p align = "center">
 <img src="https://github.com/PrinceCorwin/Useful-tech-icons/blob/main/images/HTML.png" alt="html" width="55" height="55"/>
 <img src="https://user-images.githubusercontent.com/25181517/183898674-75a4a1b1-f960-4ea9-abcb-637170a00a75.png" alt="CSS" width="50" height="55"/>
@@ -19,6 +17,7 @@ The system allows users to create, read, update, and delete records of patients,
  <img src="https://raw.githubusercontent.com/PrinceCorwin/Useful-tech-icons/main/images/mongodb-leaf.png" alt="mongo" width="50" height="50"/> 
 <img src="https://user-images.githubusercontent.com/25181517/182884894-d3fa6ee0-f2b4-4960-9961-64740f533f2a.png" alt="redis" width="50" height="50"/>
 <img src="https://user-images.githubusercontent.com/25181517/121401671-49102800-c959-11eb-9f6f-74d49a5e1774.png" alt="npm" width="50" height="50"/>
+  
 </p>
 <hr>
 
@@ -27,21 +26,65 @@ The system allows users to create, read, update, and delete records of patients,
 -  APIValidation
 -  Responsive
 -  Cross Platform
+-  Signup/signin/Logout
+-  Appointment Booking 
+-  Appointment Cancelation
+-  Admin can perform all crud operations
 
-## To run this project
+## Run Locally
+### Clone this Project
 
-In the project directory run the follwing command:
-it will install the npm packages .
+```
+https://github.com/faraz412/cozy-passenger-4798.git
+```
 
-### `npm install` 
+### Install npm Packages
 
-Runs the project in the development mode.\
-Open [http://localhost:8080](http://localhost:8080) to view it in your browser.
+```javascript
+npm i --global
+```
 
-### `npm run server `
+### Go to Backend Folder
+```javascript
+cd backend
+```
+
+### Run Server
+```javascript
+npx nodemon index.js
+```
+### Runs the project in the development mode
+
+[http://localhost:8080](http://localhost:8080)
+
+
+### Environment Variables Required
+`mongoURL`
+
+`key`
+
+`PORT`
+
+`Redis Cloud Password + Host + Port`
+
+`Nodemailer Password`
+
+## NPM Packages
+<p align = "center">
+<img src="https://repository-images.githubusercontent.com/139898859/9617c480-81c2-11ea-94fc-322231ead1f0" alt="bcrypt.png" width="70" height="50"/>
+<img src="https://github.com/faraz412/cozy-passenger-4798/blob/main/Frontend/Files/cors.png?raw=true" alt="cors" width="70" height="50"/>
+<img src="https://github.com/faraz412/cozy-passenger-4798/blob/main/Frontend/Files/download.png?raw=true" alt="dotenv" width="50" height="50"/>
+<img src="https://github.com/faraz412/cozy-passenger-4798/blob/main/Frontend/Files/JWT.png?raw=true" alt="jwt" width="50" height="50"/>
+<img src="https://4008838.fs1.hubspotusercontent-na1.net/hubfs/4008838/mogoose-logo.png" alt="mongoose.png" width="70" height="70"/>     
+<img src="https://i0.wp.com/community.nodemailer.com/wp-content/uploads/2015/10/n2-2.png?fit=422%2C360&ssl=1" alt="nodemailer" width="50" height="50"/>
+<img src="https://user-images.githubusercontent.com/13700/35731649-652807e8-080e-11e8-88fd-1b2f6d553b2d.png" alt="nodemon.png" width="50" height="50"/>
+<img src="https://www.npmjs.com/npm-avatar/eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJhdmF0YXJVUkwiOiJodHRwczovL3MuZ3JhdmF0YXIuY29tL2F2YXRhci8wNmFkMDUxNjc0NDA0NTVjOTQzYzE4NWIwNmM4NjBmMD9zaXplPTEwMCZkZWZhdWx0PXJldHJvIn0.fJ4Me0BC-QzMrHKVqZzMx9CzgTcYb06jEt9nk9NxC2c" alt="otpgen.png" width="50" height="50"/>
+<img src="https://user-images.githubusercontent.com/25181517/182884894-d3fa6ee0-f2b4-4960-9961-64740f533f2a.png" alt="redis" width="50" height="50"/>
+<img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSKZRJJRPM1V6XKXBLn2fnsy5VwmLW1uO9ixCfCYiZRwWeLKe2ukB17uzxRRyhZElgzn_E&usqp=CAU" alt="twilio" width="70" height="50"/>
+</p>
+
 
 ## Frontend Part
-
 - Home page
 - Signup/Login
 - Logout
@@ -57,37 +100,47 @@ Open [http://localhost:8080](http://localhost:8080) to view it in your browser.
 - Nodemailer - sending Emails
 - Blacklisting of tokens
 
-## Database Used 
-  `MongoDB`
-
-## NPM packages used in the project
-
-    {"bcrypt": "^5.1.0",
-     "cors": "^2.8.5",
-     "dotenv": "^16.0.3",
-     "express": "^4.18.2",
-     "jsonwebtoken": "^9.0.0",
-     "mongoose": "^7.0.3",
-     "nodemailer": "^6.9.1",
-     "nodemon": "^2.0.22",
-     "otp-generator": "^4.0.1",
-     "redis": "^4.6.5",
-     "bcrypt": "^5.1.0",
-     "redis": "^4.6.5"}
-     
+    
 ## API Endpoints
-
-   ###    User side
- - POST  http//:localhost:8080/user/signup
- - POST  http//:localhost:8080/user/signin
- 
-   ### Appointment Booking  
- - GET http//:localhost:8080/appointment/allApp/
- - POST http//:localhost:8080/appointment/create/:doctorId
- - DELETE http//:localhost:8080/appointment/cancel/appointmentId
- - PATCH http//:localhost:8080/appointment/reschedule/:appointmentId
-
-
+   #### Welcome
+```javascript
+GET  /api/
+```
+  #### Email Verification
+```javascript
+POST  /api/user/emailVerify
+```
+  #### User Signup
+```javascript
+POST  /api/user/signup
+```
+  #### User Signin
+```javascript
+POST  /api/user/signin
+```
+  #### User Logout
+```javascript
+POST  /api/user/logout
+```
+  #### Doctor 
+```javascript
+GET /api/doctor/allDoctor
+GET /api/doctor/search?
+GET /api/doctor//allDoctor/:id
+GET /api/doctor/docPending
+DELETE /api/doctor/removeDoctor/:id
+POST /api/doctor/addDoctor
+PATCH /api/doctor/updateDoctorStatus/:id
+PATCH /api/doctor//isAvailable/:doctorId
+```
+  #### Appointment Booking  
+```javascript
+GET /api/appointment/allApp/
+POST /api/appointment/create/:doctorId
+DELETE /api/appointment/cancel/appointmentId
+PATCH /api/appointment/reschedule/:appointmentId
+```
+<!-- 
  ### 
 `USERS DATA...`
 
@@ -123,19 +176,27 @@ Open [http://localhost:8080](http://localhost:8080) to view it in your browser.
     "appointmentDate":"30-03-2023",
     "createdAt":,
     "updatedAt":,
-    "paymentStatus":false}
-    
- ## Features
-  - Signup/signin/Logout
-  - Appointment Booking 
-  - Appointment Cancelation
-  - Admin can perform all crud operations
-  
- ## Project Highlights   
+    "paymentStatus":false} -->
+     
+ ## Project Highlights  
+ 
 ![image](https://user-images.githubusercontent.com/109690823/229313097-98ac03fb-69b0-4833-849c-48c4a1b9d38d.png)
 ![image](https://user-images.githubusercontent.com/109690823/229355448-be996d1e-8545-44e1-b1ba-dc3d62d0ac9a.png)
 ![image](https://user-images.githubusercontent.com/109690823/229355506-3ae1da89-9434-4400-9ab2-b8b9f86e67aa.png)
 ![image](https://user-images.githubusercontent.com/109690823/229355596-5bfd0bf9-9147-47fb-bb42-b6e04ac4208b.png)
+
+## Demo
+```
+
+```
+
+## Authors
+
+- [@faraz412](https://github.com/faraz412)
+- [@deepakChourasiya-aj](https://github.com/deepakChourasiya-aj)
+- [@abhishek1494k](https://github.com/abhishek1494k)
+- [@Atul3007](https://github.com/Atul3007)
+- [@prernadave](https://github.com/prernadave)
 
 
 
