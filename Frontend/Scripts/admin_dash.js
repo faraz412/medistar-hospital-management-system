@@ -13,6 +13,12 @@ let depObj={
     10:"Cardiology"
 }
 
+if(!localStorage.getItem("admin")){
+    swal("", "Please Login!", "warning").then(function() {
+        window.location.href="/Frontend/Pages/Admin/admin.login.html";
+    });
+}
+
 //Theme Toggler
 let sidemenu=document.querySelector("aside");
 let themetoggler=document.querySelector(".theme-toggler")

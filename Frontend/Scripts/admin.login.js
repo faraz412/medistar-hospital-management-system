@@ -27,6 +27,7 @@ async function auth(obj){
         if(res.ok){
             let data=await res.json();
             if(data.message=="Login Successful"){
+                localStorage.setItem("admin","admin");
                 swal("", "Welcome Admin!", "success").then(function() {
                     window.location = "/Frontend/Pages/Admin/dashboard.html";
                 });

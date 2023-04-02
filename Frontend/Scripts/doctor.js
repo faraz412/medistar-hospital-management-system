@@ -101,6 +101,11 @@ function renderdata(arr) {
     let forms=document.querySelectorAll(".select-app>form");
     for(let form of forms){
         form.addEventListener("submit",(e)=>{
+            if(!localStorage.getItem("admin")){
+                swal("", "Please Login!", "warning").then(function() {
+                    window.location.href="/Frontend/Pages/Admin/admin.login.html";
+                });
+            }
             console.log(e);
             e.preventDefault();
             let img=e.path[3].children[0].children[0].children[0].currentSrc;
