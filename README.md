@@ -1,6 +1,6 @@
 <div align="center">
 
-![image](https://user-images.githubusercontent.com/109690823/229355347-8d6e3d56-3c98-4abc-a973-225fd70bf3a2.png)
+![image](https://github.com/faraz412/cozy-passenger-4798/blob/main/Frontend/Files/MEDSTAR.png?raw=true)
 </div>
 # Medistar Hospital
 
