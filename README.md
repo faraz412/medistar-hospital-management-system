@@ -55,6 +55,16 @@ Open [http://localhost:8080](http://localhost:8080) to view it in your browser.
      "redis": "^4.6.5",
      "bcrypt": "^5.1.0",
      "redis": "^4.6.5",
+     
+# API Endpoints
+   ### User side
+ - POST  http//:localhost:8080/user/sighup
+ - POST  http//:localhost:8080/user/sighin
+   ### Appointment Booking  
+ - GET http//:localhost:8080/appointment/allApp/
+ - POST http//:localhost:8080/appointment/create/:doctorId
+ - DELETE http//:localhost:8080/appointment/cancel/appointmentId
+ - PATCH http//:localhost:8080/appointment/reschedule/:appointmentId
 
 
 
