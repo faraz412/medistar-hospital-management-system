@@ -12,7 +12,18 @@
     <link rel="stylesheet" href="../Styles/land.css"/>
     <link rel="stylesheet" href="/Frontend/css/all.css">
     <link rel="stylesheet" href="https://unpkg.com/aos@next/dist/aos.css" />
+    <link rel="stylesheet" href="https://unpkg.com/aos@next/dist/aos.css" />
     <title>Find doctor!</title>
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700;800&display=swap');
+        *{
+            box-sizing: border-box;
+        }
+        body{
+            font-family: poppins, sans-serif;
+            font-size: 0.9rem;
+        }
+    </style>
 </head>
 
 <body>
@@ -27,17 +38,21 @@
             <h1 style="text-align: center;" class="card-title">YOUR HOME FOR HEALTH</h1>
             <div style="margin: 50px;text-align: center;">
                 <h3 class="card-text">Find and Book</h3>
-                <div class="input-group mb-3" style="width: 700px;margin: auto;margin-top: 3%;">
-                    <button style="background-color: white;color: black;"
-                        class="btn btn-outline-secondary dropdown-toggle" type="button" data-bs-toggle="dropdown"
-                        aria-expanded="false">Departments</button>
-                    <ul class="dropdown-menu">
-                        <li><a class="dropdown-item" href="#">Dermatologist</a></li>
-                        <li><a class="dropdown-item" href="#">Pediatrician</a></li>
-                        <li><a class="dropdown-item" href="#">Gynecologist</a></li>
-                    </ul>
-                    <input type="text" class="form-control" aria-label="Text input with dropdown button"
-                        placeholder="Search doctors">
+                <div class="input-group mb-3" style="width: 30%;margin: auto;margin-top: 3%;">
+                    <p style="width:50%; padding-top:0.7rem">Select Department: </p>
+                    <select id="select-dept" style="width:50%; text-align:center">
+                        <option value="">All Departments</option>
+                        <option value="1">Neurology</option>
+                        <option value="2">Dermatology</option>
+                        <option value="3">Dental</option>
+                        <option value="4">Ayurveda</option>
+                        <option value="5">Gastroenterology</option>
+                        <option value="6">Gynaecology</option>
+                        <option value="7">ENT</option>
+                        <option value="8">General Physician</option>
+                        <option value="9">Orthopedic</option>
+                        <option value="10">Cardiology</option>
+                    </select>
                 </div>
             </div>
         </div>
@@ -61,7 +76,7 @@
                 <img src="../Files/security_1.4f45ac92aba979dac915f864df632d90.png" alt="" style="width: 70%;">
             </div>
         </div>
-        <div style="display: flex;justify-content: space-evenly; margin-top: 3%;margin-bottom: 3%;">
+        <div data-aos="fade-up" data-aos-duration="800"  style="display: flex;justify-content: space-evenly; margin-top: 3%;margin-bottom: 3%;">
             <div>
                 <img src="../Files/security_4.216e25d35038f0e7f6d8a514727fa67a.png" alt="">
                 <p style="text-align: center;">256 bit <br> encryption</p>
@@ -83,7 +98,7 @@
 
 
 
-    <div style="margin-top: 3%;padding: auto; ">
+    <div data-aos="fade-up" data-aos-duration="800"  style="margin-top: 3%;padding: auto; ">
         <h1 style="text-align: center;">Read top articles from health experts</h1>
         <div class="card-group">
             <div class="card" style="margin: 3rem;">
@@ -111,12 +126,12 @@
                 </div>
             </div>
         </div>
-        <button type="button" class="btn btn-info" style="margin-left: 40%;margin-bottom: 4%;color: white;">More
+        <button type="button" class="btn btn-info" style="margin-left: 45%; margin-bottom: 4%;color: white;">More
             Articles</button>
     </div>
 
 
-    <div style="display: flex;justify-content: space-between;background-color: rgb(235, 233, 233)">
+    <div data-aos="fade-right" data-aos-duration="800"  style="display: flex;justify-content: space-between;background-color: rgb(235, 233, 233)">
         <div style="margin-top: 6%;margin-left: 4%;">
             <h1 style="color: gray;">Get all your medicines</h1>
             <h1 style="color: black;"> Everytime. Ontime.</h1>
@@ -138,13 +153,16 @@
         <div id="carouselExampleControls" class="carousel slide" data-bs-ride="carousel">
             <div class="carousel-inner">
               <div class="carousel-item active">
-                <p>Lorem, ipsum dolor sit amet consectetur adipisicing elit. <br> Nisi, animi. Dolore error temporibus eum, corrupti atque deserunt <br> magni quia quos veniam maiores vero id. Rem repellat non porro nesciunt et!</p>
+                <p>Very helpful. Far easier than doing same things on computer. Allows quick and easy search with speedy booking. 
+                    <br>Even maintains history of doctors visited.</p>
             </div>
               <div class="carousel-item">
-                <p>Lorem, ipsum dolor sit amet consectetur adipisicing elit. <br> Nisi, animi. Dolore error temporibus eum, corrupti atque deserunt <br> magni quia quos veniam maiores vero id. Rem repellat non porro nesciunt et!</p>
+                <p>Very easy to book,maintain history. Hassle free from older versions of booking appointment via telephone.
+                    <br> Thanks for making it simple.</p>
               </div>
               <div class="carousel-item">
-                <p>Lorem, ipsum dolor sit amet consectetur adipisicing elit. <br> Nisi, animi. Dolore error temporibus eum, corrupti atque deserunt <br> magni quia quos veniam maiores vero id. Rem repellat non porro nesciunt et!</p>
+                <p>Very helpful. Far easier than doing same things on computer. Allows quick and easy search with speedy booking.
+                    <br> Even maintains history of doctors visited.</p>
             </div>
             </div>
             <button class="carousel-control-prev" type="button" data-bs-target="#carouselExampleControls" data-bs-slide="prev">
@@ -163,7 +181,7 @@
         </div>
     </div>
   
-    <div style="display: flex; justify-content: space-around;margin-top: 5%;">
+    <div data-aos="fade-left" data-aos-duration="800"  style="display: flex; justify-content: space-around;margin-top: 5%;">
         <div>
             <img src="../Files/record.bfc5241f9b15340a32c98eb360d1005a.svg" alt="">
         </div>
@@ -180,7 +198,7 @@
         </div>
     </div>
 
-    <div style="background-color: rgb(235, 233, 233);display: flex;justify-content: space-evenly;">
+    <div data-aos="fade-left" data-aos-duration="800"  style="background-color: rgb(235, 233, 233);display: flex;justify-content: space-evenly;">
         <div style="margin-top: 5%; width: 100%;margin-left: 5%;" >
             <h1 style="color: grey;">Leading healthcare provider</h1>
             <h1>Trust us for businesses</h1>
@@ -214,7 +232,7 @@
     </script>
 
 </body>
-
+<script type="module" src="../Scripts/doctor.filter.js"></script>
 
 <script type="module" src="../Scripts/navbar.js"></script>
 <script type="module" src="../Scripts/footer.js"></script>

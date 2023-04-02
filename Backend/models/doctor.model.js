@@ -1,5 +1,10 @@
 const mongoose = require("mongoose");
 
+const timeSlot = {
+  type: [String],
+  default: undefined,
+};
+
 const doctorSchema = mongoose.Schema({
   doctorName: {
     type: String,
@@ -19,7 +24,7 @@ const doctorSchema = mongoose.Schema({
     required: true,
     unique: true,
   },
-  city:{
+  city: {
     type: String,
     required: true,
   },
@@ -27,13 +32,22 @@ const doctorSchema = mongoose.Schema({
     type: Number,
     required: true,
   },
-  status:{
-    type:Boolean,
-    default:false
+  status: {
+    type: Boolean,
+    default: false,
   },
-  image:{
-    type:String
-  }
+  image: {
+    type: String,
+  },
+  isAvailable: {
+    type: Boolean,
+    default: true,
+  },
+  APRIL_04: timeSlot,
+  APRIL_05: timeSlot,
+  APRIL_06: timeSlot,
+},{
+  versionKey:false
 });
 
 const DoctorModel = mongoose.model("Doctors", doctorSchema);

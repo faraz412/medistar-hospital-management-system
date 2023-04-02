@@ -58,7 +58,7 @@ body{
     width: 96%;
     margin: 0 auto;
     gap: 1.8rem;
-    grid-template-columns: 18rem auto;
+    grid-template-columns: auto;
 }
 a{
     color: var(--color-dark);
@@ -112,6 +112,8 @@ b{
 }  
 aside{
     height: 100vh;
+    position: fixed;
+    z-index:1000;
 }
 aside .top{
     display: flex;
@@ -229,6 +231,7 @@ aside .sidebar a:hover span{
 /* ----main---- */
 main{
     margin-top: 1.4rem;
+    padding-left:20rem;
     /* border:1px solid red; */
 }
 /* status-bar*/
@@ -325,9 +328,6 @@ main{
     padding:0.5rem;
     width:30%;
 }
-/* .doctor-input input[type="submit"]{
-
-} */
 .doc-search{
     display: flex;
     justify-content: center;
@@ -382,9 +382,52 @@ main{
     border-radius: 5px;
     background-color: #41f1b6;
 }
+.doc-data tr,.app-data tr,
+.patient-data tr{
+    border:1px solid grey;
+}
 .doc-data th,.doc-data td,
 .patient-data th,.patient-data td,
 .app-data th, .app-data td{
-    width:15%;
+    padding-top:0.5rem;
+    padding-bottom:0.5rem;
+    width:10%;
     /* border:1px solid blue; */
+}
+.pfp-td{
+    padding-left:2.5rem;
+}
+.render-pfp{
+    width:110px;
+    height:110px;
+    border-radius: 50%;
+}
+#filter-approval{
+    /* border:1px solid blue; */
+    display:flex;
+    align-items: center;
+    justify-content: space-between;
+    width:30%;
+}
+#filter-approval>button{
+    padding:5px 10px;
+    background-color: rgb(238, 71, 71);
+    border-radius: 5px;
+    color:white;
+}
+#filter-approval>p{
+    padding:5px 10px;
+    background-color: #0b9c6c;
+    border-radius: 5px;
+    color:white;
+}
+#patient-sf{
+    width:30%;
+}
+#patient-sf-left{
+    border:1px solid lightgray;
+    width:100%;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
 }

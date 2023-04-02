@@ -10,6 +10,7 @@ let form =document.querySelector("form");
             password:form.exampleFormControlInput5.value,
         }
       try {
+
         let res=await fetch(baseURL+"user/emailVerify",{
             method:"POST",
             headers:{
@@ -18,10 +19,11 @@ let form =document.querySelector("form");
             body:JSON.stringify(obj)
         })
         let data=await res.json();
-        console.log(data);
+       // console.log(data.otp);
+        
         localStorage.setItem("userDetails",JSON.stringify(obj));
-        localStorage.setItem("otp",data);
-
+        localStorage.setItem("otp",data.otp);
+        window.location.href="./otp.html"
        // alert("Successfully registered");
       } catch (error) {
         console.log(error);

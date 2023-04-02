@@ -7,7 +7,7 @@ form.addEventListener("submit",async (e)=>{
         password:form.exampleFormControlInput2.value
     }
     try {
-        let res=await fetch(baseURL+"/user/signin",{
+        let res=await fetch(baseURL+"user/signin",{
             method:"POST",
             headers:{
                 'Content-type':'application/json'
