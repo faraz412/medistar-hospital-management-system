@@ -1,4 +1,4 @@
-import baseURL from './baseURL';
+import baseURL from './baseURL.js';
 let form =document.querySelector("form");
     form.addEventListener("submit",async (e)=>{
         e.preventDefault();
@@ -18,7 +18,7 @@ let form =document.querySelector("form");
             body:JSON.stringify(obj)
         })
         let data=await res.json();
-        //console.log(data);
+        console.log(data);
         localStorage.setItem("userDetails",JSON.stringify(obj));
         localStorage.setItem("otp",data);
 

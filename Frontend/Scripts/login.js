@@ -1,4 +1,4 @@
-import baseURL from './baseURL';
+import baseURL from './baseURL.js';
     let form =document.querySelector("form");
 form.addEventListener("submit",async (e)=>{
     e.preventDefault();
