@@ -179,6 +179,6 @@ module.exports = {
 //     "city":"Mumbai",
 //     "departmentId":1,
 //     "status":true,
-        // isAvailable:true;
+//     "isAvailable":true;
 //     "image":"https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSJO1Bmu2stkBmmOJXmyHN5G7UHmeA4xr5z0whR9JZF&s"
 // }

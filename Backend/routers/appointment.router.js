@@ -70,6 +70,7 @@ appointmentRouter.post("/create/:doctorId", authenticate, async (req, res) => {
     );
     let { ageOfPatient, gender, address, problemDescription, appointmentDate } =
       req.body;
+      console.log(req.body);
     if (!docName.isAvailable) {
       return res.send({ msg: `${docFirstName} is not available for today` });
     }
