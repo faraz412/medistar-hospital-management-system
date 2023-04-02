@@ -70,6 +70,21 @@ Open [http://localhost:8080](http://localhost:8080) to view it in your browser.
 
 
 
+ ### 
+`DOCTORS DATA...`
+
+    {"doctorName":"Abhishek Jaiswal",
+    "email":"abhisek@gmail.com",
+    "qualifications":"MBBS from AIMS Delhi",
+    "experience":"14 years of experience",
+    "phoneNo":"7011144555",
+    "city":"Mumbai",
+    "departmentId":1,
+    "status":true,
+    "isAvailable":true;
+    "image":"https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSJO1Bmu2stkBmmOJXmyHN5G7UHmeA4xr5z0whR9JZF&s" }
+
+
 
 ![image](https://user-images.githubusercontent.com/109690823/229313097-98ac03fb-69b0-4833-849c-48c4a1b9d38d.png)
 
