@@ -26,12 +26,40 @@ The system allows users to create, read, update, and delete records of patients,
 -  Responsive
 -  Cross Platform
 
-## To run this project
+## Run Locally
+### Clone this Project
 
-In the project directory run the follwing command:
-it will install the npm packages .
+```
+https://github.com/faraz412/cozy-passenger-4798.git
+```
 
-### `npm install` 
+### Install npm Packages
+
+```
+npm i --global
+```
+
+### Go to Backend Folder
+```
+cd backend
+```
+
+### Run Server
+``` 
+npx nodemon index.js
+```
+### Environment Variables
+`mongoURL`
+
+`key`
+
+`PORT`
+
+`Redis Cloud Password + Host + Port`
+
+`Nodemailer Password`
+
+
 
 Runs the project in the development mode.\
 Open [http://localhost:8080](http://localhost:8080) to view it in your browser.
