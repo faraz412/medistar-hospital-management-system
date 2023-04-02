@@ -101,15 +101,30 @@ npx nodemon index.js
      "bcrypt": "^5.1.0",
      "redis": "^4.6.5"
      
-### API Endpoints
-
+## API Endpoints
+   #### Welcome
 ```javascript
-POST  -http//:localhost:8080/user/signup
+GET  /api/
+```
+  #### Email Verification
+```javascript
+POST  /api/user/emailVerify
+```
+  #### User Signup
+```javascript
+POST  /api/user/signup
+```
+  #### User Signin
+```javascript
+POST  /api/user/signin
+```
+  #### User Logout
+```javascript
+POST  /api/user/logout
 ```
 
-   ###    User side
- - POST  http//:localhost:8080/user/signup
- - POST  http//:localhost:8080/user/signin
+
+
  
   ### Appointment Booking  
  - GET http//:localhost:8080/appointment/allApp/
