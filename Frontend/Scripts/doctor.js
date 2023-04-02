@@ -1,98 +1,109 @@
+let docsCont=document.getElementById("doctors-cont");
+let depObj={
+    1:"Neurology",
+    2:"Dermatology",
+    3:"Dental",
+    4:"Ayurveda",
+    5:"Gastroenterology",
+    6:"Gynaecology",
+    7:"ENT",
+    8:"General Physician",
+    9:"Orthopedic",
+    10:"Cardiology"
+}
+
+window.addEventListener("load",(e)=>{
+    getdata();
+})
+
 async function getdata() {
     try {
-        console.log("callled");
         const res = await fetch("http://localhost:8080/doctor/alldoctor");
         let data = await res.json();
         data = data.doctor;
-        console.log(data);
+       // console.log(data);
         renderdata(data);
     } catch (error) {
         console.log(error.message);
     }
 }
-getdata();
 
-function renderdata(data) {
-    let container = document.getElementById("cont");
-
-    let arr = data.map((ele) => {
+function renderdata(arr) {
+    docsCont.innerHTML="";
+    docsCont.innerHTML=arr.map((elem)=>{
         return `
-
-        <div class=" mainbox">
-        <div class="doc-image-info">
-        <div class="image-sec">
-            <img src="${ele.image}"
-                alt="${ele.doctorName}">
-            <span class="badge">
-                <img src="https://www.practostatic.com/web-assets/images/prime_badge.8f4ca26c7f36.svg">
-            </span>
-            <button class="u-t-capitalize u-bold view-profile">
-                View Profile
-            </button>
+        <div data-aos="zoom-in" data-aos-duration="800"  class=doc-card>
+            <div class="top-cont">
+                <div class="doc-profile">
+                    <div class="doc-img">
+                        <img alt="doc-pfp" src=${elem.image}/>
+                    </div>
+                    <div class="doc-desc">
+                        <h2>${elem.doctorName}</h2>
+                        <h4>Department: ${depObj[elem.departmentId]}</h4>
+                        <p>Experience: ${elem.experience}</p>
+                        <h5>Qualification: ${elem.qualifications}</h5>
+                        <p>Rs.1,000 Consultation Fee</p>
+                        <p style=${elem.status?"color:green":"color:red"}>${elem.status?"Available":"Currently Unavailable"}</p>
+                    </div>
+                </div>
+                <div class="doc-book">
+                    <div class="select-app">
+                        <form>
+                            <div>
+                                <label>Select Date:</label>
+                                <select required="true" name="date">
+                                    <option value="1">04-Apr-23</option>
+                                    <option value="2">05-Apr-23</option>
+                                    <option value="3">06-Apr-23</option>
+                                </select>
+                                </div>
+                                <div>
+                                <label>Select Slot:</label>
+                                <select required="true" name="slot">
+                                    <option value="11-12">11AM to 12PM</option>
+                                    <option value="2-3">2PM to 3PM</option>
+                                    <option value="4-5">4PM to 5PM</option>
+                                    <option value="6-7">6PM to 7PM</option>
+                                </select>
+                            </div>
+                            <input type="submit" value="Book Appointment Now"/>
+                            <p style="color:green; margin-top:0.3rem; text-align:center">No Booking Fee<p>
+                        </form>
+                    </div>
+                </div>
+            </div>
         </div>
+        `
+    }).join("");
 
-        <div class="info">
-        <div>
-            <h2> ${ele.doctorName}</h2>
-        </div>
-        <div>
-            <h6> ${ele.qualifications}</h6>
-        </div>
-        <div>
-            <h5>${ele.experience}</h5>
-        </div>
-        <div>
-            <p>Contact: ${ele.phoneNo}</p>
-        </div>
-        <div>
-        <p>Medicare Hosital, ${ele.city}</p>
-        </div>
-    </div>
-</div>
-
-<div class="book-apt-sec">
-
-    <div class='avail'>
-        Available Today
-    </div>
-
-        <button class="btn">
-        Book Now
-    </button>
-
-    <div id="slot-cont" class="div-hide">
-        <div class="slot-container" id='good'>
-            <h2 class="slot-heading">Available Slots</h2>
-            <ul class="slot-list">
-            <li>Timing</li>
-            <li>2 PM </li>
-            <li>3 PM </li>
-            <li>4 PM </li>
-            </ul>
-        </div>
-
-    </div>
-
-    </div>
-        </div>
-        `;
-    });
-
-    console.log(arr.join(""));
-    container.innerHTML = arr.join("");
-
-     const buttons = document.getElementsByClassName('btn')
-    const slot = document.getElementById('slot-cont')
-    
-    
-    console.log(slot);
-    for(let button of buttons){
-        button.addEventListener('click', ()=>{
-            slot.classList.add('active')
-            console.log(slot, 'i am slot');
-            slot.classList.remove('div-hide')
-        //    console.log('hi');
+    let forms=document.querySelectorAll(".select-app>form");
+    for(let form of forms){
+        form.addEventListener("submit",(e)=>{
+            console.log(e);
+            e.preventDefault();
+            let img=e.path[3].children[0].children[0].children[0].currentSrc;
+            let name=e.path[3].children[0].children[1].children[0].innerText;
+            let dept=e.path[3].children[0].children[1].children[1].innerText;
+            let exp=e.path[3].children[0].children[1].children[2].innerText;
+            let qual=e.path[3].children[0].children[1].children[3].innerText;
+            let formObj={
+                "date":form.date.value,
+                "slot":form.slot.value
+            }
+            let docObj={
+                img,
+                name,
+                dept,
+                exp,
+                qual,
+            };
+            console.log(docObj);
+            swal("", `Confirm Booking?`, "info").then(function() {
+                localStorage.setItem("formObj",JSON.stringify(formObj));
+                localStorage.setItem("docObj",JSON.stringify(docObj));
+                window.location.href="/Frontend/Pages/patient_details.html";
+            });
         })
     }
-
 }

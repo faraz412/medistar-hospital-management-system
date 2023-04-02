@@ -1,3 +1,5 @@
+import baseURL from "./baseURL";
+
 let form =document.querySelector("form");
     form.addEventListener("submit",async (e)=>{
         e.preventDefault();
@@ -9,7 +11,7 @@ let form =document.querySelector("form");
             email:form.exampleFormControlInput3.value
         }
       try {
-        let res=await fetch("http://localhost:8080/user/signup",{
+        let res=await fetch(baseURL+"user/signup",{
             method:"POST",
             headers:{
                 'Content-type':'application/json'
