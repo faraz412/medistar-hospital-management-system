@@ -1,6 +1,7 @@
+<div align="center">
 
 ![image](https://user-images.githubusercontent.com/109690823/229355347-8d6e3d56-3c98-4abc-a973-225fd70bf3a2.png)
-
+</div>
 # Medistar Hospital
 
 Medistar Hospital Management System is a web application built using Node.js and MongoDB. The system is designed to automate the management of hospitals, including the handling of patient records, medical billing, appointment scheduling, and other administrative tasks.
