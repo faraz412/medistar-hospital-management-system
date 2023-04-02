@@ -7,16 +7,26 @@
 
     <!-- Bootstrap CSS -->
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
-
+    <link rel="stylesheet" href="/Frontend/Styles/land.css"/>
+    <link rel="stylesheet" href="/Frontend/css/all.css">
+    <link rel="stylesheet" href="/Frontend/Styles/patient.details.css">
+    <link rel="stylesheet" href="https://unpkg.com/aos@next/dist/aos.css" />
+    <script src="https://unpkg.com/sweetalert/dist/sweetalert.min.js"></script>
     <title>Patient_form</title>
   </head>
   <body>
+
+    <section id="navbar">
+      <!-- Navbar Imported -->
+  </section> 
     
-<div style="display: flex;justify-content: space-around;">
-    <div> Doctor's detail</div>
-    <div>
+<div id="main-cont">
+    <div id="doctors-container">
+        <!-- Fetch Data -->
+    </div>
+    <div data-aos="fade-left" data-aos-duration="800" id="payment-container">
         <div class="card">
-            <div class="card-body" >
+            <div class="card-body">
                 <div>
                     <h3>Patient Details</h3>
                 </div>
@@ -70,14 +80,27 @@
                     </label>
                   </div>
             </div>
-            <button  type="button" class="btn btn-info" style="color: white;">
+            <button  type="button" class="btn btn-info" style="color: white; width:80%; margin:auto">
                 Confirm your appointment</button>
-            <h6>* Updates will be sent to your e-mail</h6>
+            <h6 style=" width:80%; margin:1rem auto">* Updates will be sent to your e-mail</h6>
           </div>
-    </div>
+        </div>
     
 </div>
 
+
+<section id="footer">
+  <!-- Footer Imported -->
+</section>
+    <script type="module" src="/Frontend/Scripts/patient.details.js"></script>
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-MrcW6ZMFYlzcLA8Nl+NtUVF0sA7MsXsP1UyJoMp4YLEuNSfAP+JcXn/tWtIaxVXM" crossorigin="anonymous"></script>
+ 
+    <script src="https://unpkg.com/aos@next/dist/aos.js"></script>
+    <script>
+      AOS.init();
+    </script>
   </body>
+
+  <script type="module" src="/Frontend/Scripts/navbar.js"></script>
+<script type="module" src="/Frontend/Scripts/footer.js"></script>
 </html>

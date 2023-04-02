@@ -18,6 +18,9 @@ document.querySelector("#navbar").innerHTML = `
     </div>
 </div>
 `
+
+{/* <h5 style="color:#0b76c6">Welcome Faraz<span></span></h5> */}
+
 const logoBtn=document.getElementById("nav-logo");
 const book_app=document.getElementById("book-app");
 const find_doc=document.getElementById("find-doc");
@@ -29,14 +32,14 @@ logoBtn.addEventListener("click",(e)=>{
 
 book_app.addEventListener("click",()=>{
     window.location.href="/Frontend/Pages/book.appointment.html";
-    book_app.classList.add("nav-active");
-    find_doc.classList.remove("nav-active");
+    // book_app.classList.add("nav-active");
+    // find_doc.classList.remove("nav-active");
 })
 
 
 find_doc.addEventListener("click",()=>{
     window.location.href="/Frontend/Pages/doctors.page.html";
-    book_app.classList.remove("nav-active");
-    find_doc.classList.add("nav-active");
+    // book_app.classList.remove("nav-active");
+    // find_doc.classList.add("nav-active");
 })
 

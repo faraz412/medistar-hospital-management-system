@@ -46,7 +46,46 @@ appointmentRouter.get(
   }
 );
 
-// Create a new appointment By Selecting a Doctor by User
+// !! Check Slots
+appointmentRouter.get("/checkSlot/:doctorId", async (req, res) => {
+  let { date, slotTime } = req.body;
+  let doctorId = req.params.doctorId;
+  try {
+    let docName = await DoctorModel.findOne({ _id: doctorId });
+    if (!docName) {
+      return res.status(404).send({ msg: `Doctor donot exists` });
+    }
+    if (!docName.isAvailable) {
+      return res.send({
+        msg: `${docName.doctorName} is not available for today`,
+      });
+    }
+    await DoctorModel.findOne({ _id: doctorId })
+      .select(date)
+      .exec()
+      .then((result) => {
+        result.APRIL_04
+          ? res.send(checkSlot(result.APRIL_04, slotTime))
+          : result.APRIL_05
+          ? res.send(checkSlot(result.APRIL_05, slotTime))
+          : result.APRIL_06
+          ? res.send(checkSlot(result.APRIL_06, slotTime))
+          : res.send({
+              msg: "Selected Date Not Available, Please Select another Date",
+            });
+      })
+      .catch((error) => {
+        console.log(error);
+        res.send({
+          msg: "Selected Date Not Available, Please Select another Date",
+        });
+      });
+  } catch (error) {
+    res.send({ msg: "Error in Check Slot Router" });
+  }
+});
+
+// !! Appointment Book
 appointmentRouter.post("/create/:doctorId", authenticate, async (req, res) => {
   let doctorId = req.params.doctorId;
   let patientId = req.body.userID;
@@ -57,7 +96,7 @@ appointmentRouter.post("/create/:doctorId", authenticate, async (req, res) => {
     if (!docName) {
       return res.status(404).send({ msg: `Doctor donot exists` });
     }
-    if(!patientName){
+    if (!patientName) {
       return res.status(404).send({ msg: `Patient donot exists` });
     }
     let docFirstName = docName.doctorName;
@@ -144,6 +183,7 @@ appointmentRouter.post("/create/:doctorId", authenticate, async (req, res) => {
         console.log(createdAppointment);
         res.status(201).json({
           message: "Appointment has been created , Check Your Mail",
+          status: true,
         });
       }
     });
@@ -151,6 +191,29 @@ appointmentRouter.post("/create/:doctorId", authenticate, async (req, res) => {
     res.status(500).send({ msg: "Error in created appointment" });
     console.log(error);
   }
+});
+
+//!! Delete Slot
+appointmentRouter.post("/deleteSlot/:doctorId", async (req, res) => {
+  let { date, slotTime } = req.body;
+  let doctorId = req.params.doctorId;
+  await DoctorModel.findOne({ _id: doctorId })
+    .then((doc) => {
+      date === "APRIL_04"
+        ? doc.APRIL_04.pull(slotTime)
+        : date === "APRIL_05"
+        ? doc.APRIL_05.pull(slotTime)
+        : doc.APRIL_06.pull(slotTime);
+      return doc.save();
+    })
+    .then(() => {
+      console.log("Element removed from array");
+      res.send({ msg: "Slot removed from array" });
+    })
+    .catch((err) => {
+      console.error(err);
+      res.send({ msg: "Slot removed " });
+    });
 });
 
 // Cancel Appointment by user/Patient
@@ -274,6 +337,13 @@ appointmentRouter.patch("/approve/:appointmentId", async (req, res) => {
     res.send({ msg: "Error in Deleting the Appointment By Patient", error });
   }
 });
+
+function checkSlot(date, time) {
+  if (date.includes(time)) {
+    return true;
+  }
+  return false;
+}
 
 module.exports = {
   appointmentRouter,
