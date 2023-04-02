@@ -112,7 +112,7 @@ appointmentRouter.post("/create/:doctorId", authenticate, async (req, res) => {
       req.body;
       console.log(req.body);
     if (!docName.isAvailable) {
-      return res.send({ msg: `${docFirstName} is not available for today` });
+      return res.send({ msg: `${docFirstName}  is currently unavailable` });
     }
     const appointment = new AppointmentModel({
       patientId,
