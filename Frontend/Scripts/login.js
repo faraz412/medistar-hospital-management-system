@@ -6,7 +6,7 @@ form.addEventListener("submit",async (e)=>{
         email:form.exampleFormControlInput1.value
     }
     try {
-        let res=await fetch("http://localhost:8080/user/signin",{
+        let res=await fetch("https://medistarbackend-services.up.railway.app/user/signin",{
             method:"POST",
             headers:{
                 'Content-type':'application/json'
