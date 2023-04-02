@@ -24,6 +24,9 @@ doctorRouter.post("/addDoctor", async (req, res) => {
     status,
     image,
     isAvailable,
+    APRIL_04,
+    APRIL_05,
+    APRIL_06,
   } = req.body;
   try {
     let doctor = new DoctorModel({
@@ -37,6 +40,9 @@ doctorRouter.post("/addDoctor", async (req, res) => {
       status,
       image,
       isAvailable,
+      APRIL_04,
+      APRIL_05,
+      APRIL_06,
     });
     await doctor.save();
     res.status(201).send({ msg: "Doctor has been created", doctor });
@@ -48,16 +54,18 @@ doctorRouter.post("/addDoctor", async (req, res) => {
 });
 
 //SEARCH BY NAME
-doctorRouter.get("/search", async(req,res)=>{
-  let query=req.query;
+doctorRouter.get("/search", async (req, res) => {
+  let query = req.query;
   //console.log(query);
-  try{
-      const result=await DoctorModel.find({doctorName:{$regex:query.q,$options:"i"}});
-      res.send(result);
-  }catch(err){
-      res.send({"err in getting doctor details":err});
+  try {
+    const result = await DoctorModel.find({
+      doctorName: { $regex: query.q, $options: "i" },
+    });
+    res.send(result);
+  } catch (err) {
+    res.send({ "err in getting doctor details": err });
   }
-})
+});
 
 // DOCTORS BY DEPARTMENT ID
 doctorRouter.get("/allDoctor/:id", async (req, res) => {
@@ -152,7 +160,9 @@ doctorRouter.patch("/isAvailable/:doctorId", async (req, res) => {
 
     // Update the availability status of the doctor
     const payload = { isAvailable: req.body.isAvailable };
-    const updatedDoctor = await DoctorModel.findByIdAndUpdate(doctorId,{isAvailable: payload.isAvailable});
+    const updatedDoctor = await DoctorModel.findByIdAndUpdate(doctorId, {
+      isAvailable: payload.isAvailable,
+    });
     res.json({
       msg: "Doctor's status has been updated",
       doctor: updatedDoctor,
@@ -163,6 +173,12 @@ doctorRouter.patch("/isAvailable/:doctorId", async (req, res) => {
       .status(500)
       .json({ msg: "Server error while updating the doctor status" });
   }
+});
+
+doctorRouter.post("/addTimeSlots", async (req, res) => {
+  let payload = "11-12";
+  try {
+  } catch (error) {}
 });
 
 module.exports = {
@@ -179,6 +195,6 @@ module.exports = {
 //     "city":"Mumbai",
 //     "departmentId":1,
 //     "status":true,
-        // isAvailable:true;
+// isAvailable:true;
 //     "image":"https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSJO1Bmu2stkBmmOJXmyHN5G7UHmeA4xr5z0whR9JZF&s"
 // }
