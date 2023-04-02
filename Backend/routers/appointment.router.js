@@ -67,9 +67,9 @@ appointmentRouter.get("/checkSlot/:doctorId", async (req, res) => {
         result.APRIL_04
           ? res.send(checkSlot(result.APRIL_04, slotTime))
           : result.APRIL_05
-          ? res.send(checkSlot(result.APRIL_04, slotTime))
+          ? res.send(checkSlot(result.APRIL_05, slotTime))
           : result.APRIL_06
-          ? res.send(checkSlot(result.APRIL_04, slotTime))
+          ? res.send(checkSlot(result.APRIL_06, slotTime))
           : res.send({
               msg: "Selected Date Not Available, Please Select another Date",
             });
