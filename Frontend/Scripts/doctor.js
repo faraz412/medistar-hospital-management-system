@@ -1,3 +1,5 @@
+import baseURL from "./baseURL.js";
+
 let docsCont=document.getElementById("doctors-cont");
 let depObj={
     1:"Neurology",
@@ -12,16 +14,35 @@ let depObj={
     10:"Cardiology"
 }
 
-window.addEventListener("load",(e)=>{
-    getdata();
+window.addEventListener("load",async (e)=>{
+    let deptID=localStorage.getItem("deptID");
+    if(deptID){
+        try{
+            let res=await fetch(baseURL+`doctor/allDoctor/${deptID}`);
+            if(res.ok){
+                let data=await res.json();
+                if(data.msg){
+                    swal("", `${data.msg}`, "info").then(function() {
+                        getdata();
+                        });
+                    }else{
+                        renderdata(data.doctor);
+                    }                
+                } 
+        }catch(err){
+            console.log(err);
+        }
+    }else{
+        getdata();
+    }
 })
 
 async function getdata() {
     try {
-        const res = await fetch("http://localhost:8080/doctor/alldoctor");
+        const res = await fetch(baseURL+`doctor/alldoctor`);
         let data = await res.json();
         data = data.doctor;
-       // console.log(data);
+        //console.log(data);
         renderdata(data);
     } catch (error) {
         console.log(error.message);
@@ -32,7 +53,7 @@ function renderdata(arr) {
     docsCont.innerHTML="";
     docsCont.innerHTML=arr.map((elem)=>{
         return `
-        <div data-aos="zoom-in" data-aos-duration="800"  class=doc-card>
+        <div class=doc-card>
             <div class="top-cont">
                 <div class="doc-profile">
                     <div class="doc-img">
@@ -42,7 +63,7 @@ function renderdata(arr) {
                         <h2>${elem.doctorName}</h2>
                         <h4>Department: ${depObj[elem.departmentId]}</h4>
                         <p>Experience: ${elem.experience}</p>
-                        <h5>Qualification: ${elem.qualifications}</h5>
+                        <h4>Qualification: ${elem.qualifications}</h4>
                         <p>Rs.1,000 Consultation Fee</p>
                         <p style=${elem.status?"color:green":"color:red"}>${elem.status?"Available":"Currently Unavailable"}</p>
                     </div>
@@ -107,3 +128,51 @@ function renderdata(arr) {
         })
     }
 }
+
+
+//SEARCH DOCTOR
+let docInputTag=document.querySelector("#doc-sf-left>input");
+docInputTag.addEventListener("input", async (e)=>{
+    let searchVal=docInputTag.value;
+    try{
+        let res=await fetch(baseURL+`doctor/search?q=${searchVal}`);
+        if(res.ok){
+            let data=await res.json();
+            //console.log(data);
+            renderdata(data);
+        }
+    }catch(err){
+        console.log(err);
+    }
+})
+
+//FILTER BY DEPT ID
+let docFilterTag=document.querySelector("#doc-sf-right>select");
+docFilterTag.addEventListener("change",async (e)=>{
+    let filterValue=docFilterTag.value;
+    try{
+        let res=await fetch(baseURL+`doctor/allDoctor/${filterValue}`);
+        if(res.ok){
+            let data=await res.json();
+            if(data.msg){
+                swal("", `${data.msg}`, "info").then(function() {
+                    getdata();
+                    });
+                }else{
+                    renderdata(data.doctor);
+                }                
+            } 
+    }catch(err){
+        console.log(err);
+    }
+})
+
+//RESET FILTERS
+
+document.querySelector("#filter-approval>p").addEventListener("click",async (e)=>{
+    try{
+        getdata();
+    }catch(err){
+        console.log(err);
+    }
+})

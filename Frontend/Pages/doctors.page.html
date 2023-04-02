@@ -19,41 +19,43 @@
     <section id="navbar">
         <!-- Navbar Imported -->
     </section> 
-
-    <div class="doc-search-bar">
-        <div id="filter-approval">
-            <h2>Doctors</h2>
-            <button>Filter Pending Approvals</button>
-            <p>Reset Filters</p>
+    <div id="container">
+        <div class="doc-search-bar">
+            <div id="filter-approval">
+                <h2>Doctors</h2>
+                <button>Filter Avaialble Doctors</button>
+                <p>Reset Filters</p>
+            </div>
+            <div id="doc-sf">
+                <div id="doc-sf-left">
+                    <input type="text" placeholder="Search by Doctor Name"/>
+                    <button><i class="fa-solid fa-magnifying-glass"></i></button>
+                </div>
+                <div id="doc-sf-right">
+                    <h3 style="padding-left:5px">Filter by Department:</h3>
+                    <select name="dept">
+                        <option value="">All</option>
+                        <option value="1">Neurology</option>
+                        <option value="2">Dermatology</option>
+                        <option value="3">Dental</option>
+                        <option value="4">Ayurveda</option>
+                        <option value="5">Gastroenterology</option>
+                        <option value="6">Gynaecology</option>
+                        <option value="7">ENT</option>
+                        <option value="8">General Physician</option>
+                        <option value="9">Orthopedic</option>
+                        <option value="10">Cardiology</option>
+                    </select>
+                </div>
+            </div>
         </div>
-        <div id="doc-sf">
-            <div id="doc-sf-left">
-                <input type="text" placeholder="Search by Doctor Name"/>
-                <button><i class="fa-solid fa-magnifying-glass"></i></button>
-            </div>
-            <div id="doc-sf-right">
-                <h3 style="padding-left:5px">Filter by Department:</h3>
-                <select name="dept">
-                    <option value="">All</option>
-                    <option value="1">Neurology</option>
-                    <option value="2">Dermatology</option>
-                    <option value="3">Dental</option>
-                    <option value="4">Ayurveda</option>
-                    <option value="5">Gastroenterology</option>
-                    <option value="6">Gynaecology</option>
-                    <option value="7">ENT</option>
-                    <option value="8">General Physician</option>
-                    <option value="9">Orthopedic</option>
-                    <option value="10">Cardiology</option>
-                </select>
-            </div>
+
+
+        <div id="doctors-cont">
+            
         </div>
     </div>
-
-
-    <div id="doctors-cont">
-        
-    </div>
+    
 
     <section id="footer">
         <!-- Footer Imported -->
@@ -71,4 +73,4 @@
 
 </html>
 
-<script src="../Scripts/doctor.js"></script>
+<script type="module" src="../Scripts/doctor.js"></script>

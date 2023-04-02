@@ -14,6 +14,16 @@
     <link rel="stylesheet" href="https://unpkg.com/aos@next/dist/aos.css" />
     <link rel="stylesheet" href="https://unpkg.com/aos@next/dist/aos.css" />
     <title>Find doctor!</title>
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700;800&display=swap');
+        *{
+            box-sizing: border-box;
+        }
+        body{
+            font-family: poppins, sans-serif;
+            font-size: 0.9rem;
+        }
+    </style>
 </head>
 
 <body>
@@ -30,14 +40,19 @@
                 <h3 class="card-text">Find and Book</h3>
                 <div class="input-group mb-3" style="width: 30%;margin: auto;margin-top: 3%;">
                     <p style="width:50%; padding-top:0.7rem">Select Department: </p>
-                    <button style="background-color: white;color: black; width:50%"
-                        class="btn btn-outline-secondary dropdown-toggle" type="button" data-bs-toggle="dropdown"
-                        aria-expanded="false">All Departments</button>
-                    <ul class="dropdown-menu" style="width:50%; text-align:center">
-                        <li><a class="dropdown-item" href="#">Dermatologist</a></li>
-                        <li><a class="dropdown-item" href="#">Pediatrician</a></li>
-                        <li><a class="dropdown-item" href="#">Gynecologist</a></li>
-                    </ul>
+                    <select id="select-dept" style="width:50%; text-align:center">
+                        <option value="">All Departments</option>
+                        <option value="1">Neurology</option>
+                        <option value="2">Dermatology</option>
+                        <option value="3">Dental</option>
+                        <option value="4">Ayurveda</option>
+                        <option value="5">Gastroenterology</option>
+                        <option value="6">Gynaecology</option>
+                        <option value="7">ENT</option>
+                        <option value="8">General Physician</option>
+                        <option value="9">Orthopedic</option>
+                        <option value="10">Cardiology</option>
+                    </select>
                 </div>
             </div>
         </div>
@@ -217,7 +232,7 @@
     </script>
 
 </body>
-
+<script type="module" src="../Scripts/doctor.filter.js"></script>
 
 <script type="module" src="../Scripts/navbar.js"></script>
 <script type="module" src="../Scripts/footer.js"></script>
