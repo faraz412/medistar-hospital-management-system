@@ -41,9 +41,9 @@ Open [http://localhost:8080](http://localhost:8080) to view it in your browser.
 ### `npm run server `
 
 
-## `npm packages used in the project`
+## NPM packages used in the project
 
-    "bcrypt": "^5.1.0",
+    {"bcrypt": "^5.1.0",
      "cors": "^2.8.5",
      "dotenv": "^16.0.3",
      "express": "^4.18.2",
@@ -54,7 +54,7 @@ Open [http://localhost:8080](http://localhost:8080) to view it in your browser.
      "otp-generator": "^4.0.1",
      "redis": "^4.6.5",
      "bcrypt": "^5.1.0",
-     "redis": "^4.6.5",
+     "redis": "^4.6.5"}
      
 ## API Endpoints
 
@@ -69,6 +69,14 @@ Open [http://localhost:8080](http://localhost:8080) to view it in your browser.
  - PATCH http//:localhost:8080/appointment/reschedule/:appointmentId
 
 
+ ### 
+`USERS DATA...`
+
+    {"first_name":"harsh thakur",
+    "last_name":"thakur",
+    "email":"harsh@gmail.com",
+    "mobile":"909999345",
+    "password":"123456"  }
 
  ### 
 `DOCTORS DATA...`
@@ -85,15 +93,19 @@ Open [http://localhost:8080](http://localhost:8080) to view it in your browser.
     "image":"https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSJO1Bmu2stkBmmOJXmyHN5G7UHmeA4xr5z0whR9JZF&s" }
 
  ### 
-`USERS DATA...`
+`APPOINTMENT DATA...`
 
-   `{"first_name":"harsh thakur",
-  "last_name":"thakur",
-  "email":"harsh@gmail.com",
-  "mobile":"909999345",
-  "password":"123456" }`
-
-
+    {"patientId":"64256f28b1fc4d36b5a12be7",
+    "doctorId":"6425319914291e303a3cf2c4",
+    "ageOfPatient":40,
+    "gender":"male",
+    "address":"Mumbai woribali",
+    "problemDescription":"having some problem related to neourology ",
+    "appointmentDate":"30-03-2023",
+    "createdAt":,
+    "updatedAt":,
+    "paymentStatus":false}
+    
 
 
 
