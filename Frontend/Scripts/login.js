@@ -1,12 +1,13 @@
+import baseURL from './baseURL.js';
     let form =document.querySelector("form");
 form.addEventListener("submit",async (e)=>{
     e.preventDefault();
     let obj={
-        pass:form.exampleFormControlInput2.value,
-        email:form.exampleFormControlInput1.value
+        payload:form.exampleFormControlInput1.value,
+        password:form.exampleFormControlInput2.value
     }
     try {
-        let res=await fetch("https://medistarbackend-services.up.railway.app/user/signin",{
+        let res=await fetch(baseURL+"user/signin",{
             method:"POST",
             headers:{
                 'Content-type':'application/json'
@@ -16,8 +17,8 @@ form.addEventListener("submit",async (e)=>{
         let data=await res.json();
         console.log(data);
         localStorage.setItem("token",data.token);
-       //  alert("Login Successful");
-        // window.location.href="notes.html";
+        alert("Login Successful");
+        window.location.href="book.appointment.html";
       } catch (error) {
         console.log(error);
       }
