@@ -133,16 +133,13 @@ POST /api/doctor/addDoctor
 PATCH /api/doctor/updateDoctorStatus/:id
 PATCH /api/doctor//isAvailable/:doctorId
 ```
-
-
-
- 
-  ### Appointment Booking  
- - GET http//:localhost:8080/appointment/allApp/
- - POST http//:localhost:8080/appointment/create/:doctorId
- - DELETE http//:localhost:8080/appointment/cancel/appointmentId
- - PATCH http//:localhost:8080/appointment/reschedule/:appointmentId
-
+  #### Appointment Booking  
+```javascript
+GET /api/appointment/allApp/
+POST /api/appointment/create/:doctorId
+DELETE /api/appointment/cancel/appointmentId
+PATCH /api/appointment/reschedule/:appointmentId
+```
 <!-- 
  ### 
 `USERS DATA...`
