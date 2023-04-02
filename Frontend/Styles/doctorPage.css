@@ -3,15 +3,14 @@
     box-sizing: border-box;
 }
 body{
-    width: 100vw;
-    height: 100vh;
     font-family: poppins, sans-serif;
-    font-size: 0.8rem;
-    overflow-x: hidden;
+    font-size: 0.9rem;
+}
+#container{
+    margin:6.5rem auto;
 }
 .doc-search-bar{
     margin:auto;
-    margin-top:6rem;
     width:80rem;
     display: flex;
     justify-content: space-between;
