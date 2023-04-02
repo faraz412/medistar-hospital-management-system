@@ -132,31 +132,31 @@ userRouter.post("/signin", async (req, res) => {
   }
 });
 
-userRouter.use(express.text());
-const client = redis.createClient({
-  password: process.env.redisPassword,
-  socket: {
-    host: process.env.redisHost,
-    port: process.env.redisPort,
-  },
-});
-client.on("error", (err) => console.log(err, "ERROR in REDIS"));
-client.connect();
+// userRouter.use(express.text());
+// const client = redis.createClient({
+//   password: process.env.redisPassword,
+//   socket: {
+//     host: process.env.redisHost,
+//     port: process.env.redisPort,
+//   },
+// });
+// client.on("error", (err) => console.log(err, "ERROR in REDIS"));
+// client.connect();
 
-userRouter.get("/logout", async (req, res) => {
-  const token = req.headers.authorization;
-  // console.log(token)
-  if (!token) {
-    return res.status(500).send({ msg: "No Token in Headers" });
-  }
-  try {
-    await client.LPUSH("token", token);
-    // await client.lpush("token", token)
-    res.status(200).send({ msg: "You are Logged out" });
-  } catch (error) {
-    return res.status(500).send({ msg: "Error in Redis" });
-  }
-});
+// userRouter.get("/logout", async (req, res) => {
+//   const token = req.headers.authorization;
+//   // console.log(token)
+//   if (!token) {
+//     return res.status(500).send({ msg: "No Token in Headers" });
+//   }
+//   try {
+//     await client.LPUSH("token", token);
+//     // await client.lpush("token", token)
+//     res.status(200).send({ msg: "You are Logged out" });
+//   } catch (error) {
+//     return res.status(500).send({ msg: "Error in Redis" });
+//   }
+// });
 
 module.exports = {
   userRouter,
