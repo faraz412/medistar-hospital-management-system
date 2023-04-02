@@ -1,4 +1,6 @@
 
+![image](https://user-images.githubusercontent.com/109690823/229355210-b41ed657-f279-402e-bc25-45e7fba33359.png)
+
 # Medistar Hospital
 
 Medistar Hospital Management System is a web application built using Node.js and MongoDB. The system is designed to automate the management of hospitals, including the handling of patient records, medical billing, appointment scheduling, and other administrative tasks.
@@ -28,6 +30,10 @@ The system allows users to create, read, update, and delete records of patients,
 - Server side -> Node.js and Express 
 - Nodemailer - sending Emails
 - Blacklisting of tokens
+
+## Database Used 
+  `MongoDB`
+  
 ## To run this project
 
 In the project directory run the follwing command:
@@ -106,72 +112,5 @@ Open [http://localhost:8080](http://localhost:8080) to view it in your browser.
     "updatedAt":,
     "paymentStatus":false}
     
-
-
-
 ![image](https://user-images.githubusercontent.com/109690823/229313097-98ac03fb-69b0-4833-849c-48c4a1b9d38d.png)
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-# cozy-passenger-4798
-
-## (All Models)
-# sigup model 
-
-- id: PK, AI
-- f_name
-- L_name
-- email
-- password
-- Mobile
-- Gender
-
-# department model
-- dept_id
-- name
-- description
-- imgURL
-
-# Doctor
-- img
-- id
-- Name
-- email
-- phone
-- DOB
-- Address
-- DepartmentID
-
-# Patient _Model
-
-- patientID
-- doctorID
-- name 
-- email
-- phone
-- city
-- Address
-- problem : Description
-
-# Appoinment 
-
-- appontmentid
-- dateTime
-- patientName
-- payment
-- doctorID
-- doctorname
-- patientName
-- patientID
-- problem 
