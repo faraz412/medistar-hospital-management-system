@@ -16,7 +16,7 @@ form.addEventListener("submit",async (e)=>{
         })
         let data=await res.json();
         console.log(data);
-        if(data.mag){
+        if(!data || data.mag || data.msg=="User not Found"){
             alert("Wrong Credentials");
         }else{
             localStorage.setItem("token",data.token);

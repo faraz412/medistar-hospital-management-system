@@ -85,7 +85,14 @@ patientForm.addEventListener("submit",async(e)=>{
                 if(response.ok){
                     let result=await response.json();
                     console.log(result);
-                    swal("",`${result.message}`,"info"); 
+                    if(result.msg){
+                        swal("",`${result.msg}`,"info");   
+                    }
+                    if(result.message){
+                        swal("",`${result.message}`,"info").then(function(){
+                            window.location.href="/Frontend/index.html"; 
+                        });
+                    }
                 }else{
                     swal("",`Selected slot not available`,"warning"); 
                 }
