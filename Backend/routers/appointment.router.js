@@ -47,9 +47,10 @@ appointmentRouter.get(
 );
 
 // !! Check Slots
-appointmentRouter.get("/checkSlot/:doctorId", async (req, res) => {
+appointmentRouter.post("/checkSlot/:doctorId", async (req, res) => {
   let { date, slotTime } = req.body;
   let doctorId = req.params.doctorId;
+  console.log(date,slotTime)
   try {
     let docName = await DoctorModel.findOne({ _id: doctorId });
     if (!docName) {
@@ -57,7 +58,7 @@ appointmentRouter.get("/checkSlot/:doctorId", async (req, res) => {
     }
     if (!docName.isAvailable) {
       return res.send({
-        msg: `${docName.doctorName} is not available for today`,
+        msg: `${docName.doctorName} is not available currently`,
       });
     }
     await DoctorModel.findOne({ _id: doctorId })
