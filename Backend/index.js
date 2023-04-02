@@ -19,7 +19,7 @@ const { authenticate } = require("./middlewares/authenticator.mw");
 app.use("/user", userRouter);
 app.use("/department",departmentRouter);
 app.use("/doctor", doctorRouter);
-app.use("/appointment",authenticate,appointmentRouter);
+app.use("/appointment",appointmentRouter);
 app.use("/admin", dashboardRouter);
 
 app.listen(process.env.port, async () => {
