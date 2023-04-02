@@ -9,7 +9,7 @@ app.use(cors());
 
 const { userRouter } = require("./routers/user.router");
 const { connection } = require("./config/db");
-const { authenticate } = require("./middlewares/authenticator.mw");
+// const { authenticate } = require("./middlewares/authenticator.mw");
 const { doctorRouter } = require("./routers/doctor.router");
 const { departmentRouter } = require("./routers/department.router");
 const { appointmentRouter } = require("./routers/appointment.router");
