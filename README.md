@@ -56,10 +56,12 @@ Open [http://localhost:8080](http://localhost:8080) to view it in your browser.
      "bcrypt": "^5.1.0",
      "redis": "^4.6.5",
      
-# API Endpoints
-   ### User side
- - POST  http//:localhost:8080/user/sighup
- - POST  http//:localhost:8080/user/sighin
+## API Endpoints
+
+   ###    User side
+ - POST  http//:localhost:8080/user/signup
+ - POST  http//:localhost:8080/user/signin
+ 
    ### Appointment Booking  
  - GET http//:localhost:8080/appointment/allApp/
  - POST http//:localhost:8080/appointment/create/:doctorId
