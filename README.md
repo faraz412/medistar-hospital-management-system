@@ -25,6 +25,10 @@ The system allows users to create, read, update, and delete records of patients,
 -  APIValidation
 -  Responsive
 -  Cross Platform
+-  Signup/signin/Logout
+-  Appointment Booking 
+-  Appointment Cancelation
+-  Admin can perform all crud operations
 
 ## Run Locally
 ### Clone this Project
@@ -35,20 +39,25 @@ https://github.com/faraz412/cozy-passenger-4798.git
 
 ### Install npm Packages
 
-```
+```javascript
 npm i --global
 ```
 
 ### Go to Backend Folder
-```
+```javascript
 cd backend
 ```
 
 ### Run Server
-``` 
+```javascript
 npx nodemon index.js
 ```
-### Environment Variables
+### Runs the project in the development mode
+
+[http://localhost:8080](http://localhost:8080)
+
+
+### Environment Variables Required
 `mongoURL`
 
 `key`
@@ -61,13 +70,7 @@ npx nodemon index.js
 
 
 
-Runs the project in the development mode.\
-Open [http://localhost:8080](http://localhost:8080) to view it in your browser.
-
-### `npm run server `
-
 ## Frontend Part
-
 - Home page
 - Signup/Login
 - Logout
@@ -83,12 +86,9 @@ Open [http://localhost:8080](http://localhost:8080) to view it in your browser.
 - Nodemailer - sending Emails
 - Blacklisting of tokens
 
-## Database Used 
-  `MongoDB`
-
 ## NPM packages used in the project
 
-    {"bcrypt": "^5.1.0",
+     "bcrypt": "^5.1.0",
      "cors": "^2.8.5",
      "dotenv": "^16.0.3",
      "express": "^4.18.2",
@@ -99,21 +99,25 @@ Open [http://localhost:8080](http://localhost:8080) to view it in your browser.
      "otp-generator": "^4.0.1",
      "redis": "^4.6.5",
      "bcrypt": "^5.1.0",
-     "redis": "^4.6.5"}
+     "redis": "^4.6.5"
      
-## API Endpoints
+### API Endpoints
+
+```javascript
+POST  -http//:localhost:8080/user/signup
+```
 
    ###    User side
  - POST  http//:localhost:8080/user/signup
  - POST  http//:localhost:8080/user/signin
  
-   ### Appointment Booking  
+  ### Appointment Booking  
  - GET http//:localhost:8080/appointment/allApp/
  - POST http//:localhost:8080/appointment/create/:doctorId
  - DELETE http//:localhost:8080/appointment/cancel/appointmentId
  - PATCH http//:localhost:8080/appointment/reschedule/:appointmentId
 
-
+<!-- 
  ### 
 `USERS DATA...`
 
@@ -149,19 +153,19 @@ Open [http://localhost:8080](http://localhost:8080) to view it in your browser.
     "appointmentDate":"30-03-2023",
     "createdAt":,
     "updatedAt":,
-    "paymentStatus":false}
-    
- ## Features
-  - Signup/signin/Logout
-  - Appointment Booking 
-  - Appointment Cancelation
-  - Admin can perform all crud operations
-  
- ## Project Highlights   
+    "paymentStatus":false} -->
+     
+ ## Project Highlights  
+ 
 ![image](https://user-images.githubusercontent.com/109690823/229313097-98ac03fb-69b0-4833-849c-48c4a1b9d38d.png)
 ![image](https://user-images.githubusercontent.com/109690823/229355448-be996d1e-8545-44e1-b1ba-dc3d62d0ac9a.png)
 ![image](https://user-images.githubusercontent.com/109690823/229355506-3ae1da89-9434-4400-9ab2-b8b9f86e67aa.png)
 ![image](https://user-images.githubusercontent.com/109690823/229355596-5bfd0bf9-9147-47fb-bb42-b6e04ac4208b.png)
+
+## Demo
+```
+
+```
 
 ## Authors
 
