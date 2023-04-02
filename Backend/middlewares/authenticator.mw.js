@@ -17,7 +17,8 @@ client.connect();
 
 
 const authenticate = async (req, res, next) => {
-  const token = req.headers.authorization;
+  const token = req.headers?.authorization;
+  console.log("From Middleware:",token);
   if (!token) {
     return res.send({ msg: "Enter Token First" });
   } else {

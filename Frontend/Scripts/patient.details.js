@@ -60,12 +60,14 @@ patientForm.addEventListener("submit",async(e)=>{
         slotTime:formObj.slot,
         date:formObj.date
     };
+    console.log(localStorage.getItem("token"));
 
     try{
         let res=await fetch(baseURL+`appointment/checkSlot/${docObj.docID}`,{
             method:"POST",
             headers:{
-				"content-type": "application/json"
+                "Content-type": "application/json",
+                "Authorization":`${localStorage.getItem("token")}`
 			},
             body: JSON.stringify(obj)
         });
@@ -75,14 +77,15 @@ patientForm.addEventListener("submit",async(e)=>{
                 let response=await fetch(baseURL+`appointment/create/${docObj.docID}`,{
                     method:"POST",
                     headers:{
-                        "content-type": "application/json"
+                        "Content-type": "application/json",
+                        "Authorization":`${localStorage.getItem("token")}`
                     },
                     body: JSON.stringify(obj)
                 });
                 if(response.ok){
                     let result=await response.json();
                     console.log(result);
-                    swal("",`${result.msg}`,"info"); 
+                    swal("",`${result.message}`,"info"); 
                 }else{
                     swal("",`Selected slot not available`,"warning"); 
                 }
