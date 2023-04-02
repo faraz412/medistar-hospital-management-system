@@ -22,6 +22,12 @@ The system allows users to create, read, update, and delete records of patients,
 </p>
 <hr>
 
+## Features 
+-  Authentication
+-  APIValidation
+-  Responsive
+-  Cross Platform
+
 ## To run this project
 
 In the project directory run the follwing command:
