@@ -17,6 +17,7 @@ The system allows users to create, read, update, and delete records of patients,
  <img src="https://raw.githubusercontent.com/PrinceCorwin/Useful-tech-icons/main/images/mongodb-leaf.png" alt="mongo" width="50" height="50"/> 
 <img src="https://user-images.githubusercontent.com/25181517/182884894-d3fa6ee0-f2b4-4960-9961-64740f533f2a.png" alt="redis" width="50" height="50"/>
 <img src="https://user-images.githubusercontent.com/25181517/121401671-49102800-c959-11eb-9f6f-74d49a5e1774.png" alt="npm" width="50" height="50"/>
+  
 </p>
 <hr>
 
@@ -86,20 +87,17 @@ npx nodemon index.js
 - Nodemailer - sending Emails
 - Blacklisting of tokens
 
-## NPM packages used in the project
-
-     "bcrypt": "^5.1.0",
-     "cors": "^2.8.5",
-     "dotenv": "^16.0.3",
-     "express": "^4.18.2",
-     "jsonwebtoken": "^9.0.0",
-     "mongoose": "^7.0.3",
-     "nodemailer": "^6.9.1",
-     "nodemon": "^2.0.22",
-     "otp-generator": "^4.0.1",
-     "redis": "^4.6.5",
-     "bcrypt": "^5.1.0",
-     "redis": "^4.6.5"
+## NPM Packages
+<img src="https://repository-images.githubusercontent.com/139898859/9617c480-81c2-11ea-94fc-322231ead1f0" alt="bcrypt.png" width="50" height="50"/>
+- Cors
+- Dotenv
+- <img src="https://res.cloudinary.com/kc-cloud/images/f_auto,q_auto/v1651772163/expressjslogo/expressjslogo.webp?_i=AA" alt="express.png" width="50" height="50"/>
+     <img src="" alt="jwt.png" width="50" height="50"/>
+          <img src="https://4008838.fs1.hubspotusercontent-na1.net/hubfs/4008838/mogoose-logo.png" alt="mongoose.png" width="50" height="50"/>     
+     <img src="https://i0.wp.com/community.nodemailer.com/wp-content/uploads/2015/10/n2-2.png?fit=422%2C360&ssl=1" alt="nodemailer" width="50" height="50"/>
+     <img src="https://user-images.githubusercontent.com/13700/35731649-652807e8-080e-11e8-88fd-1b2f6d553b2d.png" alt="nodemon.png" width="50" height="50"/>
+     ![otp](https://user-images.githubusercontent.com/112754448/229366202-8d4d5d8f-4e5e-423f-a207-42a368ec3b1f.png)
+     <img src="https://user-images.githubusercontent.com/25181517/182884894-d3fa6ee0-f2b4-4960-9961-64740f533f2a.png" alt="redis" width="50" height="50"/>
      
 ## API Endpoints
    #### Welcome
@@ -121,6 +119,17 @@ POST  /api/user/signin
   #### User Logout
 ```javascript
 POST  /api/user/logout
+```
+  #### Doctor 
+```javascript
+GET /api/doctor/allDoctor
+GET /api/doctor/search?
+GET /api/doctor//allDoctor/:id
+GET /api/doctor/docPending
+DELETE /api/doctor/removeDoctor/:id
+POST /api/doctor/addDoctor
+PATCH /api/doctor/updateDoctorStatus/:id
+PATCH /api/doctor//isAvailable/:doctorId
 ```
 
 
