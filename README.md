@@ -1,5 +1,5 @@
 
-![image](https://user-images.githubusercontent.com/109690823/229355210-b41ed657-f279-402e-bc25-45e7fba33359.png)
+![image](https://user-images.githubusercontent.com/109690823/229355347-8d6e3d56-3c98-4abc-a973-225fd70bf3a2.png)
 
 # Medistar Hospital
 
