@@ -105,7 +105,7 @@ POST  /api/user/signin
 ```javascript
 POST  /api/user/logout
 ```
-  #### Doctor 
+<!--   #### Doctor 
 ```javascript
 GET /api/doctor/allDoctor
 GET /api/doctor/search?
@@ -132,7 +132,7 @@ PATCH /api/appointment/reschedule/:appointmentId
  GET /api/appointment/allPending
  DELETE /api/appointment/reject/:appointmentId
  PATCH /api/appointment/approve/:appointmentId
- ```
+ ``` -->
 <!-- 
  ### 
 `USERS DATA...`
