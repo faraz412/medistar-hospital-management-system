@@ -285,11 +285,23 @@ class MadistarHospital {
         this.doctors.push(newDoctor);
         return newDoctor;
     }
+    makePayment( 
+        patientId: number,
+        amount: number,
+        date: string,
+        paymentMethod: string){
+       const id = this.payments.length + 1;
+       const payment = new Payments(id,patientId,amount,date,paymentMethod);
+       this.payments.push(payment);
+       return payment;
+    }
 
 }
 const Medistar = new MadistarHospital();
 const createDept = Medistar.createNewDepartment("Cardiology", "Cardiology departments specialize in diagnosing and treating heart diseases, including cardiovascular conditions like coronary artery disease, heart failure, and arrhythmias.", "https://sp-ao.shortpixel.ai/client/to_webp,q_lossy,ret_img,w_2500,h_958/https://www.punhlainghospitals.com/wp-content/uploads/2020/12/Cardiology.jpg")
 const newDoctor = Medistar.addDoctor("Deepak chourasiya","MBBS from AIIMS from Delhi","deepak1812002@gmail.com",9,"7999764766","Mumbai",1,true,"https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTgut-XrUTj4kq8azPG0BcV3bwfaDrOvAEicg&usqp=CAU",true);
+const makePayment = Medistar.makePayment(1,2000,"03-04-2023","Card");
 console.log(Medistar);
 console.log(createDept);
 console.log(newDoctor);
+console.log(makePayment);
