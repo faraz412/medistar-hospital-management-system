@@ -64,7 +64,7 @@ class Doctor {
     image: string;
     isAvailable: boolean;
     slots: [] | null;
-    appointments: [] | null;
+    appointments: Appoinment[] | null;
     constructor(
         id: number,
         doctorName: string,
@@ -80,7 +80,7 @@ class Doctor {
     ) {
         this.id = id;
         this.doctorName = doctorName;
-        this.qualifications=qualifications; 
+        this.qualifications = qualifications;
         this.email = email;
         this.experience = experience;
         this.phoneNo = phoneNo;
@@ -116,8 +116,8 @@ class Patient {
     email: string;
     mobile: string;
     password: string;
-    appointments: [];
-    feedbacks: [];
+    appointments: Appoinment[] | null;
+    feedbacks: Feedback[] | null;
 
     constructor(
         id: Number,
@@ -181,18 +181,18 @@ class Payments {
 // - paymentStatus
 
 class Appoinment {
-    id: Number
-    patientId: Number
-    doctorId: Number
-    patientFirstName: String
-    docFirstName: String
-    ageOfPatient: Number
-    gender: String
-    address: String
-    Description: String
-    appointmentDate: String
-    status: Boolean
-    paymentStatus: Boolean
+    id: Number;
+    patientId: Number;
+    doctorId: Number;
+    patientFirstName: String;
+    docFirstName: String;
+    ageOfPatient: Number;
+    gender: String;
+    address: String;
+    Description: String;
+    appointmentDate: String;
+    status: Boolean;
+    paymentStatus: Boolean;
 
     constructor(
         id: Number,
@@ -208,17 +208,60 @@ class Appoinment {
         status: Boolean,
         paymentStatus: Boolean
     ) {
+        this.id = id;
+        this.patientId = patientId;
+        this.doctorId = doctorId;
+        this.patientFirstName = patientFirstName;
+        this.docFirstName = docFirstName;
+        this.ageOfPatient = ageOfPatient;
+        this.gender = gender;
+        this.address = address;
+        this.Description = Description;
+        this.appointmentDate = appointmentDate;
+        this.status = status;
+        this.paymentStatus = paymentStatus;
+    }
+}
+
+class Feedback {
+    id: number
+    patientId: number
+    message: string
+    time: string
+    constructor(id: number,
+        patientId: number,
+        message: string,
+        time: string) {
         this.id = id
         this.patientId = patientId
-        this.doctorId = doctorId
-        this.patientFirstName = patientFirstName
-        this.docFirstName = docFirstName
-        this.ageOfPatient = ageOfPatient
-        this.gender = gender
-        this.address = address
-        this.Description = Description
-        this.appointmentDate = appointmentDate
-        this.status = status
-        this.paymentStatus = paymentStatus
+        this.message = message
+        this.time = time
+    }
+}
+
+
+// Medistar Hospital Management System Components
+// - Departments
+// - Doctors
+// - Patients
+// - Payments
+// - Feedbacks
+
+class MadistarHospital {
+    departments: Department[]
+    doctors: Doctor[]
+    patients: Patient[]
+    payments: Payments[]
+    feedbacks: Feedback[]
+    constructor(departments: Department[] = [],
+        doctors: Doctor[] = [],
+        patients: Patient[] = [],
+        payments: Payments[] = [],
+        feedbacks: Feedback[] = []) {
+        this.departments = departments
+        this.doctors = doctors
+        this.patients = patients
+        this.payments = payments
+        this.feedbacks = feedbacks
     }
 }
