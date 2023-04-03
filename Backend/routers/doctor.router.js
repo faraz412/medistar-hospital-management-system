@@ -24,9 +24,6 @@ doctorRouter.post("/addDoctor", async (req, res) => {
     status,
     image,
     isAvailable,
-    APRIL_04,
-    APRIL_05,
-    APRIL_06,
   } = req.body;
   try {
     let doctor = new DoctorModel({
@@ -40,9 +37,9 @@ doctorRouter.post("/addDoctor", async (req, res) => {
       status,
       image,
       isAvailable,
-      APRIL_04,
-      APRIL_05,
-      APRIL_06,
+      APRIL_04: ["11-12", "2-3", "4-5", "7-8"],
+      APRIL_05: ["11-12", "2-3", "4-5", "7-8"],
+      APRIL_06: ["11-12", "2-3", "4-5", "7-8"],
     });
     await doctor.save();
     res.status(201).send({ msg: "Doctor has been created", doctor });
@@ -174,7 +171,6 @@ doctorRouter.patch("/isAvailable/:doctorId", async (req, res) => {
       .json({ msg: "Server error while updating the doctor status" });
   }
 });
-
 
 module.exports = {
   doctorRouter,
