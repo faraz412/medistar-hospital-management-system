@@ -23,12 +23,12 @@
 // - image
 
 class Department {
-    departmentId: number
+    id: number
     deptName: string
     about:string
     image: string
-    constructor(departmentId: number, deptName: string, about: string,image: string) {
-        this.departmentId=departmentId,
+    constructor(id: number, deptName: string, about: string,image: string) {
+        this.id=id,
         this.deptName=deptName,
         this.about=about,
         this.image=image
@@ -93,3 +93,35 @@ class Doctor {
         return this.appointments;
     }
 }
+
+
+
+
+// Patient
+// - id
+// - first_name
+// - last_name
+// - email
+// - mobile
+// - password
+
+class Patient {
+id:Number
+first_name:string
+last_name:string
+email:string
+mobile:string
+password:string
+}
+
+
+
+
+
+
+
+
+
+
+
+
