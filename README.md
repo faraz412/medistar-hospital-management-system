@@ -83,25 +83,7 @@ npx nodemon index.js
 <img src="https://user-images.githubusercontent.com/25181517/182884894-d3fa6ee0-f2b4-4960-9961-64740f533f2a.png" alt="redis" width="50" height="50"/>
 <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSKZRJJRPM1V6XKXBLn2fnsy5VwmLW1uO9ixCfCYiZRwWeLKe2ukB17uzxRRyhZElgzn_E&usqp=CAU" alt="twilio" width="70" height="50"/>
 </p>
-
-
-## Frontend Part
-- Home page
-- Signup/Login
-- Logout
-- Book appointment
-- Make a payment
-- Feedback
-
-## Backend Part
-- Authentication using JWT
-- Storing password by hasing it
-- Mongoose - connecting the database
-- Server side -> Node.js and Express 
-- Nodemailer - sending Emails
-- Blacklisting of tokens
-
-    
+   
 ## API Endpoints
    #### Welcome
 ```javascript
@@ -208,6 +190,3 @@ PATCH /api/appointment/reschedule/:appointmentId
 - [@abhishek1494k](https://github.com/abhishek1494k)
 - [@Atul3007](https://github.com/Atul3007)
 - [@prernadave](https://github.com/prernadave)
-
-
-
