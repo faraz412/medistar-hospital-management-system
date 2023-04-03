@@ -22,16 +22,16 @@
 // - image
 
 class Department {
-  id: number;
-  deptName: string;
-  about: string;
-  image: string;
-  constructor(id: number, deptName: string, about: string, image: string) {
-    (this.id = id),
-      (this.deptName = deptName),
-      (this.about = about),
-      (this.image = image);
-  }
+    id: number;
+    deptName: string;
+    about: string;
+    image: string;
+    constructor(id: number, deptName: string, about: string, image: string) {
+        (this.id = id),
+            (this.deptName = deptName),
+            (this.about = about),
+            (this.image = image);
+    }
 }
 
 // Doctor Entities
@@ -52,47 +52,47 @@ class Department {
 // slots:Slots[]|null
 // appointments: Appoinment[] | null
 class Doctor {
-  id: number;
-  doctorName: string;
-  email: string;
-  experience: number;
-  phoneNo: string;
-  city: string;
-  departmentId: number;
-  status: boolean;
-  image: string;
-  isAvailable: boolean;
-  slots: [] | null;
-  appointments: [] | null;
-  constructor(
-    id: number,
-    doctorName: string,
-    email: string,
-    experience: number,
-    phoneNo: string,
-    city: string,
-    departmentId: number,
-    status: boolean,
-    image: string,
-    isAvailable: boolean
-  ) {
-    this.id = id;
-    this.doctorName = doctorName;
-    this.email = email;
-    this.experience = experience;
-    this.phoneNo = phoneNo;
-    this.city = city;
-    this.departmentId = departmentId;
-    this.status = status;
-    this.image = image;
-    this.isAvailable = isAvailable;
-    this.slots = [];
-    this.appointments = [];
-  }
+    id: number;
+    doctorName: string;
+    email: string;
+    experience: number;
+    phoneNo: string;
+    city: string;
+    departmentId: number;
+    status: boolean;
+    image: string;
+    isAvailable: boolean;
+    slots: [] | null;
+    appointments: [] | null;
+    constructor(
+        id: number,
+        doctorName: string,
+        email: string,
+        experience: number,
+        phoneNo: string,
+        city: string,
+        departmentId: number,
+        status: boolean,
+        image: string,
+        isAvailable: boolean
+    ) {
+        this.id = id;
+        this.doctorName = doctorName;
+        this.email = email;
+        this.experience = experience;
+        this.phoneNo = phoneNo;
+        this.city = city;
+        this.departmentId = departmentId;
+        this.status = status;
+        this.image = image;
+        this.isAvailable = isAvailable;
+        this.slots = [];
+        this.appointments = [];
+    }
 
-  viewAllAppointments() {
-    return this.appointments;
-  }
+    viewAllAppointments() {
+        return this.appointments;
+    }
 }
 
 // Patient
@@ -107,32 +107,58 @@ class Doctor {
 // feedbacks: Feedback[]
 
 class Patient {
-  id: Number;
-  first_name: string;
-  last_name: string;
-  email: string;
-  mobile: string;
-  password: string;
-  appointments: [];
-  feedbacks: [];
+    id: Number;
+    first_name: string;
+    last_name: string;
+    email: string;
+    mobile: string;
+    password: string;
+    appointments: [];
+    feedbacks: [];
 
-  constructor(
-    id: Number,
-    first_name: string,
-    last_name: string,
-    email: string,
-    mobile: string,
-    password: string,
-    appointments: [],
-    feedbacks: []
-  ) {
-    this.id = id;
-    this.first_name = first_name;
-    this.last_name = last_name;
-    this.email = email;
-    this.mobile = mobile;
-    this.password = password;
-    this.appointments = appointments;
-    this.feedbacks = feedbacks;
-  }
+    constructor(
+        id: Number,
+        first_name: string,
+        last_name: string,
+        email: string,
+        mobile: string,
+        password: string
+    ) {
+        this.id = id;
+        this.first_name = first_name;
+        this.last_name = last_name;
+        this.email = email;
+        this.mobile = mobile;
+        this.password = password;
+        this.appointments = [];
+        this.feedbacks = [];
+    }
+}
+
+// Payment Part
+// - id
+// - patientId
+// - amount
+// - date
+// - paymentMethod
+
+class Payments {
+    id: number;
+    patientId: number;
+    amount: number;
+    date: string;
+    paymentMethod: string;
+    constructor(
+        id: number,
+        patientId: number,
+        amount: number,
+        date: string,
+        paymentMethod: string
+    ) {
+        this.id = id;
+        this.patientId = patientId;
+        this.amount = amount;
+        this.date = date;
+        this.paymentMethod = paymentMethod;
+    }
 }
