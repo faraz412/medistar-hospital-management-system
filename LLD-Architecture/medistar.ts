@@ -34,3 +34,62 @@ class Department {
         this.image=image
     }
 }
+
+// Doctor Entities
+// - id
+// - doctorName
+// - email
+// - experience
+// - phoneNo
+// - city
+// - departmentId
+// - status
+// - image
+// - isAvailable
+// - APRIL_04
+// - APRIL_05
+// - APRIL_06
+
+// slots:Slots[]|null
+// appointments: Appoinment[] | null
+class Doctor {
+    id:number
+    doctorName:string
+    email:string
+    experience:number
+    phoneNo:string
+    city:string
+    departmentId:number
+    status:boolean
+    image:string
+    isAvailable:boolean
+    slots:[]|null
+    appointments: [] | null
+    constructor(    id:number,
+        doctorName:string,
+        email:string,
+        experience:number,
+        phoneNo:string,
+        city:string,
+        departmentId:number,
+        status:boolean,
+        image:string,
+        isAvailable:boolean) {
+            this.id=id 
+            this.doctorName=doctorName 
+            this.email=email 
+            this.experience=experience 
+            this.phoneNo=phoneNo 
+            this.city=city 
+            this.departmentId=departmentId 
+            this.status=status 
+            this.image=image 
+            this.isAvailable=isAvailable 
+            this.slots=[]
+            this.appointments=[]
+    }
+
+    viewAllAppointments() {
+        return this.appointments;
+    }
+}
