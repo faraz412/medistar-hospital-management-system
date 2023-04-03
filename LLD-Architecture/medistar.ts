@@ -49,8 +49,6 @@ class Department {
 // - APRIL_05
 // - APRIL_06
 
-// slots:Slots[]|null
-// appointments: Appoinment[] | null
 class Doctor {
     id: number;
     doctorName: string;
@@ -106,9 +104,6 @@ class Doctor {
 // - mobile
 // - password
 
-// appointments: Appoinment[]|null
-// feedbacks: Feedback[]
-
 class Patient {
     id: Number;
     first_name: string;
@@ -135,34 +130,6 @@ class Patient {
         this.password = password;
         this.appointments = [];
         this.feedbacks = [];
-    }
-}
-
-// Payment Part
-// - id
-// - patientId
-// - amount
-// - date
-// - paymentMethod
-
-class Payments {
-    id: number;
-    patientId: number;
-    amount: number;
-    date: string;
-    paymentMethod: string;
-    constructor(
-        id: number,
-        patientId: number,
-        amount: number,
-        date: string,
-        paymentMethod: string
-    ) {
-        this.id = id;
-        this.patientId = patientId;
-        this.amount = amount;
-        this.date = date;
-        this.paymentMethod = paymentMethod;
     }
 }
 
@@ -223,6 +190,41 @@ class Appoinment {
     }
 }
 
+
+// Payment Part
+// - id
+// - patientId
+// - amount
+// - date
+// - paymentMethod
+
+class Payments {
+    id: number;
+    patientId: number;
+    amount: number;
+    date: string;
+    paymentMethod: string;
+    constructor(
+        id: number,
+        patientId: number,
+        amount: number,
+        date: string,
+        paymentMethod: string
+    ) {
+        this.id = id;
+        this.patientId = patientId;
+        this.amount = amount;
+        this.date = date;
+        this.paymentMethod = paymentMethod;
+    }
+}
+
+// Feedback
+//  -id
+//  -patientId
+//  -message
+//  -time
+
 class Feedback {
     id: number
     patientId: number
@@ -265,3 +267,5 @@ class MadistarHospital {
         this.feedbacks = feedbacks
     }
 }
+const Medistar = new MadistarHospital();
+console.log(Medistar);
