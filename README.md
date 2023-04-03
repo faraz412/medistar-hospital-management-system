@@ -171,6 +171,9 @@ PATCH /api/appointment/reschedule/:appointmentId
     "updatedAt":,
     "paymentStatus":false} -->
      
+ ## DB Workflow
+ [Link of Lucid Diagram](https://lucid.app/lucidchart/89a9abfd-eb14-4536-817c-92e46d59f21c/edit?viewport_loc=122%2C2%2C2689%2C1156%2C0_0&invitationId=inv_8ce3c450-9515-4295-a303-cb7c82663b34)
+ 
  ## Project Highlights  
  <div align = "center">
   
