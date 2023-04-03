@@ -27,10 +27,10 @@ class Department {
     about: string;
     image: string;
     constructor(id: number, deptName: string, about: string, image: string) {
-        (this.id = id),
-            (this.deptName = deptName),
-            (this.about = about),
-            (this.image = image);
+        this.id = id,
+            this.deptName = deptName,
+            this.about = about,
+            this.image = image;
     }
 }
 
@@ -45,9 +45,7 @@ class Department {
 // - status
 // - image
 // - isAvailable
-// - APRIL_04
-// - APRIL_05
-// - APRIL_06
+
 
 class Doctor {
     id: number;
@@ -266,6 +264,32 @@ class MadistarHospital {
         this.payments = payments
         this.feedbacks = feedbacks
     }
+    createNewDepartment(deptName: string, about: string, image: string) {
+        let id = this.departments.length + 1;
+        const department = new Department(id, deptName, about, image)
+        this.departments.push(department);
+        return department;
+    }
+    addDoctor(doctorName: string,
+        qualifications: string,
+        email: string,
+        experience: number,
+        phoneNo: string,
+        city: string,
+        departmentId: number,
+        status: boolean,
+        image: string,
+        isAvailable: boolean) {
+        const id = this.doctors.length + 1;
+        const newDoctor = new Doctor(id, doctorName, qualifications, email, experience, phoneNo, city, departmentId, status, image, isAvailable)
+        this.doctors.push(newDoctor);
+        return newDoctor;
+    }
+
 }
 const Medistar = new MadistarHospital();
+const createDept = Medistar.createNewDepartment("Cardiology", "Cardiology departments specialize in diagnosing and treating heart diseases, including cardiovascular conditions like coronary artery disease, heart failure, and arrhythmias.", "https://sp-ao.shortpixel.ai/client/to_webp,q_lossy,ret_img,w_2500,h_958/https://www.punhlainghospitals.com/wp-content/uploads/2020/12/Cardiology.jpg")
+const newDoctor = Medistar.addDoctor("Deepak chourasiya","MBBS from AIIMS from Delhi","deepak1812002@gmail.com",9,"7999764766","Mumbai",1,true,"https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTgut-XrUTj4kq8azPG0BcV3bwfaDrOvAEicg&usqp=CAU",true);
 console.log(Medistar);
+console.log(createDept);
+console.log(newDoctor);
