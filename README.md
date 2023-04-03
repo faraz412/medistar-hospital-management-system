@@ -83,25 +83,7 @@ npx nodemon index.js
 <img src="https://user-images.githubusercontent.com/25181517/182884894-d3fa6ee0-f2b4-4960-9961-64740f533f2a.png" alt="redis" width="50" height="50"/>
 <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSKZRJJRPM1V6XKXBLn2fnsy5VwmLW1uO9ixCfCYiZRwWeLKe2ukB17uzxRRyhZElgzn_E&usqp=CAU" alt="twilio" width="70" height="50"/>
 </p>
-
-
-## Frontend Part
-- Home page
-- Signup/Login
-- Logout
-- Book appointment
-- Make a payment
-- Feedback
-
-## Backend Part
-- Authentication using JWT
-- Storing password by hasing it
-- Mongoose - connecting the database
-- Server side -> Node.js and Express 
-- Nodemailer - sending Emails
-- Blacklisting of tokens
-
-    
+   
 ## API Endpoints
    #### Welcome
 ```javascript
@@ -123,7 +105,7 @@ POST  /api/user/signin
 ```javascript
 POST  /api/user/logout
 ```
-  #### Doctor 
+<!--   #### Doctor 
 ```javascript
 GET /api/doctor/allDoctor
 GET /api/doctor/search?
@@ -150,7 +132,7 @@ PATCH /api/appointment/reschedule/:appointmentId
  GET /api/appointment/allPending
  DELETE /api/appointment/reject/:appointmentId
  PATCH /api/appointment/approve/:appointmentId
- ```
+ ``` -->
 <!-- 
  ### 
 `USERS DATA...`
@@ -190,24 +172,31 @@ PATCH /api/appointment/reschedule/:appointmentId
     "paymentStatus":false} -->
      
  ## Project Highlights  
- 
-![image](https://user-images.githubusercontent.com/109690823/229313097-98ac03fb-69b0-4833-849c-48c4a1b9d38d.png)
-![image](https://user-images.githubusercontent.com/109690823/229355448-be996d1e-8545-44e1-b1ba-dc3d62d0ac9a.png)
-![image](https://user-images.githubusercontent.com/109690823/229355506-3ae1da89-9434-4400-9ab2-b8b9f86e67aa.png)
-![image](https://user-images.githubusercontent.com/109690823/229355596-5bfd0bf9-9147-47fb-bb42-b6e04ac4208b.png)
-
+ <div align = "center">
+  
+ <img src="https://user-images.githubusercontent.com/109690823/229313097-98ac03fb-69b0-4833-849c-48c4a1b9d38d.png" width="600" height="250" />
+ <img src="https://user-images.githubusercontent.com/109690823/229355448-be996d1e-8545-44e1-b1ba-dc3d62d0ac9a.png" width="600" height="250"/>
+ <img src="https://user-images.githubusercontent.com/109690823/229355506-3ae1da89-9434-4400-9ab2-b8b9f86e67aa.png" width="600" height="250"/>
+ <img src="https://user-images.githubusercontent.com/109690823/229355596-5bfd0bf9-9147-47fb-bb42-b6e04ac4208b.png" width="600" height="250"/>
+ <img src="https://user-images.githubusercontent.com/112754448/229442938-2217ce0b-89d7-4663-a9c0-f966cbafe9e5.png" width="600" height="250"/>
+ <img src="https://user-images.githubusercontent.com/112754448/229443082-625321d8-29bc-4f28-b7bb-c21e900c1ad4.png" width="600" height="250"/>
+  
+<div/>
+  
 ## Demo
 ```
 
 ```
-
+  
 ## Authors
 
-- [@faraz412](https://github.com/faraz412)
-- [@deepakChourasiya-aj](https://github.com/deepakChourasiya-aj)
-- [@abhishek1494k](https://github.com/abhishek1494k)
-- [@Atul3007](https://github.com/Atul3007)
-- [@prernadave](https://github.com/prernadave)
-
-
-
+ [@faraz412](https://github.com/faraz412) 
+ 
+ [@deepakChourasiya-aj](https://github.com/deepakChourasiya-aj) 
+ 
+ [@abhishek1494k](https://github.com/abhishek1494k) 
+ 
+ [@Atul3007](https://github.com/Atul3007) 
+ 
+ [@prernadave](https://github.com/prernadave) 
+ 
