@@ -16,32 +16,21 @@
                     //   - Doctor Atul
                     //   - Doctor Prerna
 
-
-
-
- 
-
-
-
-
-
-// departmentId: {
-//     type: Number,
-//     unique: true,
-//     required: true,
-//   },
-//   deptName: { type: String, required: true },
-//   about: { type: String, required: true },
-//   image: { type: String, required: true },
-
+// Department - entities
+// - departmentId
+// - deptName
+// - about
+// - image
 
 class Department {
-    id: number
-    name: string
-    description: string
-    constructor(id: number, name: string, description: string) {
-        this.id = id
-        this.name = name
-        this.description = description
+    departmentId: number
+    deptName: string
+    about:string
+    image: string
+    constructor(departmentId: number, deptName: string, about: string,image: string) {
+        this.departmentId=departmentId,
+        this.deptName=deptName,
+        this.about=about,
+        this.image=image
     }
 }
