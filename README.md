@@ -172,17 +172,20 @@ PATCH /api/appointment/reschedule/:appointmentId
     "paymentStatus":false} -->
      
  ## Project Highlights  
- 
-![image](https://user-images.githubusercontent.com/109690823/229313097-98ac03fb-69b0-4833-849c-48c4a1b9d38d.png)
-![image](https://user-images.githubusercontent.com/109690823/229355448-be996d1e-8545-44e1-b1ba-dc3d62d0ac9a.png)
-![image](https://user-images.githubusercontent.com/109690823/229355506-3ae1da89-9434-4400-9ab2-b8b9f86e67aa.png)
-![image](https://user-images.githubusercontent.com/109690823/229355596-5bfd0bf9-9147-47fb-bb42-b6e04ac4208b.png)
-
+ <div align = "center">
+  
+ <img src="https://user-images.githubusercontent.com/109690823/229313097-98ac03fb-69b0-4833-849c-48c4a1b9d38d.png" width="650" height="300" />
+ <img src="https://user-images.githubusercontent.com/109690823/229355448-be996d1e-8545-44e1-b1ba-dc3d62d0ac9a.png" width="650" height="300"/>
+ <img src="https://user-images.githubusercontent.com/109690823/229355506-3ae1da89-9434-4400-9ab2-b8b9f86e67aa.png" width="650" height="300"/>
+ <img src="https://user-images.githubusercontent.com/109690823/229355596-5bfd0bf9-9147-47fb-bb42-b6e04ac4208b.png" width="650" height="300"/>
+  
+<div/>
+  
 ## Demo
 ```
 
 ```
-
+  
 ## Authors
 
 - [@faraz412](https://github.com/faraz412)
