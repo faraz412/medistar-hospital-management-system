@@ -54,6 +54,7 @@ class Department {
 class Doctor {
     id: number;
     doctorName: string;
+    qualifications: string;
     email: string;
     experience: number;
     phoneNo: string;
@@ -67,6 +68,7 @@ class Doctor {
     constructor(
         id: number,
         doctorName: string,
+        qualifications: string,
         email: string,
         experience: number,
         phoneNo: string,
@@ -78,6 +80,7 @@ class Doctor {
     ) {
         this.id = id;
         this.doctorName = doctorName;
+        this.qualifications=qualifications; 
         this.email = email;
         this.experience = experience;
         this.phoneNo = phoneNo;
@@ -90,7 +93,7 @@ class Doctor {
         this.appointments = [];
     }
 
-    viewAllAppointments() {
+    seeAllAppointments() {
         return this.appointments;
     }
 }
