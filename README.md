@@ -190,8 +190,8 @@ PATCH /api/appointment/reschedule/:appointmentId
   
 ## Authors
 
-- [@faraz412](https://github.com/faraz412)
-- [@deepakChourasiya-aj](https://github.com/deepakChourasiya-aj)
-- [@abhishek1494k](https://github.com/abhishek1494k)
-- [@Atul3007](https://github.com/Atul3007)
-- [@prernadave](https://github.com/prernadave)
+ [@faraz412](https://github.com/faraz412)
+ [@deepakChourasiya-aj](https://github.com/deepakChourasiya-aj)
+ [@abhishek1494k](https://github.com/abhishek1494k)
+ [@Atul3007](https://github.com/Atul3007)
+ [@prernadave](https://github.com/prernadave)
