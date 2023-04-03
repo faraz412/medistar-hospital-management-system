@@ -162,3 +162,60 @@ class Payments {
         this.paymentMethod = paymentMethod;
     }
 }
+
+// Appoinment
+// - id
+// - patientId
+// - doctorId
+// - patientFirstName
+// - docFirstName
+// - ageOfPatient
+// - gender
+// - address
+// - Description
+// - appointmentDate
+// - status
+// - paymentStatus
+
+class Appoinment {
+    id: Number
+    patientId: Number
+    doctorId: Number
+    patientFirstName: String
+    docFirstName: String
+    ageOfPatient: Number
+    gender: String
+    address: String
+    Description: String
+    appointmentDate: String
+    status: Boolean
+    paymentStatus: Boolean
+
+    constructor(
+        id: Number,
+        patientId: Number,
+        doctorId: Number,
+        patientFirstName: String,
+        docFirstName: String,
+        ageOfPatient: Number,
+        gender: String,
+        address: String,
+        Description: String,
+        appointmentDate: String,
+        status: Boolean,
+        paymentStatus: Boolean
+    ) {
+        this.id = id
+        this.patientId = patientId
+        this.doctorId = doctorId
+        this.patientFirstName = patientFirstName
+        this.docFirstName = docFirstName
+        this.ageOfPatient = ageOfPatient
+        this.gender = gender
+        this.address = address
+        this.Description = Description
+        this.appointmentDate = appointmentDate
+        this.status = status
+        this.paymentStatus = paymentStatus
+    }
+}
