@@ -74,14 +74,15 @@ let fourth=document.querySelector("#fourth").value;
     .then(data=>  {
       // console.log(data)
       if(bag==otp){
-        alert("registered successfully")
-        window.location.href="./login.html"
-        localStorage.clear()
+        swal("", "Registered successfull", "success").then(function() {
+          window.location.href = "./login.html";
+          localStorage.clear();
+      });
       }
       else if(bag!=otp){
-        alert("wrong otp")
-window.location.href="./otp.html"
-
+        swal("", "Wrong OTP", "warning").then(function() {
+          window.location.href = "./otp.html";
+      });
       }else{
         // window.location.href="./signup.html"
       }   

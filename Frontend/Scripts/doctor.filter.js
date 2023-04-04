@@ -3,5 +3,5 @@ let selectTag=document.getElementById("select-dept");
 
 selectTag.addEventListener("change", async(e)=>{
     localStorage.setItem("deptID",selectTag.value);
-    window.location.href="/Frontend/Pages/doctors.page.html";
+    window.location.href="doctors.page.html";
 })

@@ -90,7 +90,9 @@ patientForm.addEventListener("submit",async(e)=>{
                     }
                     if(result.message){
                         swal("",`${result.message}`,"info").then(function(){
-                            window.location.href="/Frontend/index.html"; 
+                            localStorage.removeItem("formObj");
+                            localStorage.removeItem("docObj");
+                            window.location.href="../index.html"; 
                         });
                     }
                 }else{
