@@ -21,9 +21,9 @@ form.addEventListener("submit",async (e)=>{
         }else{
             localStorage.setItem("token",data.token);
             localStorage.setItem("userName",data.name);
-            console.log(data);
-            alert("Login Successful");
-            window.location.href="book.appointment.html";
+            swal("", "Login Successful", "success").then(function() {
+                window.location.href="book.appointment.html";
+            });
         }
       } catch (error) {
         console.log(error);

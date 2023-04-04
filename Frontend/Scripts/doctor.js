@@ -28,7 +28,8 @@ window.addEventListener("load",async (e)=>{
                     }else{
                         renderdata(data.doctor);
                     }                
-                } 
+                }
+            localStorage.removeItem("deptID");     
         }catch(err){
             console.log(err);
         }
@@ -101,37 +102,37 @@ function renderdata(arr) {
     let forms=document.querySelectorAll(".select-app>form");
     for(let form of forms){
         form.addEventListener("submit",(e)=>{
-            if(!localStorage.getItem("admin")){
+            e.preventDefault();
+            if(!localStorage.getItem("token")){
                 swal("", "Please Login!", "warning").then(function() {
-                    window.location.href="/Frontend/Pages/Admin/admin.login.html";
+                    window.location.href="./login.html";
+                });
+            }else{
+                let img=e.path[3].children[0].children[0].children[0].currentSrc;
+                let name=e.path[3].children[0].children[1].children[0].innerText;
+                let dept=e.path[3].children[0].children[1].children[1].innerText;
+                let exp=e.path[3].children[0].children[1].children[2].innerText;
+                let qual=e.path[3].children[0].children[1].children[3].innerText;
+                let docID=e.path[3].children[0].children[1].children[4].innerText;
+                let formObj={
+                    "date":form.date.value,
+                    "slot":form.slot.value
+                }
+                let docObj={
+                    img,
+                    name,
+                    dept,
+                    exp,
+                    qual,
+                    docID
+                };
+                console.log(docObj);
+                swal("", `Confirm Booking?`, "info").then(function() {
+                    localStorage.setItem("formObj",JSON.stringify(formObj));
+                    localStorage.setItem("docObj",JSON.stringify(docObj));
+                    window.location.href="patient_details.html";
                 });
             }
-            console.log(e);
-            e.preventDefault();
-            let img=e.path[3].children[0].children[0].children[0].currentSrc;
-            let name=e.path[3].children[0].children[1].children[0].innerText;
-            let dept=e.path[3].children[0].children[1].children[1].innerText;
-            let exp=e.path[3].children[0].children[1].children[2].innerText;
-            let qual=e.path[3].children[0].children[1].children[3].innerText;
-            let docID=e.path[3].children[0].children[1].children[4].innerText;
-            let formObj={
-                "date":form.date.value,
-                "slot":form.slot.value
-            }
-            let docObj={
-                img,
-                name,
-                dept,
-                exp,
-                qual,
-                docID
-            };
-            console.log(docObj);
-            swal("", `Confirm Booking?`, "info").then(function() {
-                localStorage.setItem("formObj",JSON.stringify(formObj));
-                localStorage.setItem("docObj",JSON.stringify(docObj));
-                window.location.href="/Frontend/Pages/patient_details.html";
-            });
         })
     }
 }

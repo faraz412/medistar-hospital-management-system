@@ -23,7 +23,9 @@ let form =document.querySelector("form");
         
         localStorage.setItem("userDetails",JSON.stringify(obj));
         localStorage.setItem("otp",data.otp);
-        window.location.href="./otp.html"
+        swal("", "OTP has been sent to your mail", "info").then(function() {
+          window.location.href="./otp.html";
+      });
        // alert("Successfully registered");
       } catch (error) {
         console.log(error);

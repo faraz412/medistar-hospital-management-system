@@ -95,10 +95,6 @@ body{
     justify-content: space-around;
     width:70%;
 }
-.doc-img{
-    /* border:1px solid black; */
-    width:30%;
-}
 .doc-img,.doc-book{
     display:flex;
     align-items: center;
@@ -117,7 +113,7 @@ body{
 }
 .doc-book{
     /* border:1px solid black; */
-    width:38%;
+    width:45%;
 }
 .select-app{
     /* border:1px solid black; */
@@ -156,4 +152,7 @@ body{
 }
 .doc-book input:hover{
     cursor: pointer;
+}
+#filter-approval>*:hover{
+    cursor:pointer;
 }

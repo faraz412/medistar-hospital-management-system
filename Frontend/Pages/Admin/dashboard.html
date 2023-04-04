@@ -8,10 +8,10 @@
     <title>Admin Dashboard</title>
     <link rel="stylesheet"
         href="https://fonts.googleapis.com/css2?family=Material+Symbols+Sharp:opsz,wght,FILL,GRAD@20..48,100..700,0..1,-50..200" />
-    <link rel="stylesheet" href="/Frontend/Styles/admin_dash.css">
-    <link rel="stylesheet" href="/Frontend/css/all.css">
+    <link rel="stylesheet" href="../../Styles/admin_dash.css">
+    <link rel="stylesheet" href="../../css/all.css">
     <link rel="stylesheet" href="https://unpkg.com/aos@next/dist/aos.css" />
-    <script src="https://unpkg.com/sweetalert/dist/sweetalert.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/sweetalert/2.1.2/sweetalert.min.js"></script>
 </head>
 
 <body>
@@ -20,7 +20,7 @@
         <aside>
             <div class="top">
                 <div class="logo">
-                    <img src="/Frontend/Files/MEDSTAR.png" alt="">
+                    <img src="../../Files/MEDSTAR.png" alt="">
                     <h2>Admin <span class="primary">Panel</span></h2>
                 </div>
                 <!-- <div class="close" id="close-btn">
@@ -29,10 +29,11 @@
             </div>
             <div class="profile">
                 <div class="profile-photo">
-                    <img src="https://media.istockphoto.com/photos/close-up-portrait-of-brunette-woman-picture-id1154642632?b=1&k=20&m=1154642632&s=612x612&w=0&h=StstyxyDdiJQgUSTlaWv2ITXSMb029KzXijHtsaTQEg=">
+                    <!-- <img src="https://media.istockphoto.com/photos/close-up-portrait-of-brunette-woman-picture-id1154642632?b=1&k=20&m=1154642632&s=612x612&w=0&h=StstyxyDdiJQgUSTlaWv2ITXSMb029KzXijHtsaTQEg="> -->
+                    <img src="../../Files/Albert.jpg">
                 </div>
                 <div class="info">
-                    <p>Hey, <b>Name</b></p>
+                    <p>Hey, <b style="color:black">Albert</b></p>
                     <small class="text-muted">Admin</small>
                 </div>
                 <div class="theme-toggler">
@@ -75,7 +76,7 @@
                     </span>
                     <h3>Settings</h3>
                 </a>
-                <a id="menu-logout" href="/Frontend/Pages/Admin/admin.login.html">
+                <a id="menu-logout">
                     <span class="material-symbols-sharp">
                         logout
                     </span>
@@ -396,7 +397,7 @@
                                     <th>Consulting Doctor</th>
                                     <th>App. Date</th>
                                     <th>Reason</th>
-                                    <th>Payment Status</th>
+                                    <th>Approval Status</th>
                                     <!-- <th>Department</th> -->
                                 </tr>
                             </thead>
@@ -410,7 +411,7 @@
         </main>
         <!-- ----main section end---- -->
     </div>
-    <script type="module" src="/Frontend/Scripts/admin_dash.js"></script>
+    <script type="module" src="../../Scripts/admin_dash.js"></script>
 
     <script src="https://unpkg.com/aos@next/dist/aos.js"></script>
     <script>

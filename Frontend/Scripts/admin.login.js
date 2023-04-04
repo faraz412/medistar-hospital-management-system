@@ -29,7 +29,7 @@ async function auth(obj){
             if(data.message=="Login Successful"){
                 localStorage.setItem("admin","admin");
                 swal("", "Welcome Admin!", "success").then(function() {
-                    window.location = "/Frontend/Pages/Admin/dashboard.html";
+                    window.location.href = "dashboard.html";
                 });
             }else{
                 swal("","Wrong Credentials!","warning");

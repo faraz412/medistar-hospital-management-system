@@ -15,7 +15,7 @@ let depObj={
 
 if(!localStorage.getItem("admin")){
     swal("", "Please Login!", "warning").then(function() {
-        window.location.href="/Frontend/Pages/Admin/admin.login.html";
+        window.location.href="admin.login.html";
     });
 }
 
@@ -130,19 +130,19 @@ function renderRecentDocs(elem1,elem2,elem3){
         <td>${elem1.doctorName}</td>
         <td>${depObj[elem1.departmentId]}</td>
         <td>${elem1.phoneNo}</td>
-        <td>${elem1.experience.split(" ")[0]+" "+elem1.experience.split(" ")[1]}</td>
+        <td>${elem1.experience.split(" ")[0]}</td>
     </tr>
     <tr>
         <td>${elem2.doctorName}</td>
         <td>${depObj[elem2.departmentId]}</td>
         <td>${elem2.phoneNo}</td>
-        <td>${elem2.experience.split(" ")[0]+" "+elem2.experience.split(" ")[1]}</td>
+        <td>${elem2.experience.split(" ")[0]}</td>
     </tr>
     <tr>
         <td>${elem3.doctorName}</td>
         <td>${depObj[elem3.departmentId]}</td>
         <td>${elem3.phoneNo}</td>
-        <td>${elem3.experience.split(" ")[0]+" "+elem3.experience.split(" ")[1]}</td>
+        <td>${elem3.experience.split(" ")[0]}</td>
     </tr>
 `
 }
@@ -455,6 +455,7 @@ function renderPatientsData(arr){
 //APPOINTMENTS DATA DISPLAY
 
 function renderAppsData(arr){
+    // console.log(arr);
     let apps_tbody=document.getElementById("apps-render");
 
     apps_tbody.innerHTML="";
@@ -476,20 +477,53 @@ function renderAppsData(arr){
         let reason=document.createElement("td");
         reason.innerText=elem.problemDescription;
 
-        let payStatus=document.createElement("td");
-        if(elem.paymentStatus){
-            payStatus.innerText="PAID";
-            payStatus.style.color="blue";        
+        let status=document.createElement("td");
+        if(elem.status){
+            status.innerText="Approved";
+            status.style.color="blue";
         }else{
-            payStatus.innerText="NOT PAID";   
-            payStatus.style.color="red";        
+            status.innerText="Click to approve";
+            status.style.color="red"; 
+            status.addEventListener("click",(e)=>{
+                // console.log(arr);
+                swal("", "Confirm Approval?", "info").then(function() {
+                    approveApp(elem._id);
+                    });
+            })          
         }
 
 
-        tr.append(pname,gender,doc,date,reason,payStatus);
+        tr.append(pname,gender,doc,date,reason,status);
         apps_tbody.append(tr);
     })
 }
+
+//APPROVE Appointment
+async function approveApp(id){
+    // console.log(id);
+    try{
+        let res=await fetch(baseURL+`appointment/approve/${id}`,{
+            method:"PATCH",
+            headers:{
+				"content-type": "application/json"
+			}
+        });
+        if(res.ok){
+            let data=await res.json();
+            recentApps();
+        }
+    }catch(err){
+        console.log(err);
+    }    
+}
+
+//Logout
+document.getElementById("menu-logout").addEventListener("click",(e)=>{
+    localStorage.removeItem("admin");
+    swal("", `Logged out successfully`, "success").then(function(){
+        window.location.href="./admin.login.html";
+    });
+})
 
 
 

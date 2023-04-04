@@ -311,6 +311,8 @@ main{
     text-align: center;
     box-shadow: rgba(0, 0, 0, 0.16) 0px 1px 4px;
     border-radius: 10px;
+    background-color: #dce1eb;
+    color:black;
 }
 .create-doc{
     padding-top:0.6rem;
@@ -380,7 +382,6 @@ main{
     border-spacing: 0;
     overflow: hidden;
     border-radius: 5px;
-    background-color: #41f1b6;
 }
 .doc-data tr,.app-data tr,
 .patient-data tr{
@@ -430,4 +431,7 @@ main{
     display: flex;
     justify-content: space-between;
     align-items: center;
+}
+#filter-approval>*:hover{
+    cursor:pointer;
 }
