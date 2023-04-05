@@ -202,7 +202,7 @@ PATCH /api/appointment/reschedule/:appointmentId
 | :----: | 
    
 ```
-
+https://medistar-hospital.netlify.app/
 ```
  
 | `Authors` |
