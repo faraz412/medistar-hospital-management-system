@@ -201,9 +201,9 @@ PATCH /api/appointment/reschedule/:appointmentId
 | `Demo` |
 | :----: | 
    
-```
-[Medistar](https://medistar-hospital.netlify.app/)
-```
+
+[https://medistar-hospital.netlify.app/](https://medistar-hospital.netlify.app/)
+
  
 | `Authors` |
 | :-------: | 
