@@ -218,3 +218,12 @@ PATCH /api/appointment/reschedule/:appointmentId
  
  [@prernadave](https://github.com/prernadave) 
  
+| `Admin` |
+| :-----: | 
+
+```
+/admin.login.html
+admin@gmail.com
+admin
+```
+
