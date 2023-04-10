@@ -24,13 +24,13 @@ userRouter.post("/emailVerify", async (req, res) => {
   const transporter = nodemailer.createTransport({
     service: "gmail",
     auth: {
-      user: "abhi.jaiswal1494@gmail.com",
-      pass: "xajyvogutczrdcwy",
+      user: "medistar.hospital301@gmail.com",
+      pass: "hoxilrprpqwjbnzi",
     },
   });
 
   const mailOptions = {
-    from: "abhi.jaiswal1494@gmail.com",
+    from: "medistar.hospital301@gmail.com",
     to: email,
     subject: "Here is your OTP for Medistar Login",
     text: otp,
