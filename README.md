@@ -84,6 +84,7 @@ npx nodemon index.js
 <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSKZRJJRPM1V6XKXBLn2fnsy5VwmLW1uO9ixCfCYiZRwWeLKe2ukB17uzxRRyhZElgzn_E&usqp=CAU" alt="twilio" width="70" height="50"/>
 </p>
    
+   
 ## API Endpoints
    #### Welcome
 ```javascript
@@ -174,13 +175,15 @@ PATCH /api/appointment/reschedule/:appointmentId
    
 <div align = "center">  
   
+
+  
 | `DB Workflow` |
 | :-----------: | 
 
  [Link of Lucid Diagram](https://lucid.app/lucidchart/89a9abfd-eb14-4536-817c-92e46d59f21c/edit?viewport_loc=122%2C2%2C2689%2C1156%2C0_0&invitationId=inv_8ce3c450-9515-4295-a303-cb7c82663b34)
   
  <img src="https://raw.githubusercontent.com/faraz412/cozy-passenger-4798/main/Frontend/Files/MEDISTAR%20HOSPITALS%20DB%20Workflow.png" width="900" height="400" />
-  <img src="https://user-images.githubusercontent.com/109690823/230873616-b249569d-7695-4181-872f-3d926e4adcd0.png" width="900" height="400" />
+  <img src="https://user-images.githubusercontent.com/109690823/230876067-5b3223de-3ff3-4204-a4a8-9fb5818f2e1c.png" width="900" height="400" />
  <div/>
 
   
