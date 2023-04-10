@@ -2,7 +2,6 @@ const mongoose = require("mongoose");
 
 const timeSlot = {
   type: [String],
-  default: undefined,
 };
 
 const doctorSchema = mongoose.Schema({
@@ -43,9 +42,9 @@ const doctorSchema = mongoose.Schema({
     type: Boolean,
     default: true,
   },
-  APRIL_04: timeSlot,
-  APRIL_05: timeSlot,
-  APRIL_06: timeSlot,
+  APRIL_11: timeSlot,
+  APRIL_12: timeSlot,
+  APRIL_13: timeSlot,
 },{
   versionKey:false
 });
