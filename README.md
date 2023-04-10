@@ -188,12 +188,12 @@ PATCH /api/appointment/reschedule/:appointmentId
 
  <div align = "center">
   
- <img src="https://user-images.githubusercontent.com/109690823/229313097-98ac03fb-69b0-4833-849c-48c4a1b9d38d.png" width="600" height="250" />
- <img src="https://user-images.githubusercontent.com/109690823/229355448-be996d1e-8545-44e1-b1ba-dc3d62d0ac9a.png" width="600" height="250"/>
- <img src="https://user-images.githubusercontent.com/109690823/229355506-3ae1da89-9434-4400-9ab2-b8b9f86e67aa.png" width="600" height="250"/>
- <img src="https://user-images.githubusercontent.com/109690823/229355596-5bfd0bf9-9147-47fb-bb42-b6e04ac4208b.png" width="600" height="250"/>
- <img src="https://user-images.githubusercontent.com/112754448/229442938-2217ce0b-89d7-4663-a9c0-f966cbafe9e5.png" width="600" height="250"/>
- <img src="https://user-images.githubusercontent.com/112754448/229443082-625321d8-29bc-4f28-b7bb-c21e900c1ad4.png" width="600" height="250"/>
+ <img src="https://user-images.githubusercontent.com/109690823/229313097-98ac03fb-69b0-4833-849c-48c4a1b9d38d.png" width="700" height="350" />
+ <img src="https://user-images.githubusercontent.com/109690823/229355448-be996d1e-8545-44e1-b1ba-dc3d62d0ac9a.png" width="700" height="350"/>
+ <img src="https://user-images.githubusercontent.com/109690823/229355506-3ae1da89-9434-4400-9ab2-b8b9f86e67aa.png" width="700" height="350"/>
+ <img src="https://user-images.githubusercontent.com/109690823/229355596-5bfd0bf9-9147-47fb-bb42-b6e04ac4208b.png" width="700" height="350"/>
+ <img src="https://user-images.githubusercontent.com/112754448/229442938-2217ce0b-89d7-4663-a9c0-f966cbafe9e5.png" width="700" height="350"/>
+ <img src="https://user-images.githubusercontent.com/112754448/229443082-625321d8-29bc-4f28-b7bb-c21e900c1ad4.png" width="700" height="350"/>
   
 <div/>
   
