@@ -1,5 +1,5 @@
-let baseURL="http://localhost:8080/";
+// let baseURL="http://localhost:8080/";
 
-// let baseURL="https://chartreuse-green-eagle-robe.cyclic.app/"
+let baseURL="https://gorgeous-ruby-jaguar.cyclic.app/"
 
 export default baseURL;
