@@ -37,9 +37,9 @@ doctorRouter.post("/addDoctor", async (req, res) => {
       status,
       image,
       isAvailable,
-      APRIL_04: ["11-12", "2-3", "4-5", "7-8"],
-      APRIL_05: ["11-12", "2-3", "4-5", "7-8"],
-      APRIL_06: ["11-12", "2-3", "4-5", "7-8"],
+      APRIL_11: ["11-12", "2-3", "4-5", "7-8"],
+      APRIL_12: ["11-12", "2-3", "4-5", "7-8"],
+      APRIL_13: ["11-12", "2-3", "4-5", "7-8"],
     });
     await doctor.save();
     res.status(201).send({ msg: "Doctor has been created", doctor });
