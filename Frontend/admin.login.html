@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en">
+	<head>
+		<meta charset="UTF-8" />
+		<meta http-equiv="X-UA-Compatible" content="IE=edge" />
+		<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+		<title>Admin Login</title>
+		<link rel="icon" href="./Files/Medistar-logo-crop.jpeg">
+		<link rel="stylesheet" href="./Styles/nav.css">
+        <link rel="stylesheet" href="./css/all.css">
+		<link rel="stylesheet" href="./Styles/admin_login.css" />
+		<link rel="stylesheet" href="./Styles/footer.css">
+		<link rel="stylesheet" href="./Styles/responsive.css">
+		<script src="https://cdnjs.cloudflare.com/ajax/libs/sweetalert/2.1.2/sweetalert.min.js"></script>
+	</head>
+	<body>
+
+        <section id="navbar">
+            <!-- Navbar Imported -->
+        </section> 
+
+
+		<div class="center">
+			<h1>Admin Login</h1>
+			<form>
+				<div class="input_field">
+					<input id="user" type="email" required />
+					<span></span>
+					<label>Enter email</label>
+				</div>
+				<div class="input_field">
+					<input id="pass" type="password" required />
+					<span></span>
+					<label>Enter Password</label>
+				</div>
+				<div class="forgot_pass">Forgot Password?</div>
+				<input type="submit" type="Login" />
+				<div class="homelink">
+					Not a Admin? <a href="./index.html">HomePage</a>
+				</div>
+			</form>
+		</div>
+
+        <section id="footer">
+            <!-- Footer Imported -->
+        </section>
+
+
+		<script type="module" src="./Scripts/admin.login.js"></script>
+	</body>
+
+    <script type="module" src="./Scripts/navbar.js"></script>
+    <script type="module" src="./Scripts/footer.js"></script> 
+</html>

@@ -1,0 +1,124 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <!-- Required meta tags -->
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+
+    <!-- Bootstrap CSS -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
+    <link rel="stylesheet" href="./Styles/nav.css">
+    <link rel="stylesheet" href="./css/all.css">
+    <link rel="stylesheet" href="./Styles/patient.details.css">
+    <link rel="stylesheet" href="./Styles/footer.css">
+    <link rel="stylesheet" href="./Styles/responsive.css">
+    <link rel="stylesheet" href="https://unpkg.com/aos@next/dist/aos.css" />
+    <script src="https://unpkg.com/sweetalert/dist/sweetalert.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/sweetalert/2.1.2/sweetalert.min.js"></script>
+    <title>Patient_form</title>
+    <link rel="icon" href="./Files/Medistar-logo-crop.jpeg">
+    <style>
+      @import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700;800&display=swap');
+      *{
+          box-sizing: border-box;
+      }
+      body{
+          font-family: poppins, sans-serif;
+          font-size: 0.9rem;
+      }
+  </style>
+  </head>
+  <body>
+
+    <section id="navbar">
+      <!-- Navbar Imported -->
+  </section> 
+    
+<div id="main-cont">
+    <div id="doctors-container">
+        <!-- Fetch Data -->
+    </div>
+    <div data-aos="fade-left" data-aos-duration="800" id="payment-container">
+        <div class="card">
+            <div class="card-body">
+                <div>
+                    <h3>Patient Details</h3>
+                </div>
+              <div>
+                <p>This in-clinic appointment is for</p>
+              </div>
+              <div class="form-check">
+                <input class="form-check-input" type="radio" name="flexRadioDefault" id="flexRadioDefault1">
+                <label  class="form-check-label" for="flexRadioDefault1">
+                  Myself
+                </label>
+              </div>
+              <div class="form-check">
+                <input class="form-check-input" type="radio" name="flexRadioDefault" id="flexRadioDefault2" checked>
+                <label class="form-check-label" for="flexRadioDefault2">
+                 Someone Else
+                </label>
+              </div>
+              <p>Please provide the following information</p>
+              <form id="PatientForm">
+                <div class="mb-3" style="padding: 1%;">
+                  <input name="name" required="true" type="name" class="form-control" id="exampleFormControlInput1" placeholder="Enter Name">
+                </div>
+                <div class="mb-3" style="padding: 1%;">
+                  <input name="age" required="true" type="number" class="form-control" id="exampleFormControlInput1" placeholder="Enter Age">
+                </div>
+                <div class="mb-3" style="padding: 1%;">
+                  <input name="gender" required="true" type="text" class="form-control" id="exampleFormControlInput1" placeholder="Enter Gender">
+                </div>
+                <div class="mb-3" style="padding: 1%;">
+                  <input name="address" required="true" type="text" class="form-control" id="exampleFormControlInput1" placeholder="Enter Address">
+                </div>
+                <div class="mb-3" style="padding: 1%;">
+                  <input name="problem" required="true" type="text" class="form-control" id="exampleFormControlInput1" placeholder="Enter Problem Description">
+                </div>
+                <input type="submit" value="Confirm your appointment" class="btn btn-info" style="color: white; width:80%;display:block; margin:auto">
+              </form>
+                  <!-- <div>
+                    <p>Has the patient taken covid-19 vaccination?</p>
+                  </div>
+                  <div class="form-check">
+                    <input class="form-check-input" type="radio" name="flexRadioDefault" id="flexRadioDefault2" checked>
+                    <label class="form-check-label" for="flexRadioDefault2">
+                     Yes
+                    </label>
+                  </div>
+                  <div class="form-check">
+                    <input class="form-check-input" type="radio" name="flexRadioDefault" id="flexRadioDefault2" checked>
+                    <label class="form-check-label" for="flexRadioDefault2">
+                     No
+                    </label>
+                  </div> -->
+                  <!-- <div class="form-check">
+                    <input class="form-check-input" type="radio" name="flexRadioDefault" id="flexRadioDefault2" checked>
+                    <label class="form-check-label" for="flexRadioDefault2">
+                     Partially
+                    </label>
+                  </div> -->
+            </div>
+            <h6 style=" width:80%; margin: 1rem">* Updates will be sent to your e-mail</h6>
+          </div>
+        </div>
+    
+</div>
+
+
+<section id="footer">
+  <!-- Footer Imported -->
+</section>
+    <script type="module" src="./Scripts/patient.details.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-MrcW6ZMFYlzcLA8Nl+NtUVF0sA7MsXsP1UyJoMp4YLEuNSfAP+JcXn/tWtIaxVXM" crossorigin="anonymous"></script>
+ 
+    <script src="https://unpkg.com/aos@next/dist/aos.js"></script>
+    <script>
+      AOS.init();
+    </script>
+  </body>
+
+  <script type="module" src="./Scripts/navbar.js"></script>
+<script type="module" src="./Scripts/footer.js"></script>
+</html>
