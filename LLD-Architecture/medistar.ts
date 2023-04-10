@@ -187,7 +187,7 @@ class Appoinment {
     }
 }
 
-// Payment Part
+// Payment class
 // - id
 // - patientId
 // - amount
