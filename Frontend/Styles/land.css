@@ -1,0 +1,140 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700;800&display=swap');
+
+*{
+    margin:0;
+    padding:0;
+    font-family: sans-serif;
+    box-sizing: border-box;
+}
+body{
+    font-family: poppins, sans-serif;
+    font-size: 0.9rem;
+}
+li{
+    list-style: none;
+}
+.land-sections{
+    /* border:1px solid black; */
+    width:77%;
+    margin: 4.5rem auto;
+}
+#land-video{
+    width:100%;
+    /* border:1px solid red; */
+}
+#land-video>img{
+    width:100%;
+}
+#land-video>video{
+    border:1px solid green;
+    width:100%;
+    height:30rem;
+}
+#feature-cont{
+    /* border:1px solid red; */
+    display:grid;
+    grid-template-columns: repeat(5,1fr);
+    gap: 3rem;
+}
+.feature-card{
+    box-shadow: rgba(50, 50, 93, 0.25) 0px 6px 12px -2px, rgba(0, 0, 0, 0.3) 0px 3px 7px -3px;
+    border-radius: 10px;
+    transition: transform .2s;
+}
+.feature-card:hover{
+    transform: scale(1.1);
+    cursor:pointer;
+}
+.feature-img{
+    width:100%;
+    /* border:1px solid black; */
+}
+.feature-img>img{
+    border-top-right-radius: 10px;
+    border-top-left-radius: 10px;
+    width:100%;
+}
+.feature-desc{
+    padding:12px;
+}
+.feature-desc>*{
+    margin:10px 0;
+}
+.feature-desc>p{
+    color:gray;
+    font-size: 15px;
+}
+#consult-head>*{
+    margin:7px 0;
+}
+#consult-body{
+    display:grid;
+    grid-template-columns: repeat(5,1fr);
+    gap: 3rem;
+    margin:30px 0;
+}
+.consult-card{
+    border-radius: 10px;
+    transition: transform .2s;
+}
+.consult-card:hover{
+    transform: scale(1.1);
+    cursor:pointer;
+}
+.c-c-img{
+    width:100%;
+    /* border:1px solid black; */
+}
+.c-c-img>img{
+    width:100%;
+    height:12rem;
+    border-radius: 50%;
+    /* border:1px solid black; */
+}
+.c-c-desc{
+    padding:10px;
+    text-align: center;
+}
+.c-c-desc>*{
+    margin:5px 0;
+}
+.c-c-desc>a{
+    color:rgb(0, 183, 255);
+    font-size: 12px;
+    font-weight: bold;
+    text-decoration: none;
+}
+/* .land-sections-dept{
+    width:85rem;
+    margin:auto;
+} */
+.dept-card{
+    width:100%;
+    position:relative;
+}
+.dept-card>img{
+    width:100%;
+    border-radius:1rem;
+    margin:1rem 0;
+}
+#dept-sec>div:nth-child(odd)>.dept-body{
+    /* border:1px solid black; */
+    width:40%;
+    position:absolute;
+    top:3rem;
+    left:3rem;
+}
+#dept-sec>div:nth-child(even)>.dept-body{
+    width:40%;
+    position:absolute;
+    top:3rem;
+    right:5rem;
+}
+.dept-body>h1{
+    font-size:35px;
+    margin-bottom: 1rem;
+}
+.dept-body>p{
+    line-height: 1.5rem;
+    color:rgb(107, 107, 107);
+}

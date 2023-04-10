@@ -1,0 +1,128 @@
+/* --------BOOK APPOINTMENT PAGE ----------- */
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700;800&display=swap');
+*{
+    margin:0;
+    padding:0;
+    font-family: sans-serif;
+    box-sizing: border-box;
+}
+body{
+    font-family: poppins, sans-serif;
+    font-size: 0.9rem;
+}
+.card{
+    margin-top:4rem; 
+}
+.card-img-overlay{
+    border: 0; 
+    margin: 2%;
+}
+.card-title{
+    text-align: center;
+}
+.card-img-overlay>div{
+    /* border:1px solid red; */
+    margin: 50px;
+    text-align: center;
+}
+.card-img-overlay>div p{
+    width:50%; 
+    padding-top:0.7rem;
+}
+#select-dept{
+    width:50%; 
+    text-align:center;
+}
+.input-grp{
+    /* border:1px solid red; */
+    width: 30%;
+    margin: auto;
+    margin-top: 3%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+#select-dept{
+    margin-top:-10px;
+    padding:7px;
+}
+.safety-banner{
+    background-color: rgb(235, 233, 233);
+}
+.sb-top{
+    background-color: rgb(235, 233, 233);
+    display: flex;
+    justify-content: space-around;
+    /* border: 1px solid red; */
+}
+.sb-top-body{
+    margin-top: 3%;
+    width:40%;
+    /* border: 1px solid red; */
+}
+.sb-top-img{
+    width:25%;
+    /* border: 1px solid red; */
+}
+.sb-top-img>img{
+    width:100%;
+}
+.sb-bottom{
+    display: flex;
+    justify-content: space-evenly; 
+    margin-bottom: 3%; 
+}
+.articles{
+    margin-top: 3%;padding: auto; 
+}
+.card-group{
+    display: flex;
+    justify-content: space-around;
+}
+.card-mini{
+    margin:3rem;
+}
+.articles button{
+    margin-left: 45%; 
+    margin-bottom: 4%;
+    color: white;
+}
+.slides-banner{
+    background-color: rgb(235, 233, 233);
+    /* border:1px solid red; */
+}
+.slides-left{
+    /* border:1px solid red; */
+    margin-top: 3%;
+    margin-left: 4%;
+}
+.slides-left>div{
+    display: flex; 
+    justify-content: space-between;
+}
+.slides-left button{
+    margin-bottom: 4%;
+    color: white;
+}
+.slides-img{
+    margin-right: 4%;
+}
+.records-banner{
+    display: flex; 
+    justify-content: space-around;
+    margin-top: 5%; 
+}
+.trust-banner{
+    background-color: rgb(235, 233, 233);
+    display: flex;
+    justify-content: space-evenly;
+}
+.trust-info{
+    margin-top: 5%; 
+    width: 100%;
+    margin-left: 5%;
+}
+.btn{
+    margin-bottom: 4%;
+    color: white;
+}

@@ -1,0 +1,274 @@
+@media all and (min-width:1200px){
+    #nav-menu{
+        display: flex;
+    }
+}
+@media all and (min-width:701px) and (max-width:1200px){
+    #nav-menu{
+        width:60%;
+        font-size: 0.7rem;
+    }
+    #nav-user-details{
+        width:6rem;
+    }
+    #nav-user-details>button{
+        font-size: 0.6rem;
+        padding:4px 4px;
+    }
+    #feature-cont{
+        display:grid;
+        grid-template-columns: repeat(3,1fr);
+        column-gap: 3rem;
+        row-gap: 1rem;
+    }
+    #consult-body{
+        display:grid;
+        grid-template-columns: repeat(3,1fr);
+        column-gap: 1.5rem;
+        row-gap: 1rem;
+    }
+    #dept-sec>div:nth-child(odd)>.dept-body{
+        /* border:1px solid red; */
+        width:50%;
+        position:absolute;
+        top:2rem;
+        left:1rem;
+    }
+    #dept-sec>div:nth-child(even)>.dept-body{
+        /* border:1px solid red; */
+        width:50%;
+        position:absolute;
+        top:2rem;
+        right:1rem;
+    }
+    .dept-body>h1{
+        font-size:1.2rem;
+        margin-bottom: 0.5rem;
+    }
+    .dept-body>p{
+        line-height: 1rem;
+        color:rgb(107, 107, 107);
+        font-size: 0.6rem;
+    }
+    #footer-left{
+        width:60%;
+        display: flex;
+        justify-content: space-between;
+        /* border:1px solid blue; */
+    }
+    #footer-left>div>h4{
+        margin-bottom:0.8rem;
+        text-decoration: underline;
+        font-size: 0.8rem;
+    }
+    #footer-left>div>p{
+        font-size: 0.6rem;
+    }
+    #footer-right{
+        /* border:1px solid blue; */
+        width:20%;
+    }
+    #logo-div{
+        width:100%;
+        height:5rem;
+        /* border:1px solid black; */
+    }
+    #logo-div>img{
+        /* border:1px solid blue; */
+        width:100%;
+        height:5rem;
+        object-fit: contain;
+    }
+    #socials{
+        width:75%;
+        /* border:1px solid blue; */
+        margin:1rem auto;
+        display: grid;
+        grid-template-columns: repeat(4,1fr);
+        font-size: 0.8rem;
+        text-align: center;
+    }
+    .card-title,.card-text{
+        font-size: 1rem;
+    }
+    .input-grp{
+        /* border:1px solid red; */
+        width: 50%;
+        margin: auto;
+        margin-top: 3%;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+    }
+    #doctors-cont{
+        /* border:1px solid blue; */
+        display: grid;
+        grid-template-columns: repeat(1,1fr);
+        gap:1.5rem;
+    }
+    .doc-search-bar{
+        margin:auto;
+        width:80%;
+        display: block;
+        /* border:1px solid blue; */
+    }
+    #filter-approval{
+        width:100%;
+    }
+    #doc-sf{
+        margin-top:1rem;
+        width:100%;
+    }
+}
+
+
+
+@media all and (min-width:300px) and (max-width:700px){
+    #hamb{
+        display: block;
+    }
+    #nav-menu{
+        border-radius: 5px;
+        position: absolute;
+        left:0;
+        top:80%;
+        width:45%;
+        text-align: center;
+        display:none;
+        background-color: #0b76c6;
+    }
+    #nav-menu>li{
+        margin:0.5rem auto;
+        border-bottom:1px solid white;
+    }
+    #nav-user-details{
+        width:6rem;
+    }
+    #nav-user-details>button{
+        font-size: 0.6rem;
+        padding:4px 4px;
+    }
+    #feature-cont{
+        display:grid;
+        grid-template-columns: repeat(2,1fr);
+        column-gap: 3rem;
+        row-gap: 1rem;
+    }
+    #consult-body{
+        display:grid;
+        grid-template-columns: repeat(2,1fr);
+        column-gap: 1.5rem;
+        row-gap: 1rem;
+    }
+    #dept-sec>div:nth-child(odd)>.dept-body{
+        /* border:1px solid red; */
+        width:50%;
+        position:absolute;
+        top:1.5rem;
+        left:1rem;
+    }
+    #dept-sec>div:nth-child(even)>.dept-body{
+        /* border:1px solid red; */
+        width:50%;
+        position:absolute;
+        top:1.5rem;
+        right:1rem;
+    }
+    .dept-body>h1{
+        font-size:0.6rem;
+        margin-bottom: 0.2rem;
+    }
+    .dept-body>p{
+        line-height: 0.5rem;
+        color:rgb(107, 107, 107);
+        font-size: 0.3rem;
+    }
+    #footer-left{
+        width:70%;
+        display: flex;
+        justify-content: space-between;
+        /* border:1px solid blue; */
+    }
+    #footer-left>div>h4{
+        margin-bottom:0.5rem;
+        text-decoration: underline;
+        font-size: 0.5rem;
+    }
+    #footer-left>div>p{
+        font-size: 0.5rem;
+    }
+    #footer-right{
+        /* border:1px solid blue; */
+        width:20%;
+    }
+    #logo-div{
+        width:100%;
+        height:5rem;
+        /* border:1px solid black; */
+    }
+    #logo-div>img{
+        /* border:1px solid blue; */
+        width:100%;
+        height:5rem;
+        object-fit: contain;
+    }
+    #socials{
+        width:75%;
+        /* border:1px solid blue; */
+        margin:1rem auto;
+        display: grid;
+        grid-template-columns: repeat(2,1fr);
+        font-size: 0.8rem;
+        text-align: center;
+    }
+    .card-img-overlay>div{
+        /* border:1px solid red; */
+        margin: 10px;
+    }
+    .input-grp{
+        /* border:1px solid red; */
+        width: 65%;
+        margin: auto;
+        margin-top: 3%;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        font-size: 0.5rem;
+    }
+    .card-title,.card-text{
+        font-size: 0.5rem;
+    }
+    .sb-top{
+        display: none;
+    }
+    .sb-bottom{
+        padding-top:1rem;
+    }
+    .card-group{
+        /* border:1px solid red;  */
+        display: grid;
+        grid-template-columns: repeat(1,1fr);
+    }
+    .slides-img,.records-banner img,.trust-banner img,.sb-top-img{
+        display: none;
+    }
+    #doctors-cont{
+        /* border:1px solid blue; */
+        display: grid;
+        grid-template-columns: repeat(1,1fr);
+        gap:1.5rem;
+    }
+    .doc-search-bar{
+        margin:auto;
+        width:80%;
+        display: block;
+        /* border:1px solid blue; */
+    }
+    #filter-approval{
+        width:100%;
+    }
+    #doc-sf{
+        margin-top:1rem;
+        width:100%;
+    }
+}

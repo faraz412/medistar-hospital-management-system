@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Doctors</title>
+    <link rel="icon" href="./Files/Medistar-logo-crop.jpeg">
+    <link rel="stylesheet"
+        href="https://fonts.googleapis.com/css2?family=Material+Symbols+Sharp:opsz,wght,FILL,GRAD@20..48,100..700,0..1,-50..200" />
+    <link rel="stylesheet" href="https://unpkg.com/aos@next/dist/aos.css" />
+    <link rel="stylesheet" href="./css/all.css">
+    <link rel="stylesheet" href="./Styles/nav.css"/>
+    <link rel="stylesheet" href="./Styles/doctorPage.css">
+    <link rel="stylesheet" href="./Styles/responsive.css">
+    <link rel="stylesheet" href="./Styles/footer.css"/>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/sweetalert/2.1.2/sweetalert.min.js"></script>
+</head>
+
+<body>
+
+    <section id="navbar">
+        <!-- Navbar Imported -->
+    </section> 
+    <div id="container">
+        <div class="doc-search-bar">
+            <div id="filter-approval">
+                <h2>Doctors</h2>
+                <button>Filter Avaialble Doctors</button>
+                <p>Reset Filters</p>
+            </div>
+            <div id="doc-sf">
+                <div id="doc-sf-left">
+                    <input type="text" placeholder="Search by Doctor Name"/>
+                    <button><i class="fa-solid fa-magnifying-glass"></i></button>
+                </div>
+                <div id="doc-sf-right">
+                    <h3 style="padding-left:5px">Filter by Department:</h3>
+                    <select name="dept">
+                        <option value="">All</option>
+                        <option value="1">Neurology</option>
+                        <option value="2">Dermatology</option>
+                        <option value="3">Dental</option>
+                        <option value="4">Ayurveda</option>
+                        <option value="5">Gastroenterology</option>
+                        <option value="6">Gynaecology</option>
+                        <option value="7">ENT</option>
+                        <option value="8">General Physician</option>
+                        <option value="9">Orthopedic</option>
+                        <option value="10">Cardiology</option>
+                    </select>
+                </div>
+            </div>
+        </div>
+
+
+        <div id="doctors-cont">
+            
+        </div>
+    </div>
+    
+
+    <section id="footer">
+        <!-- Footer Imported -->
+    </section>
+
+    <script src="https://unpkg.com/aos@next/dist/aos.js"></script>
+    <script>
+      AOS.init();
+    </script>
+
+</body>
+
+<script type="module" src="./Scripts/navbar.js"></script>
+<script type="module" src="./Scripts/footer.js"></script>
+
+</html>
+
+<script type="module" src="./Scripts/doctor.js"></script>

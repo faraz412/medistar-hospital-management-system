@@ -1,0 +1,42 @@
+#main-cont{
+    margin:6rem auto;
+    /* border:1px solid black; */
+    width:77rem;
+    display: flex;
+    justify-content: space-around;
+    padding:1rem;
+}
+#doctors-container{
+    /* border:1px solid black; */
+    width:50%;
+}
+#payment-container{
+    /* border:1px solid black; */
+    width:42%;
+}
+.doc-card{
+    /* border:1px solid blue; */
+    box-shadow: rgba(0, 0, 0, 0.24) 0px 3px 8px;
+    background-color: ghostwhite;
+    border-radius: 10px;
+    padding-top: 0.5rem;
+}
+.card{
+    /* border:1px solid black; */
+    box-shadow: rgba(0, 0, 0, 0.24) 0px 3px 8px;
+    background-color: ghostwhite;
+    border-radius: 10px;
+}
+.doc-profile{
+    display: flex;
+    justify-content: space-around;
+    padding:1rem;
+}
+.doc-date{
+    display:flex;
+    padding:1rem;
+    justify-content: space-between;
+    align-items: center;
+    background-color: #0b76c6;
+    color:white;
+}

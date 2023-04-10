@@ -1,0 +1,423 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Admin Dashboard</title>
+    <link rel="icon" href="./Files/Medistar-logo-crop.jpeg">
+    <link rel="stylesheet"
+        href="https://fonts.googleapis.com/css2?family=Material+Symbols+Sharp:opsz,wght,FILL,GRAD@20..48,100..700,0..1,-50..200" />
+    <link rel="stylesheet" href="./Styles/admin_dash.css">
+    <link rel="stylesheet" href="./css/all.css">
+    <link rel="stylesheet" href="https://unpkg.com/aos@next/dist/aos.css" />
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/sweetalert/2.1.2/sweetalert.min.js"></script>
+</head>
+
+<body>
+    <div class="container">
+        <!-- ----sidebar start---- -->
+        <aside>
+            <div class="top">
+                <div class="logo">
+                    <img src="./Files/MEDSTAR.png" alt="">
+                    <h2>Admin <span class="primary">Panel</span></h2>
+                </div>
+                <!-- <div class="close" id="close-btn">
+                    <span class="material-symbols-sharp">close</span>
+                </div> -->
+            </div>
+            <div class="profile">
+                <div class="profile-photo">
+                    <!-- <img src="https://media.istockphoto.com/photos/close-up-portrait-of-brunette-woman-picture-id1154642632?b=1&k=20&m=1154642632&s=612x612&w=0&h=StstyxyDdiJQgUSTlaWv2ITXSMb029KzXijHtsaTQEg="> -->
+                    <img src="./Files/Albert.jpg">
+                </div>
+                <div class="info">
+                    <p>Hey, <b style="color:black">Albert</b></p>
+                    <small class="text-muted">Admin</small>
+                </div>
+                <div class="theme-toggler">
+                    <span class="material-symbols-sharp active">
+                        light_mode
+                    </span>
+                    <span class="material-symbols-sharp">
+                        dark_mode
+                    </span>
+                </div>
+            </div>
+            <div class="sidebar">
+                <a id="menu-dash" class="active">
+                    <span class="material-symbols-sharp">
+                        grid_view
+                    </span>
+                    <h3>Dashboard</h3>
+                </a>
+                <a id="menu-doc">
+                    <span class="material-symbols-sharp">
+                        stethoscope
+                    </span>
+                    <h3>Doctors</h3>
+                </a>
+                <a id="menu-patient">
+                    <span class="material-symbols-sharp">
+                        personal_injury
+                    </span>
+                    <h3>Patients</h3>
+                </a>
+                <a id="menu-app">
+                    <span class="material-symbols-sharp">
+                        edit_calendar
+                    </span>
+                    <h3>Appointments</h3>
+                </a>
+                <a href="#">
+                    <span class="material-symbols-sharp">
+                        settings
+                    </span>
+                    <h3>Settings</h3>
+                </a>
+                <a id="menu-logout">
+                    <span class="material-symbols-sharp">
+                        logout
+                    </span>
+                    <h3>Logout</h3>
+                </a>
+            </div>
+        </aside>
+        <!-- ----sidebar end---- -->
+        <!-- main section start -->
+        <main>
+            <div id="dash-cont">
+                <div class="status-bar">
+                    <div data-aos="zoom-in" data-aos-duration="800" style="background-color: #41f1b6;" class="status-card">
+                        <div class="sc-logo">
+                            <div class="material-symbols-sharp">
+                                <i class="fa-solid fa-user-doctor"></i>
+                            </div>
+                            <h2>Doctors</h2>
+                        </div>
+                        <div class="sc-info">
+                            <p >Total Doctors: <b id="total-doc">5</b></p>
+                            <p >Pending Approvals: <b id="doc-approvals">1</b></p>
+                        </div>
+                    </div>
+                    <div data-aos="zoom-in" data-aos-duration="800" style="background-color: #ffbb55" class="status-card">
+                        <div class="sc-logo">
+                            <div class="material-symbols-sharp">
+                                <i class="fa-solid fa-bed"></i>
+                            </div>
+                            <h2>Patients</h2>
+                        </div>
+                        <div class="sc-info">
+                            <p >Total Patients: <b id="total-pat">11</b></p>
+                            <p >Pending Approvals: <b>4</b></p>
+                        </div>
+                    </div>
+                    <div data-aos="zoom-in" data-aos-duration="800" style="background-color: skyblue" class="status-card">
+                        <div class="sc-logo">
+                            <div class="material-symbols-sharp">
+                                <i class="fa-regular fa-calendar-days"></i>
+                            </div>
+                            <h2>Appointments</h2>
+                        </div>
+                        <div class="sc-info">
+                            <p>Total Appointments: <b id="total-app">30</b></p>
+                            <p>Pending Approvals: <b id="app-approvals">2</b></p>
+                        </div>
+                    </div>
+                </div>
+                <div class="dash-body">
+                    <div class="latest">
+                        <div data-aos="fade-right" data-aos-duration="800" style="background-color: #41f1b6;">
+                            <h2>Recently Joined Doctors &nbsp;<i class="fa-solid fa-stethoscope"></i></h2>
+                            <table>
+                                <thead>
+                                    <tr>
+                                        <th>Name</th>
+                                        <th>Department</th>
+                                        <th>Mobile</th>
+                                        <th>Experience</th>
+                                    </tr>
+                                </thead>
+                                <tbody id="doc-tbody">
+                                    <!-- <tr>
+                                        <td>Name1</td>
+                                        <td>Dept1</td>
+                                        <td>123456</td>
+                                        <td>Active</td>
+                                    </tr>
+                                    <tr>
+                                        <td>Name1</td>
+                                        <td>Dept1</td>
+                                        <td>123456</td>
+                                        <td>Active</td>
+                                    </tr>
+                                    <tr>
+                                        <td>Name1</td>
+                                        <td>Dept1</td>
+                                        <td>123456</td>
+                                        <td>Active</td>
+                                    </tr> -->
+                                </tbody>
+                            </table>
+                        </div>
+                    </div>
+                    <div class="latest">
+                        <div data-aos="fade-left" data-aos-duration="800" style="background-color: #ffbb55">
+                            <h2>Recently Joined Patients &nbsp;<i class="fa-solid fa-bed"></i></h2>
+                            <table>
+                                <thead>
+                                    <tr>
+                                        <th>First Name</th>
+                                        <th>Last Name</th>
+                                        <th>Email</th>
+                                        <th>Mobile</th>
+                                    </tr>
+                                </thead>
+                                <tbody id="pat-tbody">
+                                    <tr>
+                                        <!-- <td>Name1</td>
+                                        <td>Dept1</td>
+                                        <td>123456</td>
+                                        <td>Active</td>
+                                    </tr>
+                                    <tr>
+                                        <td>Name1</td>
+                                        <td>Dept1</td>
+                                        <td>123456</td>
+                                        <td>Active</td>
+                                    </tr>
+                                    <tr>
+                                        <td>Name1</td>
+                                        <td>Dept1</td>
+                                        <td>123456</td>
+                                        <td>Active</td>
+                                    </tr> -->
+                                </tbody>
+                            </table>
+                        </div>
+                    </div>
+                    <div class="latest">
+                        <div data-aos="fade-right" data-aos-duration="800" style="background-color: skyblue">
+                            <h2>Recent Appointments &nbsp;<i class="fa-regular fa-calendar-days"></i></h2>
+                            <table>
+                                <thead>
+                                    <tr>
+                                        <th>Patient Name</th>
+                                        <th>Doctor Name</th>
+                                        <th>Date</th>
+                                        <th>Approval Status</th>
+                                    </tr>
+                                </thead>
+                                <tbody id="app-tbody">
+                                    <tr>
+                                        <!-- <td>Name1</td>
+                                        <td>Dept1</td>
+                                        <td>123456</td>
+                                        <td>Active</td>
+                                    </tr>
+                                    <tr>
+                                        <td>Name1</td>
+                                        <td>Dept1</td>
+                                        <td>123456</td>
+                                        <td>Active</td>
+                                    </tr>
+                                    <tr>
+                                        <td>Name1</td>
+                                        <td>Dept1</td>
+                                        <td>123456</td>
+                                        <td>Active</td> -->
+                                    </tr>
+                                </tbody>
+                            </table>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div id="doc-cont" class="div-hide">
+                <div class="doctor-input">
+                    <div class="create-doc">
+                        <h2>Add New Doctor</h2>
+                        <form>
+                            <input name="name" required="true" type="text" placeholder="Enter Name"/>
+                            <input name="email" required="true" type="email" placeholder="Enter Email"/>
+                            <input name="phone" required="true" type="text" placeholder="Enter Phone No."/>
+                            <input name="city" required="true" type="text" placeholder="Enter City"/>
+                            <input name="dept" required="true" type="text" placeholder="Enter Dept. ID"/>
+                            <input name="qual" required="true" type="text" placeholder="Enter Qualification"/>
+                            <input name="img" required="true" type="text" placeholder="Enter Image URL"/>
+                            <input name="exp" required="true" type="text" placeholder="Enter Experience"/>
+                            <select name="status">
+                                <option value=false>Approval: Pending</option>
+                                <option value=true>Approval: Approved</option>
+                            </select>
+                            <input type="submit" value="SUBMIT"/>
+                        </form>
+                    </div>
+                    <div class="edit-doc">
+                        <div class="doc-search">
+                            <h2>Update Doctor Details:</h2>
+                            <input type="text" placeholder="Enter Doctor ID"/>
+                            <button><i class="fa-solid fa-magnifying-glass"></i></button>   
+                        </div>
+                        <form>
+                            <input type="text" placeholder="Enter Name"/>
+                            <input type="email" placeholder="Enter Email"/>
+                            <input type="text" placeholder="Enter Phone No."/>
+                            <input type="text" placeholder="Enter City"/>
+                            <input type="text" placeholder="Enter Dept. ID"/>
+                            <input type="text" placeholder="Enter Qualification"/>
+                            <input type="text" placeholder="Enter Image URL"/>
+                            <input type="text" placeholder="Enter Experience"/>
+                            <select name="status">
+                                <option value=false>Approval: Pending</option>
+                                <option value=true>Approval: Approved</option>
+                            </select>
+                            <input type="submit" value="UPDATE"/>
+                        </form>
+                    </div>
+                </div>
+                <div class="doc-db">
+                    <div class="doc-search-bar">
+                        <div id="filter-approval">
+                            <h2>Doctors</h2>
+                            <button>Filter Pending Approvals</button>
+                            <p>Reset Filters</p>
+                        </div>
+                        <div id="doc-sf">
+                            <div id="doc-sf-left">
+                                <input type="text" placeholder="Search by Doctor Name"/>
+                                <button><i class="fa-solid fa-magnifying-glass"></i></button>
+                            </div>
+                            <div id="doc-sf-right">
+                                <h3 style="padding-left:5px">Filter by Department:</h3>
+                                <select name="dept">
+                                    <option value="">All</option>
+                                    <option value="1">Neurology</option>
+                                    <option value="2">Dermatology</option>
+                                    <option value="3">Dental</option>
+                                    <option value="4">Ayurveda</option>
+                                    <option value="5">Gastroenterology</option>
+                                    <option value="6">Gynaecology</option>
+                                    <option value="7">ENT</option>
+                                    <option value="8">General Physician</option>
+                                    <option value="9">Orthopedic</option>
+                                    <option value="10">Cardiology</option>
+                                </select>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="doc-data">
+                        <table>
+                            <thead style="background-color: rgb(245, 169, 29)">
+                                <tr>
+                                    <th>Profile picture</th>
+                                    <th>Name</th>
+                                    <th>Dept.</th>
+                                    <th>Email</th>
+                                    <th>Phone No.</th>
+                                    <th>Approval Status</th>
+                                    <th>Remove Doctor</th>
+                                </tr>
+                            </thead>
+                            <div class="scroll">
+                                <tbody id="doc-render">
+                                    <!-- FETCH DATA -->
+                                </tbody>
+                            </div>
+                        </table>
+                    </div>
+                </div>
+            </div>
+
+            <div id="patient-cont" class="div-hide">
+                <div class="patient-db">
+                    <div class="patient-search-bar">
+                        <h2>Patients</h2>
+                        <div id="patient-sf">
+                            <div id="patient-sf-left">
+                                <input type="text" placeholder="Search by Name"/>
+                                <button><i class="fa-solid fa-magnifying-glass"></i></button>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="patient-data">
+                        <table>
+                            <thead style="background-color: rgb(245, 169, 29)">
+                                <tr>
+                                    <th>First Name</th>
+                                    <th>Last Name</th>
+                                    <th>Email</th>
+                                    <th>Mobile</th>
+                                    <th>Block User</th>
+                                </tr>
+                            </thead>
+                            <tbody id="user-render">
+                                <!-- FETCH DATA -->
+                            </tbody>
+                        </table>
+                    </div>
+                </div>
+            </div>
+            
+            <div id="app-cont" class="div-hide">
+                <div class="app-db">
+                    <div class="app-search-bar">
+                        <h2>Appointments</h2>
+                        <div id="app-sf">
+                            <div id="app-sf-left">
+                                <input type="text" placeholder="Search by Patient Name"/>
+                                <button><i class="fa-solid fa-magnifying-glass"></i></button>
+                            </div>
+                            <div id="app-sf-right">
+                                <h3 style="padding-left:5px">Filter by Department:</h3>
+                                <select name="dept">
+                                    <option value="">All</option>
+                                    <option value="1">Neurology</option>
+                                    <option value="2">Dermatology</option>
+                                    <option value="3">Dental</option>
+                                    <option value="4">Ayurveda</option>
+                                    <option value="5">Gastroenterology</option>
+                                    <option value="6">Gynaecology</option>
+                                    <option value="7">ENT</option>
+                                    <option value="8">General Physician</option>
+                                    <option value="9">Orthopedic</option>
+                                    <option value="10">Cardiology</option>
+                                </select>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="app-data">
+                        <table>
+                            <thead style="background-color: rgb(245, 169, 29)">
+                                <tr>
+                                    <th>Patient Name</th>
+                                    <th>Gender</th>
+                                    <th>Consulting Doctor</th>
+                                    <th>App. Date</th>
+                                    <th>Reason</th>
+                                    <th>Payment Status</th>
+                                    <!-- <th>Department</th> -->
+                                </tr>
+                            </thead>
+                            <tbody id="apps-render">
+                                <!-- FETCH DATA -->
+                            </tbody>
+                        </table>
+                    </div>
+                </div>
+            </div>
+        </main>
+        <!-- ----main section end---- -->
+    </div>
+    <script type="module" src="./Scripts/admin_dash.js"></script>
+
+    <script src="https://unpkg.com/aos@next/dist/aos.js"></script>
+    <script>
+      AOS.init();
+    </script>
+</body>
+
+</html>
