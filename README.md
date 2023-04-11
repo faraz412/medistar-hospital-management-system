@@ -182,8 +182,8 @@ PATCH /api/appointment/reschedule/:appointmentId
 
  [Link of Lucid Diagram](https://lucid.app/lucidchart/89a9abfd-eb14-4536-817c-92e46d59f21c/edit?viewport_loc=122%2C2%2C2689%2C1156%2C0_0&invitationId=inv_8ce3c450-9515-4295-a303-cb7c82663b34)
   
- <img src="https://raw.githubusercontent.com/faraz412/cozy-passenger-4798/main/Frontend/Files/MEDISTAR%20HOSPITALS%20DB%20Workflow.png" width="900" height="400" />
-  <img src="https://user-images.githubusercontent.com/109690823/230876067-5b3223de-3ff3-4204-a4a8-9fb5818f2e1c.png" width="900" height="400" />
+ <img src="https://raw.githubusercontent.com/faraz412/cozy-passenger-4798/main/Frontend/Files/MEDISTAR%20HOSPITALS%20DB%20Workflow.png" width="800" height="400" />
+  <img src="https://user-images.githubusercontent.com/109690823/230876067-5b3223de-3ff3-4204-a4a8-9fb5818f2e1c.png" width="700" height="300" />
  <div/>
 
   
@@ -192,11 +192,11 @@ PATCH /api/appointment/reschedule/:appointmentId
 
  <div align = "center">
 
- <img src="https://user-images.githubusercontent.com/109690823/229313097-98ac03fb-69b0-4833-849c-48c4a1b9d38d.png" width="900" height="400" />
- <img src="https://user-images.githubusercontent.com/109690823/229355448-be996d1e-8545-44e1-b1ba-dc3d62d0ac9a.png" width="900" height="400"/>
- <img src="https://user-images.githubusercontent.com/109690823/229355596-5bfd0bf9-9147-47fb-bb42-b6e04ac4208b.png" width="900" height="400"/>
- <img src="https://user-images.githubusercontent.com/112754448/229442938-2217ce0b-89d7-4663-a9c0-f966cbafe9e5.png" width="900" height="400"/>
- <img src="https://user-images.githubusercontent.com/112754448/229443082-625321d8-29bc-4f28-b7bb-c21e900c1ad4.png" width="900" height="400"/>
+ <img src="https://user-images.githubusercontent.com/109690823/229313097-98ac03fb-69b0-4833-849c-48c4a1b9d38d.png" width="700" height="300" />
+ <img src="https://user-images.githubusercontent.com/109690823/229355448-be996d1e-8545-44e1-b1ba-dc3d62d0ac9a.png" width="700" height="300"/>
+ <img src="https://user-images.githubusercontent.com/109690823/229355596-5bfd0bf9-9147-47fb-bb42-b6e04ac4208b.png" width="700" height="300"/>
+ <img src="https://user-images.githubusercontent.com/112754448/229442938-2217ce0b-89d7-4663-a9c0-f966cbafe9e5.png" width="700" height="300"/>
+ <img src="https://user-images.githubusercontent.com/112754448/229443082-625321d8-29bc-4f28-b7bb-c21e900c1ad4.png" width="700" height="300"/>
   
 <div/>
   
