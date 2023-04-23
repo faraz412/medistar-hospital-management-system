@@ -230,10 +230,10 @@ admin@gmail.com
 admin
 ``` -->
 
-mongoURL='mongodb+srv://medistar:medistar@medistar.ne0fmxt.mongodb.net/medistar?retryWrites=true&w=majority'
+<!-- mongoURL='mongodb+srv://medistar:medistar@medistar.ne0fmxt.mongodb.net/medistar?retryWrites=true&w=majority'
 key='masai'
 port=8080
 redisPassword = 'jKnThiUqDr7ko7ESOUban2Rawrt7DSu2'
 redisHost = 'redis-19172.c8.us-east-1-2.ec2.cloud.redislabs.com'
 redisPort = 19172
-nodeMailer="xajyvogutczrdcwy"
+nodeMailer="xajyvogutczrdcwy" -->
