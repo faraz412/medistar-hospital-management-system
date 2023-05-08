@@ -238,4 +238,5 @@ redisHost = 'redis-19172.c8.us-east-1-2.ec2.cloud.redislabs.com'
 redisPort = 19172
 nodeMailer="xajyvogutczrdcwy"
 medistar.hospital301@gmail.com
+https://medistar-hospital-301.netlify.app/admin.login.html
 -->
