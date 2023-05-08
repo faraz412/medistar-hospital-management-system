@@ -267,7 +267,7 @@
         const paramLast_Name = urlParams.get('last_name');
         console.log(paramEmail, paramValue,
             paramFirst_Name, paramLast_Name)
-        if (paramValue && paramName && paramEmail) {
+        if (paramValue && paramFirst_Name && paramLast_Name  && paramEmail) {
             localStorage.setItem("token", JSON.stringify(paramValue));
             localStorage.setItem("first_name", JSON.stringify(paramFirst_Name));
             localStorage.setItem("email", JSON.stringify(paramEmail));
