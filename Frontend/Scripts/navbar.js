@@ -49,8 +49,9 @@ signupbtn.addEventListener("click",(e)=>{
     if(e.target.innerText=="Signup"){
         window.location.href="./signup.html";
     }else{
-        localStorage.removeItem("token");
-        localStorage.removeItem("userName");
+        localStorage.clear();
+        // localStorage.removeItem("token");
+        // localStorage.removeItem("userName");
         window.location.href="./index.html";
     }
 })

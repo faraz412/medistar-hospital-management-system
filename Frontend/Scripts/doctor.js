@@ -102,20 +102,23 @@ function renderdata(arr) {
     let forms=document.querySelectorAll(".select-app>form");
     for(let form of forms){
         form.addEventListener("submit",(e)=>{
-            e.preventDefault();
-            console.log(e.target)
+
+            //e.preventDefault();
+            console.log(e.composedPath());
+
             if(!localStorage.getItem("token")){
                 swal("", "Please Login!", "warning").then(function() {
                     window.location.href="./login.html";
                 });
             }else{
 
-                let img=e.path[3].children[0].children[0].children[0].currentSrc;
-                let name=e.path[3].children[0].children[1].children[0].innerText;
-                let dept=e.path[3].children[0].children[1].children[1].innerText;
-                let exp=e.path[3].children[0].children[1].children[2].innerText;
-                let qual=e.path[3].children[0].children[1].children[3].innerText;
-                let docID=e.path[3].children[0].children[1].children[4].innerText;
+                let img=e.composedPath()[3].children[0].children[0].children[0].currentSrc;
+                let name=e.composedPath()[3].children[0].children[1].children[0].innerText;
+                let dept=e.composedPath()[3].children[0].children[1].children[1].innerText;
+                let exp=e.composedPath()[3].children[0].children[1].children[2].innerText;
+                let qual=e.composedPath()[3].children[0].children[1].children[3].innerText;
+                let docID=e.composedPath()[3].children[0].children[1].children[4].innerText;
+
                 let formObj={
                     "date":form.date.value,
                     "slot":form.slot.value
