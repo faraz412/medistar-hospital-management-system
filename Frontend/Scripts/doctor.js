@@ -103,11 +103,13 @@ function renderdata(arr) {
     for(let form of forms){
         form.addEventListener("submit",(e)=>{
             e.preventDefault();
+            console.log(e.target)
             if(!localStorage.getItem("token")){
                 swal("", "Please Login!", "warning").then(function() {
                     window.location.href="./login.html";
                 });
             }else{
+
                 let img=e.path[3].children[0].children[0].children[0].currentSrc;
                 let name=e.path[3].children[0].children[1].children[0].innerText;
                 let dept=e.path[3].children[0].children[1].children[1].innerText;

@@ -131,7 +131,7 @@ appointmentRouter.post("/create/:doctorId", authenticate, async (req, res) => {
       service: "gmail",
       auth: {
         user: "medistar.hospital301@gmail.com",
-        pass: "hoxilrprpqwjbnzi",
+        pass: "inuuywvtlrqvugpp",
       },
     });
     const mailOptions = {

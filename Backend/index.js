@@ -17,7 +17,6 @@ const { dashboardRouter } = require("./routers/adminDash.router");
 // const { authenticate } = require("./middlewares/authenticator.mw");
 
 
-
 app.use("/user", userRouter);
 app.use("/department",departmentRouter);
 app.use("/doctor", doctorRouter);
