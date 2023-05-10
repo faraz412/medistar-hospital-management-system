@@ -103,12 +103,13 @@ function renderdata(arr) {
     for(let form of forms){
         form.addEventListener("submit",(e)=>{
 
-            //e.preventDefault();
+            e.preventDefault();
             console.log(e.composedPath());
 
             if(!localStorage.getItem("token")){
                 swal("", "Please Login!", "warning").then(function() {
                     window.location.href="./login.html";
+                    return;
                 });
             }else{
 
