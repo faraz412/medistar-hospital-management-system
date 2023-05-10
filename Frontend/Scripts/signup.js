@@ -19,13 +19,20 @@ let form =document.querySelector("form");
             body:JSON.stringify(obj)
         })
         let data=await res.json();
-       // console.log(data.otp);
-        
-        localStorage.setItem("userDetails",JSON.stringify(obj));
-        localStorage.setItem("otp",data.otp);
-        swal("", "OTP has been sent to your mail", "info").then(function() {
-          window.location.href="./otp.html";
-      });
+        //console.log(data);
+
+        if(data.otp){
+            localStorage.setItem("userDetails",JSON.stringify(obj));
+            localStorage.setItem("otp",data.otp);
+            swal("", "OTP has been sent to your mail", "info").then(function() {
+              window.location.href="./otp.html";
+            });
+        }else{
+          swal("", `${data.msg}`, "info").then(function() {
+            window.location.href="./login.html";
+          });          
+        }
+       
        // alert("Successfully registered");
       } catch (error) {
         console.log(error);
