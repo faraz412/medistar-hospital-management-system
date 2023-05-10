@@ -16,11 +16,17 @@ userRouter.get("/", async (req, res) => {
 });
 
 userRouter.post("/emailVerify", async (req, res) => {
+  let { first_name, last_name, email, mobile, password } = req.body;
+  const isPresent = await UserModel.findOne({ email });
+  if (isPresent) {
+    return res.status(500).send({
+      msg: "You are already registered. Please login!",
+    });
+  }  
   otp = otpGenerator.generate(4, {
     upperCaseAlphabets: false,
     specialChars: false,
   });
-  let { email } = req.body;
   const transporter = nodemailer.createTransport({
     service: "gmail",
     auth: {

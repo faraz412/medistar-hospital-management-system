@@ -20,7 +20,7 @@
     <!-- Navbar Imported -->
   </section> 
    
-  <div style="margin-top: 6.5rem;">
+  <div style="margin-top: 6rem;">
       <ul class="nav nav-tabs" style="margin-left: 50%;">
           <li class="nav-item">
             <a class="nav-link active" aria-current="page" href="#">Register</a>
@@ -31,9 +31,9 @@
         </ul>
   </div>
 
-  <div style="width:65%;display: flex; margin:2rem auto;">
+  <div style="width:65%; display: flex; margin:1rem auto;">
       <div>
-          <img style="width: 90%;" src="./Files/illustration.png" alt="">
+          <img style="width: 90%;" src="./Files/illustration.png" alt="banner">
       </div>
       <div>
         <div class="card-header" style="width: 30rem; display:flex; justify-content: space-between; border:1px solid lightgray">
@@ -44,47 +44,57 @@
               <p >Are you a doctor? <a href="./signup.html" style="color: red;">register here</a></p>
           </div>
         </div>
-        <form >
-          <div class="card" style="width: 30rem;">
-            <div class="card-body">
-              <div class="mb-3" style="padding: 1%; ">
-                <label for="exampleFormControlInput1" class="form-label">First Name</label>
-                <input required="true" class="form-control" id="exampleFormControlInput1" placeholder="First Name">
+        <div>
+          <form >
+            <div class="card" style="width: 31rem;">
+              <div class="card-body">
+                <div class="mb-3" style="padding: 1%; ">
+                  <!-- <label for="exampleFormControlInput1" class="form-label">First Name</label> -->
+                  <input required="true" class="form-control" id="exampleFormControlInput1" placeholder="Enter First Name">
+                </div>
+                <div class="mb-3" style="padding: 1%; ">
+                  <!-- <label for="exampleFormControlInput1" class="form-label">Last Name</label> -->
+                  <input required="true" class="form-control" id="exampleFormControlInput2" placeholder="Enter Last Name">
+                </div>
+                <div class="mb-3" style="padding: 1%; ">
+                  <!-- <label for="exampleFormControlInput1" class="form-label">E-mail</label> -->
+                  <input required="true" class="form-control" id="exampleFormControlInput3" placeholder="Enter E-mail Address">
+                </div>
+                <div class="mb-3" style="padding: 1%; ">
+                  <!-- <label for="exampleFormControlInput1" class="form-label">Mobile Number</label> -->
+                  <input required="true" class="form-control" id="exampleFormControlInput4" placeholder="Enter Mobile Number">
+                </div>
+                <div class="mb-3" style="padding: 1%; ">
+                  <!-- <label for="exampleFormControlInput1" class="form-label">Create password</label> -->
+                  <input required="true" type="password" class="form-control" id="exampleFormControlInput5" placeholder="Create new password">
+                </div>
+                <!-- <div class="form-check" style="padding: 1%;margin-left: 5%; ">
+                  <input class="form-check-input" type="checkbox" value="" id="flexCheckDefault">
+                  <label class="form-check-label" for="flexCheckDefault">
+                    Receive revelant offers and promotional communication
+                  </label>
+                </div>
+                <div class="form-check" style="padding: 2%;margin-left: 4%;">
+                  <input class="form-check-input" type="checkbox" value="" id="flexCheckDefault">
+                  <label class="form-check-label" for="flexCheckDefault">
+                    Agree to terms and condition
+                  </label>
+                </div> -->
               </div>
-              <div class="mb-3" style="padding: 1%; ">
-                <label for="exampleFormControlInput1" class="form-label">Last Name</label>
-                <input required="true" class="form-control" id="exampleFormControlInput2" placeholder="Last Name">
-              </div>
-              <div class="mb-3" style="padding: 1%; ">
-                <label for="exampleFormControlInput1" class="form-label">E-mail</label>
-                <input required="true" class="form-control" id="exampleFormControlInput3" placeholder="E-mail">
-              </div>
-              <div class="mb-3" style="padding: 1%; ">
-                <label for="exampleFormControlInput1" class="form-label">Mobile Number</label>
-                <input required="true" class="form-control" id="exampleFormControlInput4" placeholder="Mobile Number">
-              </div>
-              <div class="mb-3" style="padding: 1%; ">
-                <label for="exampleFormControlInput1" class="form-label">Create password</label>
-                <input required="true" type="password" class="form-control" id="exampleFormControlInput5" placeholder="Create password">
-              </div>
-              <div class="form-check" style="padding: 1%;margin-left: 5%; ">
-                <input class="form-check-input" type="checkbox" value="" id="flexCheckDefault">
-                <label class="form-check-label" for="flexCheckDefault">
-                  Receive revelant offers and promotional communication
-                </label>
-              </div>
-              <div class="form-check" style="padding: 2%;margin-left: 4%;">
-                <input class="form-check-input" type="checkbox" value="" id="flexCheckDefault">
-                <label class="form-check-label" for="flexCheckDefault">
-                  Agree to terms and condition
-                </label>
-              </div>
-            </div>
-            <button  type="submit" class="btn btn-info" style="color: white; margin:auto;margin-bottom: 5%; width:90%">
-              Send OTP
-            </button>
+              <button  type="submit" class="btn btn-info" style="color: white; margin:auto; margin-top:-3%; margin-bottom: 3%; width:90%">
+                Send OTP
+              </button>
+          </div>
+          </form>
+          <div style="width:100%; margin:auto; margin-bottom: 5%; border:1px solid lightgray; padding:2% 5%;">
+            <a style="display:block; " href="https://oauth-medistar.onrender.com/auth/github">
+              <button style="width:100%; margin-bottom: 2%; background-color: black; color:white; border:1px solid black; border-radius: 5px; padding:7px 0;"> <i class="fa-brands fa-github"></i> &nbsp;&nbsp; Continue with Github</button>
+            </a>
+            <a style="display:block" href="https://oauth-medistar.onrender.com/auth/google">
+              <button style="width:100%; background-color: #0b76c6; color:white; border:1px solid #0b76c6; border-radius: 5px; padding:7px 0;"> <i class="fa-brands fa-google"></i> &nbsp;&nbsp; Continue with Google</button>
+            </a>
+          </div>
         </div>
-        </form>
     </div>
   </div>
 

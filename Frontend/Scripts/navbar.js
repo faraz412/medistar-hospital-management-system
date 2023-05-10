@@ -1,3 +1,4 @@
+import baseURL from "./baseURL.js";
 
 document.querySelector("#navbar").innerHTML = `
 <div id="nav-cont">
@@ -49,10 +50,27 @@ signupbtn.addEventListener("click",(e)=>{
     if(e.target.innerText=="Signup"){
         window.location.href="./signup.html";
     }else{
-        localStorage.clear();
-        // localStorage.removeItem("token");
-        // localStorage.removeItem("userName");
-        window.location.href="./index.html";
+        (async function(){
+            try{
+                let res=await fetch(baseURL+"user/logout",{
+                    headers:{
+                        'Content-type':'application/json',
+                        'Authorization':`${localStorage.getItem("token")}`
+                    }
+                });
+                let data=await res.json();
+                if(data){
+                    localStorage.clear();
+                    // localStorage.removeItem("token");
+                    // localStorage.removeItem("userName");
+                    swal("", "You are successfully logged out!", "success").then(function() {
+                        window.location.href="./index.html";
+                      });
+                }
+            }catch(err){
+                console.log(err);
+            }         
+        })();
     }
 })
 
